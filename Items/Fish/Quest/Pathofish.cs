@@ -1,5 +1,6 @@
 using Avalon.Common;
 using Terraria;
+using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
@@ -7,13 +8,13 @@ namespace Avalon.Items.Fish.Quest;
 
 public class Pathofish : ModItem
 {
+	public override void SetStaticDefaults()
+	{
+		ItemID.Sets.IsQuestFish[Item.type] = true;
+	}
 	public override void SetDefaults()
 	{
 		Item.DefaultToQuestFish();
-	}
-	public override bool IsQuestFish()
-	{
-		return true;
 	}
 	public override bool IsAnglerQuestAvailable()
 	{

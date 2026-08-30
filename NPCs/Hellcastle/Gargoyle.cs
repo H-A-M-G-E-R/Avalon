@@ -187,9 +187,9 @@ public class Gargoyle : ModNPC
             return;
         }
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneHellcastle && Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].WallType == (ushort)ModContent.WallType<Walls.ImperviousBrickWallUnsafe>())
+        if (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneHellcastle && Main.tile[spawner.SpawnTileX, spawner.SpawnTileY].WallType == (ushort)ModContent.WallType<Walls.ImperviousBrickWallUnsafe>())
         {
             return 2f;
         }

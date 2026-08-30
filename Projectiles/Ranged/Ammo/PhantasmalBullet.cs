@@ -122,7 +122,7 @@ public class PhantasmalBullet : ModProjectile
 		Projectile.position += value * x * Main.rand.NextFloat(1f, 1.5f);
 		//Projectile.position += value * x * Main.rand.NextFloat(5f, 10.5f); //exaggerated sine wave to test trail
 	}
-	public override bool PreDraw(ref Color lightColor) // theft v3? (from enchanted SpectralBullet)
+	public override bool PreDraw(Player player, ref Color lightColor) // theft v3? (from enchanted SpectralBullet)
 	{
 		Rectangle dims = this.GetDims();
 		Vector2 drawOrigin = new Vector2(Projectile.width, Projectile.height);

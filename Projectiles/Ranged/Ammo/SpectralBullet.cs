@@ -126,7 +126,7 @@ public class SpectralBullet : ModProjectile
 		Projectile.position += value * x * Main.rand.NextFloat(1f, 1.5f);
 		//Projectile.position += value * x * Main.rand.NextFloat(5f, 10.5f); //exaggerated sine wave to test trail
 	}
-	public override bool PreDraw(ref Color lightColor) // theft v2? (from enchanted shuriken)
+	public override bool PreDraw(Player player, ref Color lightColor) // theft v2? (from enchanted shuriken)
 	{
 		Rectangle dims = this.GetDims();
 		Vector2 drawOrigin = new Vector2(Projectile.width, Projectile.height);

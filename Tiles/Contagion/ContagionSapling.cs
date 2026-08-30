@@ -42,7 +42,7 @@ public class ContagionSapling : ModTile
         AdjTiles = new int[1] { TileID.Saplings };
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         if (WorldGen.genRand.Next(20) == 0)
         {

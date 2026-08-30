@@ -42,9 +42,9 @@ public class IridiumLongbowHeld : LongbowTemplate
 		}
 		return false;
 	}
-	public override void PostDraw(Color lightColor)
+	public override void PostDraw(Player player, Color lightColor)
 	{
-		if (Main.player[Projectile.owner].channel)
+		if (player.channel)
 		{
 			Color arrowColor = Color.Lerp(Color.Chartreuse, Color.Green, Main.masterColor) with { A = 0 };
 			DrawArrow(arrowColor * Power, Vector2.Zero, true);

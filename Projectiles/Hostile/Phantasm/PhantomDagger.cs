@@ -21,11 +21,6 @@ public class PhantomDagger : SoulDagger
 	{
 		NPCs.Bosses.Hardmode.Phantasm.Phantasm.ApplyShadowCurse(target);
 	}
-	public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
-	{
-		if (Projectile.tileCollide)
-			behindNPCsAndTiles.Add(index);
-	}
 	public override void AI()
 	{
 		Lighting.AddLight(Projectile.Center, new Vector3(0f, 1f, 1f) * 0.2f);
@@ -122,6 +117,16 @@ public class PhantomDagger : SoulDagger
 			Projectile.rotation = Projectile.ai[2] * rotationMultipler;
 		}
 	}
+	public override bool PreDraw(Player player, ref Color lightColor)
+	{
+		if (Projectile.tileCollide)
+			Projectile.drawLayer = ProjectileDrawLayerID.BehindNPCsAndTiles;
+		else
+			Projectile.drawLayer = ProjectileDrawLayerID.None;
+
+		return true;
+	}
+
 	public override bool OnTileCollide(Vector2 oldVelocity)
 	{
 		if (Projectile.velocity != Vector2.Zero)

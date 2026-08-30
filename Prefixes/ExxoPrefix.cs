@@ -1,9 +1,12 @@
+using Avalon.Common.Players;
+using Avalon.DropConditions;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 using System.Reflection;
-using Avalon.Common.Players;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -110,7 +113,7 @@ public abstract class ExxoPrefix : ModPrefix
 
         foreach (TooltipLine line in lines)
         {
-            line.IsModifier = true;
+            line.Color = Terraria.ID.Colors.PrefixGood;
         }
 
         TooltipLines = new ReadOnlyCollection<TooltipLine>(lines);
@@ -134,8 +137,8 @@ public abstract class ExxoPrefix : ModPrefix
         {
             list.Add(new TooltipLine(Mod, prefix, $"{value:+#;-#;+0}{(percentage ? "%" : string.Empty)} {identifier}")
             {
-                IsModifier = true, IsModifierBad = !inverted ? value < 0 : value >= 0,
-            });
+				Color = (!inverted ? value < 0 : value >= 0) ? Terraria.ID.Colors.PrefixBad : Terraria.ID.Colors.PrefixGood,
+			});
         }
     }
 
@@ -146,8 +149,8 @@ public abstract class ExxoPrefix : ModPrefix
         {
             list.Add(new TooltipLine(Mod, prefix, $"{value * 100:+#;-#;+0;n0}% {identifier}")
             {
-                IsModifier = true, IsModifierBad = !inverted ? value < 0 : value >= 0,
-            });
+				Color = (!inverted ? value < 0 : value >= 0) ? Terraria.ID.Colors.PrefixBad : Terraria.ID.Colors.PrefixGood,
+			});
         }
     }
 
@@ -156,7 +159,7 @@ public abstract class ExxoPrefix : ModPrefix
     {
         if (value)
         {
-            list.Add(new TooltipLine(Mod, prefix, identifier) { IsModifier = true, IsModifierBad = isBad });
+            list.Add(new TooltipLine(Mod, prefix, identifier) { Color = isBad ? Terraria.ID.Colors.PrefixBad : Terraria.ID.Colors.PrefixGood, });
         }
     }
 }

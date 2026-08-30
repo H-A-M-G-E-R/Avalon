@@ -36,7 +36,7 @@ public class Lightning : ModProjectile
         Dust.NewDust(Projectile.Center, 0, 0, DustID.Electric, 0f, 0f);
     }
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Vector2 end = Projectile.position + new Vector2(Projectile.width, Projectile.height) / 2f + Vector2.UnitY * Projectile.gfxOffY - Main.screenPosition;
         Vector2 scale = new Vector2(Projectile.scale) / 2f;

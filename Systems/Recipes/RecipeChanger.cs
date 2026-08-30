@@ -197,7 +197,7 @@ public class RecipeChanger : ModSystem
 					if (recipe.TryGetIngredient(ItemID.AdamantiteBar, out Item ing))
 					{
 						recipe.RemoveIngredient(ing);
-						recipe.AddRecipeGroup("AdamantiteBar", 12);
+						recipe.AddRecipeGroup(RecipeGroups.AdamantiteBar, 12);
 						recipe.AddIngredient(ModContent.ItemType<FrigidShard>());
 					}
 					else if (recipe.HasIngredient(ItemID.TitaniumBar))
@@ -211,7 +211,7 @@ public class RecipeChanger : ModSystem
 					if (recipe.TryGetIngredient(ItemID.AdamantiteBar, out Item ing))
 					{
 						recipe.RemoveIngredient(ing);
-						recipe.AddRecipeGroup("AdamantiteBar", 24);
+						recipe.AddRecipeGroup(RecipeGroups.AdamantiteBar, 24);
 						recipe.AddIngredient(ModContent.ItemType<FrigidShard>());
 					}
 					else if (recipe.HasIngredient(ItemID.TitaniumBar))
@@ -225,7 +225,7 @@ public class RecipeChanger : ModSystem
 					if (recipe.TryGetIngredient(ItemID.AdamantiteBar, out Item ing))
 					{
 						recipe.RemoveIngredient(ing);
-						recipe.AddRecipeGroup("AdamantiteBar", 18);
+						recipe.AddRecipeGroup(RecipeGroups.AdamantiteBar, 18);
 						recipe.AddIngredient(ModContent.ItemType<FrigidShard>());
 					}
 					else if (recipe.HasIngredient(ItemID.TitaniumBar))

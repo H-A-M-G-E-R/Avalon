@@ -21,7 +21,7 @@ public class CrystalSkullProj : ModProjectile
 		Projectile.friendly = true;
 		Projectile.tileCollide = false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Vector2 position = Projectile.Center - Main.screenPosition;
 		Texture2D value = TextureAssets.Projectile[Projectile.type].Value;

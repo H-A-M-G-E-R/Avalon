@@ -150,7 +150,7 @@ namespace Avalon.Common.Players
         }
         public override void PostUpdateEquips()
         {
-            if (PlayingATrack && Main.musicBox2 == -1)
+            if (PlayingATrack && Player.musicBox == -1)
             {
                 Main.SceneMetrics.ActiveMusicBox = PlayingATrackID;
             }

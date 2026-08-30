@@ -48,7 +48,7 @@ public class CrystalTomahawkProj : ModProjectile
 			Dust dust2 = Dust.NewDustPerfect(Projectile.Center + Main.rand.NextVector2Circular(18, 18), Dusts[Main.rand.Next(3)], Projectile.velocity, 64, default, 1f);
 			dust2.fadeIn = 0.6f + Main.rand.NextFloat() * 0.5f;
 			dust2.noGravity = true;
-			dust2.noLightEmittence = true;
+			dust2.noLightEmittance = true;
 		}
 
 		Projectile.ai[0]++;
@@ -115,7 +115,7 @@ public class CrystalTomahawkProj : ModProjectile
 		}
 		return true;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		int frameHeight = TextureAssets.Projectile[Type].Value.Height / Main.projFrames[Projectile.type];
 		Rectangle frame = new Rectangle(0, frameHeight * Projectile.frame, TextureAssets.Projectile[Type].Value.Width, frameHeight);

@@ -28,7 +28,7 @@ public class PeridotGemsparkWall : ModItem
 			.SortAfterFirstRecipesOf(ModContent.ItemType<PeridotGemsparkWall>())
 			.Register();
 	}
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 0.714f * 0.8f, 1f * 0.8f, 0);
 	}
@@ -83,7 +83,7 @@ public class TourmalineGemsparkWall : ModItem
 			.SortAfterFirstRecipesOf(ModContent.ItemType<TourmalineGemsparkWall>())
 			.Register();
 	}
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 0, 1f * 0.8f, 1f * 0.8f);
 	}
@@ -138,7 +138,7 @@ public class ZirconGemsparkWall : ModItem
 			.SortAfterFirstRecipesOf(ModContent.ItemType<ZirconGemsparkWall>())
 			.Register();
 	}
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 1.1f * 0.8f, 0.8f * 0.8f, 0.4f);
 	}

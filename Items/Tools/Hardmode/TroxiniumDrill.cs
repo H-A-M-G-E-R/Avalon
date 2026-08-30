@@ -31,7 +31,7 @@ public class TroxiniumDrill : ModItem
 	{
 		return lightColor * 4f;
 	}
-	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		Rectangle dims = this.GetDims();
 		Vector2 vector = dims.Size() / 2f;

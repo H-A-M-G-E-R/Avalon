@@ -72,9 +72,9 @@ public class Mosquito : ModNPC
     {
         npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<MosquitoProboscis>(), 2));
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return spawnInfo.Player.InModBiome<Biomes.UndergroundTropics>() && !spawnInfo.Player.InPillarZone() ? 0.4f : 0f;
+        return spawner.Player.InModBiome<Biomes.UndergroundTropics>() && !spawner.Player.InPillarZone() ? 0.4f : 0f;
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

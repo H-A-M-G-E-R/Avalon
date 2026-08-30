@@ -63,7 +63,7 @@ public class OsmiumShrapnel : ModProjectile
 			return false;
 		return null;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		SpriteEffects effect = Projectile.identity % 2 == 0 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 		for(int i = 0; i < ProjectileID.Sets.TrailCacheLength[Type]; i+= 2)

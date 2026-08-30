@@ -25,8 +25,8 @@ public class MysticalTomePage : ModItem
 	{
 		CreateRecipe(1)
 			.AddIngredient(ItemID.FallenStar)
-			.AddRecipeGroup(RecipeGroupID.IronBar)
-			.AddRecipeGroup(RecipeGroupID.Wood, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar)
+			.AddRecipeGroup(RecipeGroups.Wood, 3)
 			.AddTile(ModContent.TileType<TomeForge>())
 			.Register();
 	}

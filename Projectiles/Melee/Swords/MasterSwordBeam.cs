@@ -99,7 +99,7 @@ public class MasterSwordBeam : ModProjectile
 			d.scale *= Main.rand.NextFloat(0.5f,1.25f);
 		}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var effect = Projectile.spriteDirection == 1? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 		var t = TextureAssets.Projectile[Type].Value;

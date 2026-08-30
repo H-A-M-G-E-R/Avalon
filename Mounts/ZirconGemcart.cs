@@ -12,7 +12,6 @@ internal class ZirconGemcart : ModMount
     public override void SetStaticDefaults()
     {
         MountID.Sets.Cart[Type] = true;
-        MountID.Sets.FacePlayersVelocity[Type] = true;
 
         SetAsMinecart(MountData, ModContent.BuffType<Buffs.ZirconGemcartBuff>(), MountData.frontTexture);
 

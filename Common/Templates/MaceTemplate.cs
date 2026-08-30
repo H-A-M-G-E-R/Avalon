@@ -200,7 +200,7 @@ public abstract class MaceTemplate : ModProjectile
 			modifiers.HitDirectionOverride = -1;
 		}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Rectangle frame = TextureAssets.Projectile[Type].Frame();
 		Vector2 drawPos = Projectile.Center - Main.screenPosition;

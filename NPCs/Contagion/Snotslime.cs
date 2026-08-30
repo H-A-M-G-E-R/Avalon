@@ -76,10 +76,10 @@ public class Snotslime : ModNPC
 			new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.Avalon.Bestiary.Snotslime"))
 		});
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		return (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
-			!spawnInfo.Player.InPillarZone() ? 0.4f / 2f : 0f;
+		return (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
+			!spawner.Player.InPillarZone() ? 0.4f / 2f : 0f;
 	}
 	public override void HitEffect(NPC.HitInfo hit)
 	{

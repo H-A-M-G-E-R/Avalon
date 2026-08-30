@@ -157,7 +157,7 @@ public class ShadowPhoneDungeon : ModItem
 		int num3 = num2 / 2;
 		int teleportStartY = Main.dungeonY - 3;
 		int teleportRangeY = 0;
-		Player.RandomTeleportationAttemptSettings settings = new Player.RandomTeleportationAttemptSettings
+		Utils.RandomTeleportationAttemptSettings settings = new Utils.RandomTeleportationAttemptSettings
 		{
 			mostlySolidFloor = true,
 			avoidAnyLiquid = true,
@@ -167,14 +167,14 @@ public class ShadowPhoneDungeon : ModItem
 			attemptsBeforeGivingUp = 1000,
 			maximumFallDistanceFromOrignalPoint = 30
 		};
-		Vector2 vector = player.CheckForGoodTeleportationSpot(ref canSpawn, num - num3, num2, teleportStartY, teleportRangeY, settings);
+		Vector2 vector = Utils.CheckForGoodTeleportationSpot(ref canSpawn, num - num3, num2, teleportStartY, teleportRangeY, settings);
 		if (!canSpawn)
 		{
-			vector = player.CheckForGoodTeleportationSpot(ref canSpawn, num - num2, num3, teleportStartY, teleportRangeY, settings);
+			vector = Utils.CheckForGoodTeleportationSpot(ref canSpawn, num - num2, num3, teleportStartY, teleportRangeY, settings);
 		}
 		if (!canSpawn)
 		{
-			vector = player.CheckForGoodTeleportationSpot(ref canSpawn, num + num3, num3, teleportStartY, teleportRangeY, settings);
+			vector = Utils.CheckForGoodTeleportationSpot(ref canSpawn, num + num3, num3, teleportStartY, teleportRangeY, settings);
 		}
 		if (canSpawn)
 		{
@@ -332,7 +332,7 @@ public class ShadowPhoneJungleTropics : ModItem
 		int num3 = num2 / 2;
 		int teleportStartY = 300;
 		int teleportRangeY = 50;
-		Player.RandomTeleportationAttemptSettings settings = new Player.RandomTeleportationAttemptSettings
+		Utils.RandomTeleportationAttemptSettings settings = new Utils.RandomTeleportationAttemptSettings
 		{
 			mostlySolidFloor = true,
 			avoidAnyLiquid = false,
@@ -342,14 +342,14 @@ public class ShadowPhoneJungleTropics : ModItem
 			attemptsBeforeGivingUp = 1000,
 			maximumFallDistanceFromOrignalPoint = 30
 		};
-		Vector2 vector = player.CheckForGoodTeleportationSpot(ref canSpawn, num - num3, num2, teleportStartY, teleportRangeY, settings);
+		Vector2 vector = Utils.CheckForGoodTeleportationSpot(ref canSpawn, num - num3, num2, teleportStartY, teleportRangeY, settings);
 		if (!canSpawn)
 		{
-			vector = player.CheckForGoodTeleportationSpot(ref canSpawn, num - num2, num3, teleportStartY, teleportRangeY, settings);
+			vector = Utils.CheckForGoodTeleportationSpot(ref canSpawn, num - num2, num3, teleportStartY, teleportRangeY, settings);
 		}
 		if (!canSpawn)
 		{
-			vector = player.CheckForGoodTeleportationSpot(ref canSpawn, num + num3, num3, teleportStartY, teleportRangeY, settings);
+			vector = Utils.CheckForGoodTeleportationSpot(ref canSpawn, num + num3, num3, teleportStartY, teleportRangeY, settings);
 		}
 		if (canSpawn)
 		{

@@ -22,7 +22,7 @@ public class FineLumber : ModItem
 	public override void AddRecipes()
 	{
 		Recipe.Create(Type, 15)
-			.AddRecipeGroup(RecipeGroupID.Wood, 40)
+			.AddRecipeGroup(RecipeGroups.Wood, 40)
 			.AddTile(TileID.Anvils)
 			.Register();
 	}

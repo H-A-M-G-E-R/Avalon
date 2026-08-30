@@ -13,7 +13,7 @@ public class BronzePickaxe : ModItem
 	{
 		Terraria.Recipe.Create(Type)
 			.AddIngredient(ModContent.ItemType<Material.Bars.BronzeBar>(), 8)
-			.AddRecipeGroup(RecipeGroupID.Wood, 4)
+			.AddRecipeGroup(RecipeGroups.Wood, 4)
 			.AddTile(TileID.Anvils)
 			.Register();
 	}

@@ -69,7 +69,7 @@ public partial class Phantasm : ModNPC
 		Transition();
 		eyePos = NPC.Center;
 	}
-	public override void BossLoot(ref int potionType)
+	public override void BossLoot(ref int potionType, ref int potionStack, ref int heartStack)
 	{
 		potionType = ItemID.SuperHealingPotion;
 	}

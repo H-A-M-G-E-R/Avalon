@@ -25,9 +25,9 @@ public class AFlowerlessPlant : ModItem
 	public override void AddRecipes()
 	{
 		CreateRecipe()
-			.AddRecipeGroup(RecipeGroupID.Wood, 50)
+			.AddRecipeGroup(RecipeGroups.Wood, 50)
 			.AddIngredient(ItemID.FallenStar, 6)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 5)
+			.AddRecipeGroup(RecipeGroups.IronBar, 5)
 			.AddTile(TileID.WorkBenches)
 			.Register();
 	}

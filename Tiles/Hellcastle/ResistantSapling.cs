@@ -61,7 +61,7 @@ public class ResistantSapling : ModTile
         num = fail ? 1 : 3;
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         // A random chance to slow down growth
         if (!WorldGen.genRand.NextBool(20))

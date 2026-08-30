@@ -34,7 +34,7 @@ public class Bone1 : ModProjectile
 		}
 		Projectile.velocity *= 0.99f;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Rectangle frame = TextureAssets.Projectile[Type].Frame();
 		Vector2 frameOrigin = frame.Size() / 2f;

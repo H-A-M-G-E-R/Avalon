@@ -30,10 +30,10 @@ public class EruptionHook : ModProjectile
     {
         return Color.White;
     }
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         var position = Projectile.Center;
-        var mountedCenter = Main.player[Projectile.owner].MountedCenter;
+        var mountedCenter = player.MountedCenter;
         var sourceRectangle = new Rectangle?();
         var origin = new Vector2(chainTexture.Value.Width * 0.5f, chainTexture.Value.Height + 1);
         float num1 = chainTexture.Value.Height;
@@ -66,7 +66,7 @@ public class EruptionHook : ModProjectile
 
         return true;
     }
-    public override bool PreDrawExtras()
+    public override bool PreDrawExtras(Player player)
     {
         return false;
     }

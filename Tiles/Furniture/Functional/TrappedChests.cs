@@ -24,7 +24,7 @@ internal class TrappedChests : ModTile
 		TileID.Sets.HasOutlines[Type] = true;
 		TileID.Sets.IsAContainer[Type] = true;
 		TileID.Sets.AvoidedByNPCs[Type] = true;
-		TileID.Sets.InteractibleByNPCs[Type] = true;
+		TileID.Sets.InteractableByNPCs[Type] = true;
 		TileID.Sets.BasicChestFake[Type] = true;
 		TileID.Sets.DisableSmartCursor[Type] = true;
 		TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);

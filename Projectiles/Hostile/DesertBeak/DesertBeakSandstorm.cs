@@ -30,7 +30,7 @@ public class DesertBeakSandstorm : ModProjectile
 		if (Projectile.alpha > -64)
 			Projectile.alpha -= 8;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Rectangle frame = new Rectangle(0, 0, TextureAssets.Projectile[Type].Value.Width, TextureAssets.Projectile[Type].Value.Height);
 		for (int j = 0; j < 2; j++)

@@ -109,7 +109,7 @@ public class BacteriumPet : ModProjectile
                 float speedX = 1f - Main.rand.NextFloat() * 2f;
                 float speedY = 1f - Main.rand.NextFloat() * 2f;
                 int num89 = Dust.NewDust(Projectile.position, Projectile.width, Projectile.height, num78, speedX, speedY);
-                Main.dust[num89].noLightEmittence = true;
+                Main.dust[num89].noLightEmittance = true;
                 Main.dust[num89].noGravity = true;
             }
             Projectile.Center = Main.player[Projectile.owner].Center;
@@ -222,7 +222,7 @@ public class BacteriumPet : ModProjectile
             eyeCounter = 0;
         }
     }
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D texture = ModContent.Request<Texture2D>(Texture + "Eye").Value;
         Texture2D texBack = ModContent.Request<Texture2D>(Texture).Value;

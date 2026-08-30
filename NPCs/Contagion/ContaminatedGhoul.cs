@@ -48,9 +48,9 @@ public class ContaminatedGhoul : ModNPC
         SpawnModBiomes = new int[] { ModContent.GetInstance<Biomes.ContagionCaveDesert>().Type };
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return spawnInfo.Player.InModBiome<Biomes.ContagionCaveDesert>() && Main.hardMode ? 0.33f : 0f;
+        return spawner.Player.InModBiome<Biomes.ContagionCaveDesert>() && Main.hardMode ? 0.33f : 0f;
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

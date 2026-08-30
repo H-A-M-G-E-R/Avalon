@@ -88,7 +88,7 @@ public class CanisterFire : ModProjectile
 	}
 	public override void OnHitPlayer(Player target, Player.HurtInfo info)
 	{
-		target.AddBuff(BuffID.OnFire, 240, false);
+		target.AddBuff(BuffID.OnFire, 240);
 	}
 	public override void ModifyDamageHitbox(ref Rectangle hitbox)
 	{

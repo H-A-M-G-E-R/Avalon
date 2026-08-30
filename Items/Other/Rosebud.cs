@@ -19,7 +19,7 @@ public class Rosebud : LifePickupItem
 		glow = ModContent.Request<Texture2D>(Texture + "Glow");
 	}
 	public override float HealAmount => Main.rand.NextFloat(10, 15);
-	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		spriteBatch.Draw
 		(

@@ -148,7 +148,7 @@ public class DyeSlime : ModNPC
 		{
 			Dust d = Dust.NewDustDirect(NPC.position, NPC.width, NPC.height, Main.rand.Next(DustID.CopperCoin, DustID.PlatinumCoin + 1));
 			d.noGravity = true;
-			d.noLightEmittence = true;
+			d.noLightEmittance = true;
 			d.velocity *= 0.2f;
 			d.velocity += NPC.velocity * 0.7f;
 		}
@@ -212,7 +212,7 @@ public class DyeSlime : ModNPC
 	{
 		NPC.lifeMax = (int)(NPC.lifeMax * 0.85f);
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
 		if (!NPC.downedBoss1 && !NPC.downedBoss2 && !NPC.downedBoss3)
 			return 0;

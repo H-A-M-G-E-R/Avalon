@@ -74,7 +74,7 @@ public class RhodiumLongbowEnergyArrow : ModProjectile
 	{
 		return Projectile.ai[0] > 0;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		return Projectile.ai[0] > 0;
 	}

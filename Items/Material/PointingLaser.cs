@@ -42,7 +42,7 @@ public class PointingLaser : ModItem
 		ItemGlowmask.GlowTextures.TryGetValue(Type, out Asset<Texture2D> glow);
 		spriteBatch.Draw(glow.Value, position, frame, TeamColor(Main.LocalPlayer), 0f, origin, scale, SpriteEffects.None, 0f);
 	}
-	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		ItemGlowmask.GlowTextures.TryGetValue(Type, out var texture);
 		Vector2 vector = texture.Size() / 2f;
@@ -50,7 +50,7 @@ public class PointingLaser : ModItem
 		Vector2 vector2 = Item.position - Main.screenPosition + vector + value;
 		spriteBatch.Draw(texture.Value, vector2, new Rectangle(0, 0, texture.Width(), texture.Height()), TeamColor(Main.LocalPlayer), rotation, vector, scale, SpriteEffects.None, 0f);
 	}
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight(Item.Center, TeamColor(Main.LocalPlayer).ToVector3() * 0.2f);
 	}

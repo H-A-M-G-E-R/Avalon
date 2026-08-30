@@ -22,14 +22,14 @@ public abstract class GemBunny : ModNPC
             new FlavorTextBestiaryInfoElement(Language.GetTextValue("CommonBestiaryFlavor.GemBunny"))
         });
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) //possibly incomplete, needs special rules for special seeds?
+    public override float SpawnChance(NPC.Spawner spawner) //possibly incomplete, needs special rules for special seeds?
     {
         int spawnRangeX = (int)(NPC.sWidth / 16 * 0.7);
         int spawnRangeY = (int)(NPC.sHeight / 16 * 0.7);
         for (int l = 0; l < 255; l++)
         {
             bool spawnThing = false;
-            if (!spawnInfo.Player.InPillarZone() && ((!Main.bloodMoon && !Main.pumpkinMoon && !Main.snowMoon) || Main.dayTime) && (!Main.eclipse || !Main.dayTime) && !Main.player[l].ZoneDungeon && !Main.player[l].ZoneCorrupt && !Main.player[l].ZoneCrimson && !Main.player[l].ZoneMeteor && !Main.player[l].ZoneOldOneArmy)
+            if (!spawner.Player.InPillarZone() && ((!Main.bloodMoon && !Main.pumpkinMoon && !Main.snowMoon) || Main.dayTime) && (!Main.eclipse || !Main.dayTime) && !Main.player[l].ZoneDungeon && !Main.player[l].ZoneCorrupt && !Main.player[l].ZoneCrimson && !Main.player[l].ZoneMeteor && !Main.player[l].ZoneOldOneArmy)
             {
                 if (Main.player[l].Center.Y / 16f > (float)Main.UnderworldLayer && (!Main.remixWorld || !((double)(Main.player[l].Center.X / 16f) > (double)Main.maxTilesX * 0.39 + 50.0) || !((double)(Main.player[l].Center.X / 16f) < (double)Main.maxTilesX * 0.61)))
                 {

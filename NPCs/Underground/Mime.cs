@@ -131,8 +131,8 @@ public class Mime : ModNPC
 			Gore.NewGore(NPC.GetSource_FromThis(), NPC.position, NPC.velocity, Mod.Find<ModGore>("MimeLeg").Type, 0.9f);
 		}
 	}
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return spawnInfo.Player.ZoneRockLayerHeight && spawnInfo.Player.ZoneMarble && Main.hardMode ? 0.14f : 0f;
+        return spawner.Player.ZoneRockLayerHeight && spawner.Player.ZoneMarble && Main.hardMode ? 0.14f : 0f;
     }
 }

@@ -35,7 +35,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 16 };
 			TileObjectData.newTile.LavaDeath = LavaDeath;
 			TileObjectData.addTile(Type);
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 			AddMapEntry(new Color(144, 148, 144), Language.GetText("ItemName.Bathtub"));
 			DustType = Dust;
 		}
@@ -139,9 +139,9 @@ namespace Avalon.Common.Templates
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			TileID.Sets.BasicDresser[Type] = true;
 			TileID.Sets.AvoidedByNPCs[Type] = true;
-			TileID.Sets.InteractibleByNPCs[Type] = true;
+			TileID.Sets.InteractableByNPCs[Type] = true;
 			TileID.Sets.IsAContainer[Type] = true;
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 
 			AdjTiles = new int[] { TileID.Dressers };
 			DustType = Dust;
@@ -212,7 +212,6 @@ namespace Avalon.Common.Templates
 					if (left == player.chestX && top == player.chestY && player.chest != -1)
 					{
 						player.chest = -1;
-						Recipe.FindRecipes();
 						SoundEngine.PlaySound(SoundID.MenuClose);
 					}
 					else
@@ -232,7 +231,6 @@ namespace Avalon.Common.Templates
 						if (chestIndex == player.chest)
 						{
 							player.chest = -1;
-							Recipe.FindRecipes();
 							SoundEngine.PlaySound(SoundID.MenuClose);
 						}
 						else if (chestIndex != player.chest && player.chest == -1)
@@ -245,7 +243,6 @@ namespace Avalon.Common.Templates
 							player.OpenChest(left, top, chestIndex);
 							SoundEngine.PlaySound(SoundID.MenuTick);
 						}
-						Recipe.FindRecipes();
 					}
 				}
 			}
@@ -253,7 +250,6 @@ namespace Avalon.Common.Templates
 			{
 				Main.playerInventory = false;
 				player.chest = -1;
-				Recipe.FindRecipes();
 				player.SetTalkNPC(-1);
 				Main.npcChatCornerItem = 0;
 				Main.npcChatText = "";
@@ -411,7 +407,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newAlternate.Direction = TileObjectDirection.PlaceLeft;
 			TileObjectData.addAlternate(1);
 			TileObjectData.addTile(Type);
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+			TileID.Sets.RoomNeeds.CountsAsDoor[Type] = true;
 			TileID.Sets.HousingWalls[Type] = true; //needed for non-solid blocks to count as walls
 			TileID.Sets.HasOutlines[Type] = true;
 			AddMapEntry(new Color(119, 105, 79));
@@ -472,7 +468,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newAlternate.Origin = new Point16(0, 2);
 			TileObjectData.addAlternate(0);
 			TileObjectData.addTile(Type);
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+			TileID.Sets.RoomNeeds.CountsAsDoor[Type] = true;
 			AddMapEntry(new Color(119, 105, 79));
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			AdjTiles = new int[] { TileID.ClosedDoor };
@@ -526,7 +522,7 @@ namespace Avalon.Common.Templates
 			TileID.Sets.BasicChest[Type] = true;
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			TileID.Sets.AvoidedByNPCs[Type] = true;
-			TileID.Sets.InteractibleByNPCs[Type] = true;
+			TileID.Sets.InteractableByNPCs[Type] = true;
 			TileID.Sets.IsAContainer[Type] = true;
 			TileID.Sets.FriendlyFairyCanLureTo[Type] = true;
 
@@ -718,7 +714,6 @@ namespace Avalon.Common.Templates
 					if (left == player.chestX && top == player.chestY && player.chest != -1)
 					{
 						player.chest = -1;
-						Recipe.FindRecipes();
 						SoundEngine.PlaySound(SoundID.MenuClose);
 					}
 					else
@@ -744,7 +739,6 @@ namespace Avalon.Common.Templates
 							player.OpenChest(left, top, chest);
 						}
 
-						Recipe.FindRecipes();
 					}
 				}
 			}
@@ -849,7 +843,7 @@ namespace Avalon.Common.Templates
 			Main.tileLighted[Type] = true;
 
 			TileID.Sets.MultiTileSway[Type] = true;
-			TileID.Sets.IsAMechanism[Type] = true;
+			TileID.Sets.Wiring.IsAMechanism[Type] = true;
 
 			DustType = Dust;
 
@@ -864,7 +858,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.StyleLineSkip = 2;
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+			TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 			AddMapEntry(new Color(235, 166, 135), Language.GetText("MapObject.Chandelier"));
 			RegisterItemDrop(DropItem);
 		}
@@ -990,7 +984,7 @@ namespace Avalon.Common.Templates
 			TileID.Sets.CanBeSatOnForPlayers[Type] = true; // Facilitates calling ModifySittingTargetInfo for Players
 			TileID.Sets.DisableSmartCursor[Type] = true;
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+			TileID.Sets.RoomNeeds.CountsAsChair[Type] = true;
 
 			DustType = Dust;
 			AdjTiles = new int[] { TileID.Chairs };
@@ -1115,7 +1109,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.StyleWrapLimit = 36;
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+			TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 			AddMapEntry(new Color(253, 221, 3), Language.GetText("ItemName.Candle"));
 			RegisterItemDrop(DropItem);
 		}
@@ -1250,7 +1244,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.StyleWrapLimit = 36;
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+			TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 			AddMapEntry(new Color(253, 221, 3), Language.GetText("ItemName.Candelabra"));
 			RegisterItemDrop(DropItem);
 		}
@@ -1390,7 +1384,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.Origin = new Point16(0, 2);
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+			TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 			AddMapEntry(new Color(253, 221, 3), Language.GetText("MapObject.FloorLamp"));
 			RegisterItemDrop(DropItem);
 		}
@@ -1515,7 +1509,7 @@ namespace Avalon.Common.Templates
 			Main.tileLighted[Type] = true;
 
 			TileID.Sets.MultiTileSway[Type] = true;
-			TileID.Sets.IsAMechanism[Type] = true;
+			TileID.Sets.Wiring.IsAMechanism[Type] = true;
 
 			DustType = Dust;
 
@@ -1528,7 +1522,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.LavaDeath = LavaDeath;
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+			TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 			AddMapEntry(new Color(251, 235, 127), Language.GetText("MapObject.Lantern"));
 			RegisterItemDrop(DropItem);
 		}
@@ -1644,7 +1638,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.LavaDeath = LavaDeath;
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 			AddMapEntry(new Color(191, 142, 111), Language.GetText("ItemName.Bookcase"));
 		}
 	}
@@ -1670,7 +1664,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.LavaDeath = LavaDeath;
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 
 			AddMapEntry(new Color(191, 142, 111), Language.GetText("ItemName.WorkBench"));
 		}
@@ -1690,7 +1684,7 @@ namespace Avalon.Common.Templates
 			TileID.Sets.CanBeSatOnForPlayers[Type] = true; // Facilitates calling ModifySittingTargetInfo for Players
 			TileID.Sets.DisableSmartCursor[Type] = true;
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+			TileID.Sets.RoomNeeds.CountsAsChair[Type] = true;
 
 			DustType = Dust;
 			AdjTiles = new int[] { TileID.Toilets }; // Condider adding TileID.Chairs to AdjTiles to mirror "(regular) Toilet" and "Golden Toilet" behavior for crafting stations
@@ -1834,7 +1828,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 18 };
 			TileObjectData.addTile(Type);
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 
 			AddMapEntry(new Color(191, 142, 111), Language.GetText("MapObject.Table"));
 			DustType = Dust;
@@ -1853,7 +1847,7 @@ namespace Avalon.Common.Templates
 			TileID.Sets.CanBeSatOnForNPCs[Type] = false; // Facilitates calling ModifySittingTargetInfo for NPCs
 			TileID.Sets.CanBeSatOnForPlayers[Type] = true; // Facilitates calling ModifySittingTargetInfo for Players
 
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsChair);
+			TileID.Sets.RoomNeeds.CountsAsChair[Type] = true;
 
 			TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 16 };
@@ -1980,7 +1974,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.CoordinateHeights = new[] { 16, 16 };
 			TileObjectData.newTile.LavaDeath = LavaDeath;
 			TileObjectData.addTile(Type);
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+			TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 			AddMapEntry(new Color(191, 142, 111), Language.GetText("ItemName.Piano"));
 			DustType = Dust;
 		}
@@ -2094,7 +2088,7 @@ namespace Avalon.Common.Templates
 			TileObjectData.newTile.UsesCustomCanPlace = false;
 			TileObjectData.newTile.LavaDeath = LavaDeath;
 			TileObjectData.addTile(Type);
-			AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+			TileID.Sets.RoomNeeds.CountsAsDoor[Type] = true;
 			AddMapEntry(new Color(191, 142, 111));
 			//ItemDrop = ModContent.ItemType<Items.Placeable.Tile.OrangeBrickPlatform>();
 			TileID.Sets.DisableSmartCursor[Type] = true;

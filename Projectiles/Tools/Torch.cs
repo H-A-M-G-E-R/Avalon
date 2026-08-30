@@ -45,7 +45,7 @@ public class Torch : ModProjectile
 	{
 		starTorchPos = Main.MouseWorld;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 
 		Texture2D TEX = ModContent.Request<Texture2D>("Avalon/Projectiles/Tools/Torch").Value;
@@ -194,7 +194,7 @@ public class Torch : ModProjectile
 			}
 			else if (dustType == -2)
 			{
-				if (Main.rand.NextBool(15) && Main.hasFocus)
+				if (Main.rand.NextBool(15) && FocusHelper.AllowGameplayInputs/* tModPorter Suggestion: Also consider FocusHelper.AllowUIInputs, FocusHelper.UpdateVisualEffects, or others */)
 				{
 					Main.ParticleSystem_World_OverPlayers.Add(
 						new StarTorch(Projectile.Center + new Vector2(Main.rand.Next(4, 13), Main.rand.Next(2, 6)),

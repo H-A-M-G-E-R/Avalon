@@ -59,13 +59,13 @@ public class BloodyVulture : ModNPC
         loot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Material.Beak>(), 2));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if (spawnInfo.Player.ZoneCrimson)
+        if (spawner.Player.ZoneCrimson)
         {
             if (Main.hardMode)
             {
-                if (Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY + 1].TileType == TileID.Crimsand)
+                if (Main.tile[spawner.SpawnTileX, spawner.SpawnTileY + 1].TileType == TileID.Crimsand)
                 {
                     return 1f;
                 }

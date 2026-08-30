@@ -25,7 +25,7 @@ public class PeridotGemsparkBlock : ModItem
 			.Register();
 	}
 
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 0.714f, 1f, 0);
 	}
@@ -52,7 +52,7 @@ public class TourmalineGemsparkBlock : ModItem
 			.Register();
 	}
 
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 0, 1f, 1f);
 	}
@@ -79,7 +79,7 @@ public class ZirconGemsparkBlock : ModItem
 			.Register();
 	}
 
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		Lighting.AddLight((int)((Item.position.X + Item.width / 2) / 16f), (int)((Item.position.Y + Item.height / 2) / 16f), 1.1f, 0.8f, 0.4f);
 	}

@@ -58,7 +58,7 @@ public class TourmalineSapling : ModTile
         return false;
     }
 
-	public override void RandomUpdate(int i, int j)
+	public override void RandomUpdate(int i, int j, bool underground)
 	{
 		if (j > Main.rockLayer)
 		{

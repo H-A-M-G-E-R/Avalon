@@ -244,7 +244,6 @@ public class StatDisplayUIState : ExxoUIState
         {
             modPlayer.DisplayHerbologyMenu = false;
             player.dropItemCheck();
-            Recipe.FindRecipes();
         }
     }
 

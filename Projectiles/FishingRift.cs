@@ -45,10 +45,10 @@ public abstract class FishingRiftAbstract : ModProjectile
 	{
 		return false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		Player player = Main.LocalPlayer;
-		if (player.GetModPlayer<AvalonPlayer>().RiftGoggles)
+		Player localPlayer = Main.LocalPlayer;
+		if (localPlayer.GetModPlayer<AvalonPlayer>().RiftGoggles)
 		{
 			Color color = Color.White;
 			if (initialTimeLeft - Projectile.timeLeft < 60)
@@ -87,10 +87,6 @@ public class FishingRiftFront : FishingRiftAbstract
 	//{
 	//	Projectile.timeLeft = (int)Projectile.ai[1];
 	//}
-	public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
-	{
-		overWiresUI.Add(index);
-	}
 
 	//-1 on other clients, but it's only relevant for owner
 	public int RiftWhoAmI
@@ -100,6 +96,7 @@ public class FishingRiftFront : FishingRiftAbstract
 	}
 	public override void AI()
 	{
+		Projectile.drawLayer = ProjectileDrawLayerID.OverWiresUI;
 		base.AI();
 
 		//Spawns child
@@ -136,10 +133,6 @@ public class FishingRiftBack : FishingRiftAbstract
 	{
 		base.SetStaticDefaults();
 	}
-	public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
-	{
-		behindProjectiles.Add(index);
-	}
 	public int ParentIdentity
 	{
 		get => (int)Projectile.ai[0] - 1;
@@ -167,6 +160,7 @@ public class FishingRiftBack : FishingRiftAbstract
 	}
 	public override void AI()
 	{
+		Projectile.drawLayer = ProjectileDrawLayerID.BehindProjectiles;
 		base.AI();
 
 		if (ParentIdentity <= -1 || ParentIdentity > Main.maxProjectiles)

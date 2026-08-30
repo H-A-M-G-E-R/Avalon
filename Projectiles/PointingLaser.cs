@@ -44,9 +44,8 @@ public class PointingLaser : ModProjectile
 		Projectile.ai[0] = mousePos.X;
 		Projectile.ai[1] = mousePos.Y;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		Player player = Main.player[Projectile.owner];
 		Vector2 playerCenter = player.RotatedRelativePoint(player.MountedCenter);
 		//float distToPlayer = playerCenter.DistanceSQ(player.GetModPlayer<AvalonPlayer>().MousePosition);
 		//float playerVelMod = (1f - Utils.Remap(distToPlayer / 2116f, 0.4f, 1f, 0f, 1f));

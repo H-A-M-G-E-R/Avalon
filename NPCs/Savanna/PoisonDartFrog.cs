@@ -164,8 +164,8 @@ public class PoisonDartFrog : ModNPC
         }
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) =>
-        spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneSavanna && !spawnInfo.Player.InPillarZone() &&
+    public override float SpawnChance(NPC.Spawner spawner) =>
+        spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneSavanna && !spawner.Player.InPillarZone() &&
         Main.hardMode ? 0.083f : 0f;
 
     public override void HitEffect(NPC.HitInfo hit)

@@ -20,11 +20,8 @@ public class TourmalineGemcartBuff : ModBuff
 
     public override void SetStaticDefaults()
     {
-        // Handles automatically mounting the player within Update, and setting Main.buffNoTimeDisplay/buffNoSave (no need to write yourself like in ExampleMountBuff)
-        BuffID.Sets.BasicMountData[Type] = new BuffID.Sets.BuffMountData()
-        {
-            mountID = ModContent.MountType<TourmalineGemcart>()
-        };
+		// Handles automatically mounting the player within Update, and setting Main.buffNoTimeDisplay/buffNoSave (no need to write yourself like in ExampleMountBuff)
+		BuffID.Sets.MountType[Type] = ModContent.MountType<TourmalineGemcart>();
         Main.buffNoTimeDisplay[Type] = true;
     }
 }

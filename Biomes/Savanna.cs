@@ -17,7 +17,7 @@ public class Savanna : ModBiome
         get
         {
             if (Main.dayTime)
-                return MusicID.Jungle;
+                return MusicID.JungleDay;
             return MusicID.JungleNight;
 
             //if (Main.dayTime)

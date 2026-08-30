@@ -28,7 +28,7 @@ public class SoulofIce : ModItem
 		Item.rare = ItemRarityID.LightRed;
 		Item.value = Item.sellPrice(0, 1);
 	}
-	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		float num7 = (float)Main.rand.Next(90, 111) * 0.01f;
 		num7 *= Main.essScale;

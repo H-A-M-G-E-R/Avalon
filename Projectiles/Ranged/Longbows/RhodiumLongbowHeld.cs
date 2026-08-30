@@ -26,9 +26,9 @@ public class RhodiumLongbowHeld : LongbowTemplate
 			Projectile.NewProjectile(source, pos, pos.DirectionTo(Main.MouseWorld) * velocity.Length(), t, damage / 5, knockback / 4, Projectile.owner, -20 + (i * -6));
 		}
 	}
-	public override void PostDraw(Color lightColor)
+	public override void PostDraw(Player player, Color lightColor)
 	{
-		if (Main.player[Projectile.owner].channel)
+		if (player.channel)
 		{
 			Color arrowColor = Color.Lerp(new Color(1f, 0f, 0.2f, 0f), new Color(1f, 0.3f, 0.7f, 0f), Main.masterColor);
 			DrawArrow(arrowColor * Power, Vector2.Zero, true);

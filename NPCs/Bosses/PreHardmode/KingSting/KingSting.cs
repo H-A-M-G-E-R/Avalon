@@ -76,7 +76,7 @@ public class KingSting : ModNPC
         NPC.boss = true;
         NPC.lifeMax = 3400;
         NPC.scale = 1;
-        Music = ExxoAvalonOrigins.MusicMod == null ? MusicID.Boss2 : MusicID.Boss4; // MusicLoader.GetMusicSlot(Avalon.MusicMod, "Sounds/Music/KingSting");
+        Music = ExxoAvalonOrigins.MusicMod == null ? MusicID.Boss2 : MusicID.Golem; // MusicLoader.GetMusicSlot(Avalon.MusicMod, "Sounds/Music/KingSting");
 		SpawnModBiomes = [ModContent.GetInstance<Biomes.UndergroundTropics>().Type];
 		//NPC.BossBar = ModContent.GetInstance<BossBars.KingStingBossBar>();
 		// Misc vars

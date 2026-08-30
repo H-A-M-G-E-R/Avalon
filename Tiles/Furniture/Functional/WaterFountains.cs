@@ -21,7 +21,7 @@ namespace Avalon.Tiles.Furniture.Functional
         {
             Main.tileFrameImportant[Type] = true; // Any multitile requires this
             TileID.Sets.HasOutlines[Type] = true;
-            TileID.Sets.InteractibleByNPCs[Type] = true; // Town NPCs will palm their hand at this tile
+            TileID.Sets.InteractableByNPCs[Type] = true; // Town NPCs will palm their hand at this tile
 
             DustType = 1;
             AdjTiles = new int[] { TileID.WaterFountain };

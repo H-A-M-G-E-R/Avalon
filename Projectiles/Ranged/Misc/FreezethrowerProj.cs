@@ -30,7 +30,7 @@ public class FreezethrowerProj : ModProjectile
 		Projectile.DamageType = DamageClass.Ranged;
 		Projectile.ArmorPenetration = 30;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		DrawProj_Flamethrower(Projectile);
 		return true;

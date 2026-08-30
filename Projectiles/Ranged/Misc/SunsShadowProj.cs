@@ -50,7 +50,7 @@ public class SunsShadowProj : ModProjectile
 			Main.dust[dust].noGravity = true;
 			Main.dust[dust].velocity *= 0.3f;
 			Main.dust[dust].alpha = 20;
-			Main.dust[dust].noLightEmittence = true;
+			Main.dust[dust].noLightEmittance = true;
 		}
 		if (Projectile.ai[1] % 20 == 0)
 		{
@@ -66,7 +66,7 @@ public class SunsShadowProj : ModProjectile
 					dust2.noGravity = true;
 					dust2.alpha = 20;
 					dustAngle += 18f;
-					dust2.noLightEmittence = true;
+					dust2.noLightEmittance = true;
 				}
 				float angle = Main.rand.NextFloat(-2.5f, -3.5f);
 				for (int i = 0; i < 2; i++)

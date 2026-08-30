@@ -17,7 +17,7 @@ public class HeartstoneChest : ModItem
 	{
 		CreateRecipe()
 			.AddIngredient(ModContent.ItemType<Material.Ores.Heartstone>(), 8)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 2)
+			.AddRecipeGroup(RecipeGroups.IronBar, 2)
 			.AddTile(TileID.WorkBenches)
 			.Register();
 	}

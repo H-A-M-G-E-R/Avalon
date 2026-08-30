@@ -62,7 +62,7 @@ public class FeroziumIceswordProj : ModProjectile, ISyncedOnHitEffect
 			//}
 		}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type];
 		int originOffsetFromEnd = 10;
@@ -70,7 +70,7 @@ public class FeroziumIceswordProj : ModProjectile, ISyncedOnHitEffect
 
 		float glowOpacity = MathF.Sin((Projectile.localAI[2] / 10f) * MathHelper.Pi);
 
-		if(Projectile.direction * Main.player[Projectile.owner].gravDir == -1)
+		if(Projectile.direction * player.gravDir == -1)
 		{
 			d.rotation += MathHelper.PiOver2;
 			d.effect = SpriteEffects.FlipHorizontally;

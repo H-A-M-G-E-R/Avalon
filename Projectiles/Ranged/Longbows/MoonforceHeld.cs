@@ -91,16 +91,16 @@ public class MoonforceHeld : LongbowTemplate
 		}
 		return false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		if (Main.player[Projectile.owner].channel)
+		if (player.channel)
 		{
 			var sparkle = AssetReferences.Assets.Textures.SparklySingleEnd.Asset;
 			float glowOpacity = Power * Power;
 			float interval = 40;
 			Vector2 glowScale = new Vector2(0.7f, Power);
 			float amount = (float)(Main.timeForVisualEffects % interval) / interval;
-			Vector2 glowPos = Projectile.Center + new Vector2(0, Main.player[Projectile.owner].gfxOffY) - Main.screenPosition + Projectile.velocity * 14;
+			Vector2 glowPos = Projectile.Center + new Vector2(0, player.gfxOffY) - Main.screenPosition + Projectile.velocity * 14;
 			Main.EntitySpriteDraw(sparkle.Value, glowPos, null, new Color(1f, 0.1f, 0.7f, 0.3f) * (1f - amount) * amount * glowOpacity, Projectile.rotation + MathHelper.PiOver2, sparkle.Size() / 2, glowScale * (0.5f + amount) * 2, SpriteEffects.None);
 			Main.EntitySpriteDraw(sparkle.Value, glowPos, null, new Color(1f, 1, 1, 0) * (1f - amount) * amount * glowOpacity, Projectile.rotation + MathHelper.PiOver2, sparkle.Size() / 2, glowScale * (0.25f + amount) * 1.5f, SpriteEffects.None);
 
@@ -113,7 +113,7 @@ public class MoonforceHeld : LongbowTemplate
 		{
 			DefaultBowDraw(NotificationColor * FullPowerGlow, Vector2.Zero);
 		}
-		if (Main.player[Projectile.owner].channel)
+		if (player.channel)
 		{
 			DrawArrow(lightColor, new Vector2(0, -1));
 			for (int i = 0; i < 4; i++)
@@ -192,7 +192,7 @@ public class MoonlightArrowVisuals : GlobalProjectile, ISyncedOnHitEffect
 			}
 		}
 	}
-	public override bool PreDraw(Projectile projectile, ref Color lightColor)
+	public override bool PreDraw(Projectile projectile, Player player, ref Color lightColor)
 	{
 		if (Moonlight)
 		{
@@ -245,7 +245,7 @@ public class MoonlightArrowVisuals : GlobalProjectile, ISyncedOnHitEffect
 			Main.EntitySpriteDraw(TextureAssets.Projectile[projectile.type].Value, drawPos, frameArrow, projectile.GetAlpha(Color.Lerp((lightColor * 0.75f) with { A = 255 }, Color.Lerp(Color.Red, Color.Blue, Main.masterColor), 0.3f)), projectile.velocity.ToRotation() + MathHelper.PiOver2, new Vector2(TextureAssets.Projectile[projectile.type].Value.Width, frameHeightArrow / 2f) / 2, projectile.scale, Flip, 0);
 			return false;
 		}
-		return base.PreDraw(projectile, ref lightColor);
+		return base.PreDraw(projectile, player, ref lightColor);
 	}
 
 	public bool SyncedOnHitNPC(Player player, NPC target, Rectangle attackHitbox, int damage, float knockback, bool crit, int hitDirection, Projectile? projectile)

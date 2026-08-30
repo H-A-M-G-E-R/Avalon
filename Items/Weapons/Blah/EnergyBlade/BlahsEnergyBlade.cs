@@ -75,7 +75,7 @@ public class BlahEnergySlash : EnergySlashTemplate
 		base.SetDefaults();
 		Projectile.penetrate = -1;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Color[] Colors = { new Color(255, 66, 0), new Color(249, 201, 77), new Color(247, 255, 177), new Color(216, 131, 0) };
 		Color Color1 = ClassExtensions.CycleThroughColors(Colors, 60, 0) * 0.5f;

@@ -99,7 +99,6 @@ internal class JukeboxUIState : ExxoUIState
         {
             modPlayer.DisplayJukeboxInterface = false;
             player.dropItemCheck();
-            Recipe.FindRecipes();
         }
     }
     private void RefreshTrackList()

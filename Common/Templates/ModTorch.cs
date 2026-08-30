@@ -34,7 +34,7 @@ public abstract class ModTorch : SpecialLight
 		Main.tileNoAttach[Type] = true;
 		Main.tileNoFail[Type] = true;
 		Main.tileWaterDeath[Type] = WaterDeath;
-		TileID.Sets.Torch[Type] = true;
+		TileID.Sets.Torches[Type] = true;
 		TileID.Sets.DisableSmartCursor[Type] = true;
 		TileID.Sets.FramesOnKillWall[Type] = true;
 
@@ -65,7 +65,7 @@ public abstract class ModTorch : SpecialLight
 
 		TileObjectData.addTile(Type);
 
-		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 		AddMapEntry(new Color(253, 221, 3), Language.GetText("ItemName.Torch"));
 		DustType = dustType;
 		AdjTiles = [TileID.Torches];
@@ -80,7 +80,7 @@ public abstract class ModTorch : SpecialLight
 			{
 				d.noGravity = NoDustGravity;
 			}
-			d.noLightEmittence = true;
+			d.noLightEmittance = true;
 			d.velocity *= 0.3f;
 			d.velocity.Y -= 1.5f;
 			d.noGravity = false;
@@ -143,8 +143,8 @@ public abstract class ModCampfire : SpecialLight
 		Main.tileWaterDeath[Type] = WaterDeath;
 		Main.tileLavaDeath[Type] = true;
 		TileID.Sets.HasOutlines[Type] = true;
-		TileID.Sets.InteractibleByNPCs[Type] = true;
-		TileID.Sets.Campfire[Type] = true;
+		TileID.Sets.InteractableByNPCs[Type] = true;
+		TileID.Sets.Campfires[Type] = true;
 
 		DustType = -1; // No dust when mined.
 		AdjTiles = [TileID.Campfire];

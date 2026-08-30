@@ -194,14 +194,14 @@ namespace Avalon.Common.Templates
 			}
 			player.SetCompositeArmFront(true, CompositeArm, new Vector2(player.MountedCenter.X + player.direction * -6, player.MountedCenter.Y).DirectionTo(ProjPosition + player.velocity).ToRotation() + RotationOffset);
 		}
-		public override bool PreDraw(ref Color lightColor)
+		public override bool PreDraw(Player player, ref Color lightColor)
 		{
 			DefaultBowDraw(lightColor, Vector2.Zero);
 			if (FullPowerGlow > 0 && Main.myPlayer == Projectile.owner)
 			{
 				DefaultBowDraw(NotificationColor * FullPowerGlow, Vector2.Zero);
 			}
-			if (Main.player[Projectile.owner].channel)
+			if (player.channel)
 			{
 				DrawArrow(lightColor, Vector2.Zero);
 			}

@@ -4,6 +4,7 @@ using Avalon.Items.Material;
 using Microsoft.Xna.Framework;
 using System;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
@@ -92,7 +93,7 @@ public class Viriling : ModNPC
 			NPC.alpha = 128;
 		}
         NPC.noTileCollide = true;
-		Banner = Item.NPCtoBanner(ModContent.NPCType<Viris>());
+		Banner = BannerSystem.NPCtoBanner(ModContent.NPCType<Viris>());
 		NPC.dontCountMe = true;
 		SpawnModBiomes = new int[] { ModContent.GetInstance<Biomes.UndergroundContagion>().Type };
     }

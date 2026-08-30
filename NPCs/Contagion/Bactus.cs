@@ -106,11 +106,11 @@ public class Bactus : ModNPC
         npcLoot.Add(ItemDropRule.ByCondition(new Conditions.DontStarveIsNotUp(), ItemID.TentacleSpike, 525));
         npcLoot.Add(ItemDropRule.ByCondition(new Conditions.DontStarveIsUp(), ItemID.TentacleSpike, 100));
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if ((spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion ||
-            spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
-            !spawnInfo.Player.InPillarZone())
+        if ((spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion ||
+            spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
+            !spawner.Player.InPillarZone())
             return 0.7f / 3;
         return 0;
     }

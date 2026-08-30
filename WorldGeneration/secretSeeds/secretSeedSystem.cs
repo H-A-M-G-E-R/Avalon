@@ -77,7 +77,7 @@ namespace Avalon.WorldGeneration.SecretSeeds
 			orig.Invoke(seed, customProgressObject);
 		}
 
-		public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
+		public override void ModifyWorldGenTasks(List<GenPass> tasks)
 		{
 			if (AvalonWorld.retroWorld)
 			{

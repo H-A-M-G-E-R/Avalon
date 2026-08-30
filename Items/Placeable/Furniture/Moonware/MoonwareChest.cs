@@ -17,7 +17,7 @@ public class MoonwareChest : ModItem
 	{
 		CreateRecipe()
 			.AddIngredient(ModContent.ItemType<Tile.MoonplateBlock>(), 8)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 2)
+			.AddRecipeGroup(RecipeGroups.IronBar, 2)
 			.AddTile(TileID.SkyMill)
 			.Register();
 	}

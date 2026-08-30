@@ -19,7 +19,7 @@ public class Grindstone : ModItem
 		CreateRecipe()
 			.AddIngredient(ItemID.Extractinator)
 			.AddRecipeGroup("GoldBar", 10)
-			.AddRecipeGroup(RecipeGroupID.Wood, 15)
+			.AddRecipeGroup(RecipeGroups.Wood, 15)
 			.AddIngredient(ItemID.Chain, 2)
 			.AddTile(TileID.Anvils)
 			.Register();

@@ -23,9 +23,9 @@ public class SoulEdgeSlash : EnergySlashTemplate, ISyncedOnHitEffect
 		base.SetDefaults();
 		Projectile.penetrate = 3;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		float percent = 1f - Main.player[Projectile.owner].GetModPlayer<SoulEdgePlayer>().SoulEdgeDamage / (float)SoulEdgePlayer.maxSoulEdge;
+		float percent = 1f - player.GetModPlayer<SoulEdgePlayer>().SoulEdgeDamage / (float)SoulEdgePlayer.maxSoulEdge;
 
 		if (percent == 0)
 		{

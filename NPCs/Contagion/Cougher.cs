@@ -97,10 +97,10 @@ public class Cougher : ModNPC
         // add back when the mask gets added back
         //npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<CougherMask>(), 150));
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
-            !spawnInfo.Player.InPillarZone() && Main.hardMode ? 0.7f : 0f;
+        return (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
+            !spawner.Player.InPillarZone() && Main.hardMode ? 0.7f : 0f;
     }
     int Frame;
     public override void AI()
@@ -279,7 +279,7 @@ public class Cougher : ModNPC
             {
                 Vector2 ShootDirection = NPC.Center.DirectionTo(TargetPlr.Center).RotatedByRandom(0.5f) * Main.rand.NextFloat(6, 3);
                 int d = Dust.NewDust(NPC.position + new Vector2(0, NPC.height / 2), NPC.width, NPC.height / 3, ModContent.DustType<PathogenDust>(), ShootDirection.X, ShootDirection.Y, 128, default, Main.rand.NextFloat(1, 1.5f));
-                Main.dust[d].noLightEmittence = true;
+                Main.dust[d].noLightEmittance = true;
                 Main.dust[d].noGravity = !Main.rand.NextBool(4);
                 if (Main.dust[d].noGravity)
                     Main.dust[d].fadeIn = 1.5f;

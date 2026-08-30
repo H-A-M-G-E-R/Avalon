@@ -29,7 +29,7 @@ public class MagnetPotion : ModItem
 	{
 		CreateRecipe(1)
 			.AddIngredient(ModContent.ItemType<Material.BottledLava>())
-			.AddRecipeGroup(RecipeGroupID.IronBar)
+			.AddRecipeGroup(RecipeGroups.IronBar)
 			.AddIngredient(ItemID.Ebonkoi)
 			.AddIngredient(ItemID.Blinkroot)
 			.AddTile(TileID.Bottles)
@@ -37,7 +37,7 @@ public class MagnetPotion : ModItem
 
 		CreateRecipe(1)
 			.AddIngredient(ModContent.ItemType<Material.BottledLava>())
-			.AddRecipeGroup(RecipeGroupID.IronBar)
+			.AddRecipeGroup(RecipeGroups.IronBar)
 			.AddIngredient(ItemID.Hemopiranha)
 			.AddIngredient(ItemID.Blinkroot)
 			.AddTile(TileID.Bottles)
@@ -45,7 +45,7 @@ public class MagnetPotion : ModItem
 
 		CreateRecipe(1)
 			.AddIngredient(ModContent.ItemType<Material.BottledLava>())
-			.AddRecipeGroup(RecipeGroupID.IronBar)
+			.AddRecipeGroup(RecipeGroups.IronBar)
 			.AddIngredient(ModContent.ItemType<Fish.SicklyTrout>())
 			.AddIngredient(ItemID.Blinkroot)
 			.AddTile(TileID.Bottles)

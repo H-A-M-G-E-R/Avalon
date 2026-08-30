@@ -32,7 +32,7 @@ public class ItemGlowmask : GlobalItem
 	public override bool InstancePerEntity => true;
 	public bool CustomPostDrawInWorld = false;
 
-	public override void PostDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		if (!CustomPostDrawInWorld && GlowTextures.TryGetValue(item.type, out var texture))
 		{

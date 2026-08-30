@@ -17,7 +17,7 @@ namespace Avalon.Tiles.Furniture.Functional
 		{
 			Main.tileFrameImportant[Type] = true; // Any multitile requires this
 			Main.tileLighted[Type] = true;
-			TileID.Sets.InteractibleByNPCs[Type] = true; // Town NPCs will palm their hand at this tile
+			TileID.Sets.InteractableByNPCs[Type] = true; // Town NPCs will palm their hand at this tile
 
 			DustType = DustID.Wraith;
 			Glow = ModContent.Request<Texture2D>(Texture + "_Glow");

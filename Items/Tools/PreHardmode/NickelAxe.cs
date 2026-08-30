@@ -16,7 +16,7 @@ public class NickelAxe : ModItem
 	{
 		Recipe.Create(Type)
 			.AddIngredient(ModContent.ItemType<Material.Bars.NickelBar>(), 8)
-			.AddRecipeGroup(RecipeGroupID.Wood, 3)
+			.AddRecipeGroup(RecipeGroups.Wood, 3)
 			.AddTile(TileID.Anvils)
 			.Register();
 	}

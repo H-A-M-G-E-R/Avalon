@@ -34,7 +34,7 @@ public class StasisRifle : ModItem
 	public override void AddRecipes()
 	{
 		CreateRecipe(1)
-			.AddRecipeGroup("AdamantiteBar", 20)
+			.AddRecipeGroup(RecipeGroups.AdamantiteBar, 20)
 			.AddIngredient(ItemID.FrostCore, 2)
 			.AddIngredient(ItemID.Shotgun)
 			.AddTile(TileID.MythrilAnvil)

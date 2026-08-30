@@ -87,7 +87,7 @@ public class BoompipeShrapnel : ModProjectile
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.Center);
 		return base.OnTileCollide(oldVelocity);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		int frameHeight = TextureAssets.Projectile[Type].Value.Height / Main.projFrames[Projectile.type];
 		Rectangle frame = new Rectangle(0, frameHeight * Projectile.frame, TextureAssets.Projectile[Type].Value.Width, frameHeight);

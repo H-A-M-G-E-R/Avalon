@@ -36,7 +36,7 @@ namespace Avalon.Items.Placeable.Furniture
 			}
 		}
 
-		public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+		public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
 			Main.instance.LoadItem(ItemID.GoldChest);
 			Texture2D texture = TextureAssets.Item[ItemID.GoldChest].Value;

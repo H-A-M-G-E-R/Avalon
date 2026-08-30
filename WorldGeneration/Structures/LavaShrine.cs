@@ -927,28 +927,28 @@ class LavaShrine
                     while (num3 == 0)
                     {
                         // contained item (oil bottle or eruption hook)
-                        Main.chest[num2].item[0].SetDefaults(contain, false);
+                        Main.chest[num2].item[0].SetDefaults(contain);
                         Main.chest[num2].item[0].Prefix(-1);
 
                         // second item (obsidian)
-                        Main.chest[num2].item[1].SetDefaults(ItemID.Obsidian, false);
+                        Main.chest[num2].item[1].SetDefaults(ItemID.Obsidian);
                         Main.chest[num2].item[1].stack = WorldGen.genRand.Next(41, 68);
 
                         // third item (potions)
                         int rand = WorldGen.genRand.Next(51);
                         if (rand >= 0 && rand <= 16)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<AuraPotion>(), false);
+                            Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<AuraPotion>());
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(3) + 1;
                         }
                         else if (rand >= 17 && rand <= 33)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<ShockwavePotion>(), false);
+                            Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<ShockwavePotion>());
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(3) + 1;
                         }
                         else if (rand >= 34 && rand <= 50)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<GamblerPotion>(), false);
+                            Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<GamblerPotion>());
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(3) + 1;
                         }
 

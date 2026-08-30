@@ -47,7 +47,7 @@ public class SlimeTorch : ModItem
 		}
 	}
 
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		if (!Item.wet)
 		{

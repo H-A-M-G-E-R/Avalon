@@ -61,14 +61,14 @@ public class InfernalJudgement : ModBuff
 			Dust d = Dust.NewDustDirect(e.position, e.width, e.height, DustID.BoneTorch);
 			d.noGravity = true;
 			d.velocity += e.velocity * 0.5f;
-			d.noLightEmittence = Main.rand.NextBool();
+			d.noLightEmittance = Main.rand.NextBool();
 			d.scale *= 2;
 		}
 		Dust d2 = Dust.NewDustDirect(e.position, e.width, e.height, DustID.DesertTorch);
 		d2.noGravity = true;
 		d2.scale *= 2;
 		d2.velocity += e.velocity * 0.5f;
-		d2.noLightEmittence = Main.rand.NextBool();
+		d2.noLightEmittance = Main.rand.NextBool();
 	}
 	public override void Update(NPC npc, ref int buffIndex)
 	{
@@ -133,13 +133,13 @@ public class InfernalJudgementNPC : GlobalNPC
 	}
 	private void RestoreBuffImmunities(NPC npc)
 	{
-		if (NPCID.Sets.ImmuneToAllBuffs[npc.type])
+		if (NPCID.Sets.ImmuneToRegularBuffs[npc.type])
 		{
 			Array.Fill(npc.buffImmune, value: true);
 		}
-		if (NPCID.Sets.ImmuneToRegularBuffs[npc.type] || NPCID.Sets.ImmuneToAllBuffs[npc.type])
+		if (NPCID.Sets.ImmuneToRegularBuffs[npc.type] || NPCID.Sets.ImmuneToRegularBuffs[npc.type])
 		{
-			if (!NPCID.Sets.ImmuneToAllBuffs[npc.type])
+			if (!NPCID.Sets.ImmuneToRegularBuffs[npc.type])
 			{
 				for (int num2 = 0; num2 < npc.buffImmune.Length; num2++)
 				{

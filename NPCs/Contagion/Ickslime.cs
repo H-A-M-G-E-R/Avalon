@@ -133,10 +133,10 @@ public class Ickslime : ModNPC
 			new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.Avalon.Bestiary.Ickslime"))
 		});
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		return (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
-			!spawnInfo.Player.InPillarZone() && Main.hardMode ? 0.7f / 3f : 0f;
+		return (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) &&
+			!spawner.Player.InPillarZone() && Main.hardMode ? 0.7f / 3f : 0f;
 	}
 	public override void FindFrame(int frameHeight)
 	{

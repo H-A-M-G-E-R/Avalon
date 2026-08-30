@@ -8,7 +8,7 @@ public class SkyFortress : ModBiome
 {
     public override SceneEffectPriority Priority => SceneEffectPriority.Environment;
 
-    public override int Music => ExxoAvalonOrigins.MusicMod != null ? MusicLoader.GetMusicSlot(ExxoAvalonOrigins.MusicMod, "Sounds/Music/SkyFortress") : MusicID.OtherworldlySpace;
+    public override int Music => ExxoAvalonOrigins.MusicMod != null ? MusicLoader.GetMusicSlot(ExxoAvalonOrigins.MusicMod, "Sounds/Music/SkyFortress") : MusicID.OtherworldSpace;
 
     public override bool IsBiomeActive(Player player)
     {

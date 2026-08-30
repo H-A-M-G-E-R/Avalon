@@ -58,7 +58,7 @@ public class SavannaPylon : ModPylon
 
 		TileObjectData.addTile(Type);
 
-		TileID.Sets.InteractibleByNPCs[Type] = true;
+		TileID.Sets.InteractableByNPCs[Type] = true;
 		TileID.Sets.PreventsSandfall[Type] = true;
 		TileID.Sets.AvoidedByMeteorLanding[Type] = true;
 

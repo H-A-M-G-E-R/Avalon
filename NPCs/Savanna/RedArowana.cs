@@ -40,9 +40,9 @@ public class RedArowana : ModNPC
         NPC.ai[0] = 0;
         SoundEngine.PlaySound(SoundID.Item3, NPC.position);
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return spawnInfo.Water && Main.hardMode && spawnInfo.Player.InModBiome<Biomes.UndergroundTropics>() && !spawnInfo.Player.InPillarZone() ? 0.5f : 0f;
+        return spawner.waterTile && Main.hardMode && spawner.Player.InModBiome<Biomes.UndergroundTropics>() && !spawner.Player.InPillarZone() ? 0.5f : 0f;
     }
 
     public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)

@@ -24,7 +24,7 @@ public class Hellrazer : ModItem
 	{
 		return new Vector2(-8, -4);
 	}
-	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		var texture = AssetReferences.Items.Weapons.Ranged.Bows.Hellrazer_Glow.Asset;
 		Vector2 vector = texture.Size() / 2f;

@@ -106,7 +106,7 @@ namespace Avalon.Common.Templates
 				return false;
 			}
 			TileColorCache cache = Main.tile[checkedX, i].BlockColorAndCoating();
-			if (Main.tenthAnniversaryWorld && !gen && (settings.TreeTileType == 596 || settings.TreeTileType == 616))
+			if (Main.tenthAnniversaryWorld && !isGeneratingOrLoadingWorld && (settings.TreeTileType == 596 || settings.TreeTileType == 616))
 			{
 				cache.Color = (byte)genRand.Next(1, 13);
 			}

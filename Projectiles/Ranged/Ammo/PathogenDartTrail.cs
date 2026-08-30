@@ -87,7 +87,7 @@ public class PathogenDartTrail : ModProjectile
 		target.AddBuff(ModContent.BuffType<Pathogen>(), 5 * 60);
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		ClassExtensions.DrawGas(TextureAssets.Projectile[Type].Value, lightColor * 0.8f, Projectile, 3, 8);
 		return false;

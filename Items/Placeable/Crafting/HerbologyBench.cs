@@ -16,6 +16,6 @@ public class HerbologyBench : ModItem
 	}
 	public override void AddRecipes()
 	{
-		CreateRecipe(1).AddRecipeGroup(RecipeGroupID.IronBar, 8).AddRecipeGroup(RecipeGroupID.Wood, 45).AddIngredient(ItemID.GrassSeeds, 20).AddRecipeGroup("Herbs", 15).AddTile(TileID.Anvils).Register();
+		CreateRecipe(1).AddRecipeGroup(RecipeGroups.IronBar, 8).AddRecipeGroup(RecipeGroups.Wood, 45).AddIngredient(ItemID.GrassSeeds, 20).AddRecipeGroup("Herbs", 15).AddTile(TileID.Anvils).Register();
 	}
 }

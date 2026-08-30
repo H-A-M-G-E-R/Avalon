@@ -19,7 +19,7 @@ public class Jukebox : ModItem
 		CreateRecipe()
 			.AddRecipeGroup("MusicBoxes", 3)
 			.AddIngredient(ItemID.LunarBar, 20)
-			.AddRecipeGroup(RecipeGroupID.Wood, 30)
+			.AddRecipeGroup(RecipeGroups.Wood, 30)
 			.AddTile(TileID.TinkerersWorkbench)
 			.Register();
 	}

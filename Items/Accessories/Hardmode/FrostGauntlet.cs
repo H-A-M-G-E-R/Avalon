@@ -26,7 +26,7 @@ public class FrostGauntlet : ModItem
 	{
 		if (player.statLife <= player.statLifeMax2 * 0.5)
 		{
-			player.AddBuff(62, 5, true);
+			player.AddBuff(62, 5);
 		}
 		player.GetModPlayer<AvalonEnchantPlayer>().FrostGauntlet = true;
 		player.kbGlove = true;

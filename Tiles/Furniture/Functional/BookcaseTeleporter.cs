@@ -19,7 +19,7 @@ public class BookcaseTeleporter : ModTile
         TileObjectData.newTile.CopyFrom(TileObjectData.Style3x4);
         TileObjectData.newTile.CoordinateHeights = new[] { 16, 16, 16, 16 };
         TileObjectData.addTile(Type);
-        AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+        TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
         AddMapEntry(new Color(191, 142, 111));
         DustType = DustID.Dirt;
     }

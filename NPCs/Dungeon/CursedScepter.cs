@@ -92,7 +92,7 @@ public class CursedScepter : ModNPC
         }
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) => Main.hardMode && spawnInfo.Player.ZoneDungeon
+    public override float SpawnChance(NPC.Spawner spawner) => Main.hardMode && spawner.Player.ZoneDungeon
         ? 0.1f : 0f;
 
     public override void ModifyNPCLoot(NPCLoot npcLoot) => npcLoot.Add(ItemDropRule.StatusImmunityItem(ItemID.Nazar, 100));

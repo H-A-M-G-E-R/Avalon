@@ -27,7 +27,7 @@ public class BloodshotShot : ModProjectile
         Main.dust[D].noGravity = true;
         Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;
     }
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Texture2D tex = TextureAssets.Extra[ExtrasID.ThePerfectGlow].Value;
         Main.EntitySpriteDraw(tex, Projectile.Center - Main.screenPosition, new Rectangle(0, 0, tex.Width, tex.Height), Color.DarkRed * 0.8f, Projectile.rotation, tex.Size() / 2f, Projectile.height / 16f, SpriteEffects.None);

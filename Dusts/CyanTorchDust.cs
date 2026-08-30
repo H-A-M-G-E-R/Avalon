@@ -20,7 +20,7 @@ public class CyanTorchDust : ModDust
         {
             dust.velocity.Y += 0.05f;
         }
-        if (!dust.noLightEmittence)
+        if (!dust.noLightEmittance)
         {
             Vector3 light = new Vector3(0, 1f, 1f) * dust.scale * 1.5f;
             Lighting.AddLight(dust.position, light);

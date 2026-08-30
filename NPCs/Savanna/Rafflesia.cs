@@ -46,11 +46,11 @@ public class Rafflesia : ModNPC
     {
         loot.Add(ItemDropRule.Common(ModContent.ItemType<Root>(), 2, 1, 2));
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneSavanna || spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundSavanna)
+        if (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneSavanna || spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundSavanna)
         {
-            if (Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY + 2].TileType == ModContent.TileType<Tiles.Savanna.SavannaGrass>())
+            if (Main.tile[spawner.SpawnTileX, spawner.SpawnTileY + 2].TileType == ModContent.TileType<Tiles.Savanna.SavannaGrass>())
                 //&&
                 //!Main.tile[spawnInfo.SpawnTileX + 1, spawnInfo.SpawnTileY].HasTile && !Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].HasTile &&
                 //!Main.tile[spawnInfo.SpawnTileX - 1, spawnInfo.SpawnTileY].HasTile)

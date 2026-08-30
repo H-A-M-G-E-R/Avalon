@@ -44,7 +44,7 @@ public class SavannaPot : ModTile
 		Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, DustID.Pot, 0f, 0f, 0, default, 1f);
 		Gore.NewGore(WorldGen.GetItemSource_FromTileBreak(i, j), new Vector2(i * 16, j * 16), default, ModContent.GoreType<Gores.TropicsPotGore1>());
 		Gore.NewGore(WorldGen.GetItemSource_FromTileBreak(i, j), new Vector2(i * 16, j * 16), default, ModContent.GoreType<Gores.TropicsPotGore2>());
-		if (!WorldGen.gen && Main.netMode != NetmodeID.MultiplayerClient)
+		if (!WorldGen.isGeneratingOrLoadingWorld && Main.netMode != NetmodeID.MultiplayerClient)
 		{
 			if (WorldGen.genRand.NextBool(15))
 			{

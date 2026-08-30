@@ -36,7 +36,7 @@ class EvilShrine
                             if (q == 0) q = ItemID.DemoniteOre;
                             if (q == 1) q = ItemID.CrimtaneOre;
                             if (q == 2) q = ModContent.ItemType<BacciliteOre>();
-                            Main.chest[num2].item[0].SetDefaults(q, false);
+                            Main.chest[num2].item[0].SetDefaults(q);
                             Main.chest[num2].item[0].stack = WorldGen.genRand.Next(41, 68);
                         }
                         else if (rN >= 21 && rN <= 41)
@@ -45,18 +45,18 @@ class EvilShrine
                             if (q == 0) q = ItemID.DemoniteBar;
                             if (q == 1) q = ItemID.CrimtaneBar;
                             if (q == 2) q = ModContent.ItemType<BacciliteBar>();
-                            Main.chest[num2].item[0].SetDefaults(q, false);
+                            Main.chest[num2].item[0].SetDefaults(q);
                             Main.chest[num2].item[0].stack = WorldGen.genRand.Next(2, 7);
                         }
                         int rand = WorldGen.genRand.Next(51);
                         if (rand >= 0 && rand <= 20)
                         {
-                            Main.chest[num2].item[1].SetDefaults(ItemID.MusketBall, false);
+                            Main.chest[num2].item[1].SetDefaults(ItemID.MusketBall);
                             Main.chest[num2].item[1].stack = WorldGen.genRand.Next(50, 101);
                         }
                         else if (rand >= 21 && rand <= 30)
                         {
-                            Main.chest[num2].item[1].SetDefaults(ItemID.PoisonedKnife, false);
+                            Main.chest[num2].item[1].SetDefaults(ItemID.PoisonedKnife);
                             Main.chest[num2].item[1].stack = WorldGen.genRand.Next(77, 125);
                         }
                         else if (rand >= 31 && rand <= 40)
@@ -65,18 +65,18 @@ class EvilShrine
                             if (q == 0) q = ItemID.Ebonkoi;
                             if (q == 1) q = ItemID.Hemopiranha;
                             if (q == 2) q = ModContent.ItemType<Ickfish>();
-                            Main.chest[num2].item[1].SetDefaults(q, false);
+                            Main.chest[num2].item[1].SetDefaults(q);
                             Main.chest[num2].item[1].stack = WorldGen.genRand.Next(4, 8);
                         }
                         else if (rand >= 41 && rand <= 50)
                         {
-                            Main.chest[num2].item[1].SetDefaults(ItemID.RecallPotion, false);
+                            Main.chest[num2].item[1].SetDefaults(ItemID.RecallPotion);
                             Main.chest[num2].item[1].stack = WorldGen.genRand.Next(3) + 1;
                         }
                         int rand2 = WorldGen.genRand.Next(27);
                         if (rand2 >= 0 && rand2 <= 20)
                         {
-                            Main.chest[num2].item[2].SetDefaults(73, false);
+                            Main.chest[num2].item[2].SetDefaults(73);
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(5, 11);
                         }
                         else if (rand2 >= 21 && rand2 <= 26)
@@ -85,7 +85,7 @@ class EvilShrine
                             if (q == 0) q = ItemID.BandofStarpower;
                             if (q == 1) q = ItemID.PanicNecklace;
                             if (q == 2) q = ModContent.ItemType<NerveNumbNecklace>();
-                            Main.chest[num2].item[2].SetDefaults(q, false);
+                            Main.chest[num2].item[2].SetDefaults(q);
                             Main.chest[num2].item[2].Prefix(-1);
                         }
                         int rand3 = WorldGen.genRand.Next(27);
@@ -95,11 +95,11 @@ class EvilShrine
                             if (q == 0) q = ModContent.ItemType<BagofShadows>();
                             if (q == 1) q = ModContent.ItemType<BagofBlood>();
                             if (q == 2) q = ModContent.ItemType<BagofIck>();
-                            Main.chest[num2].item[3].SetDefaults(q, false);
+                            Main.chest[num2].item[3].SetDefaults(q);
                         }
                         else if (rand3 == 26)
                         {
-                            Main.chest[num2].item[3].SetDefaults(73, false);
+                            Main.chest[num2].item[3].SetDefaults(73);
                             Main.chest[num2].item[3].stack = WorldGen.genRand.Next(7, 14);
                         }
                         num3++;

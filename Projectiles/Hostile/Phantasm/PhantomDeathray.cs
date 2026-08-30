@@ -90,7 +90,7 @@ namespace Avalon.Projectiles.Hostile.Phantasm
 			float collsionPoint = 0;
 			return Collision.CheckAABBvLineCollision(targetHitbox.TopLeft(), targetHitbox.Size(), Projectile.Center, Projectile.Center + Projectile.velocity * Projectile.ai[1],Projectile.scale * 26, ref collsionPoint);
 		}
-		public override bool PreDraw(ref Color lightColor)
+		public override bool PreDraw(Player player, ref Color lightColor)
 		{
 			Asset<Texture2D> tex = TextureAssets.Projectile[Type];
 			Rectangle start = new Rectangle(0,0,26,22);

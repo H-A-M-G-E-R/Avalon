@@ -104,7 +104,7 @@ namespace Avalon.WorldGeneration.SecretSeeds
 			//NPC.clrNames(); //legacy NPC name code, does not to be reinstalled
 			//NPC.setNames();
 			SetBackgroundNormal();
-			WorldGen.gen = true;
+			WorldGen.isGeneratingOrLoadingWorld = true;
 			resetGen();
 			/*if (seed > 0) //seed is done before any genpass now, adding this line may cause unknown changes
 			{
@@ -2890,7 +2890,7 @@ namespace Avalon.WorldGeneration.SecretSeeds
 		{
 			GenerateShimmer(); //Added to generate shimmer
 			isGeneratingOldWorld = false;
-			WorldGen.gen = false;
+			WorldGen.isGeneratingOrLoadingWorld = false;
 		}
 
 		//Readded legacy generation methods
@@ -10000,11 +10000,11 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num31 = WorldGen.genRand.Next(2);
 						if (num31 == 0)
 						{
-							val2.SetDefaults(ItemID.Muramasa, false);
+							val2.SetDefaults(ItemID.Muramasa);
 						}
 						if (num31 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<Longbone>(), false); //dungeon bow
+							val2.SetDefaults(ModContent.ItemType<Longbone>()); //dungeon bow
 						}
 						val2.Prefix(-1);
 					}
@@ -10013,11 +10013,11 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num33 = WorldGen.genRand.Next(2);
 						if (num33 == 0)
 						{
-							val2.SetDefaults(ItemID.AquaScepter, false);
+							val2.SetDefaults(ItemID.AquaScepter);
 						}
 						if (num33 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<Blueshift>(), false);
+							val2.SetDefaults(ModContent.ItemType<Blueshift>());
 						}
 						val2.Prefix(-1);
 					}
@@ -10026,11 +10026,11 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num34 = WorldGen.genRand.Next(2);
 						if (num34 == 0)
 						{
-							val2.SetDefaults(ItemID.MagicMissile, false);
+							val2.SetDefaults(ItemID.MagicMissile);
 						}
 						if (num34 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<SapphirePickaxe>(), false);
+							val2.SetDefaults(ModContent.ItemType<SapphirePickaxe>());
 						}
 						val2.Prefix(-1);
 					}
@@ -10039,11 +10039,11 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num35 = WorldGen.genRand.Next(2);
 						if (num35 == 0)
 						{
-							val2.SetDefaults(ItemID.BlueMoon, false);
+							val2.SetDefaults(ItemID.BlueMoon);
 						}
 						if (num35 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<SapphirePickaxe>(), false);
+							val2.SetDefaults(ModContent.ItemType<SapphirePickaxe>());
 						}
 						val2.Prefix(-1);
 					}
@@ -10052,12 +10052,12 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num36 = WorldGen.genRand.Next(2);
 						if (num36 == 0)
 						{
-							val2.SetDefaults(ItemID.Handgun, false);
+							val2.SetDefaults(ItemID.Handgun);
 							val2.Prefix(-1);
 						}
 						if (num36 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<Longbone>(), false); //dungeon bow
+							val2.SetDefaults(ModContent.ItemType<Longbone>()); //dungeon bow
 							val2.Prefix(-1);
 						}
 					}
@@ -10066,15 +10066,15 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num37 = WorldGen.genRand.Next(3);
 						if (num37 == 0)
 						{
-							val2.SetDefaults(ItemID.ShadowKey, false);
+							val2.SetDefaults(ItemID.ShadowKey);
 						}
 						if (num37 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<Blueshift>(), false);
+							val2.SetDefaults(ModContent.ItemType<Blueshift>());
 						}
 						if (num37 == 2)
 						{
-							val2.SetDefaults(ItemID.ShadowKey, false);
+							val2.SetDefaults(ItemID.ShadowKey);
 						}
 						val2.Prefix(-1);
 					}
@@ -10083,11 +10083,11 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num38 = WorldGen.genRand.Next(2);
 						if (num38 == 0)
 						{
-							val2.SetDefaults(ItemID.StaffofRegrowth, false);
+							val2.SetDefaults(ItemID.StaffofRegrowth);
 						}
 						if (num38 == 1)
 						{
-							val2.SetDefaults(ModContent.ItemType<FlowerofTheJungle>(), false);
+							val2.SetDefaults(ModContent.ItemType<FlowerofTheJungle>());
 						}
 						val2.Prefix(-1);
 					}
@@ -10096,11 +10096,11 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num40 = WorldGen.genRand.Next(10);
 						if (num40 >= 0 && num40 <= 8)
 						{
-							val2.SetDefaults(ItemID.LesserHealingPotion, false);
+							val2.SetDefaults(ItemID.LesserHealingPotion);
 						}
 						if (num40 == 9)
 						{
-							val2.SetDefaults(ItemID.BottledHoney, false);
+							val2.SetDefaults(ItemID.BottledHoney);
 						}
 						val2.stack = WorldGen.genRand.Next(3, 7);
 					}
@@ -10679,7 +10679,7 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						for (int m = 0; m < Main.chest[num2].item.Length; m++)
 						{
 							Item val = Main.chest[num2].item[m];
-							val.SetDefaults(ItemID.ThinIce, false);
+							val.SetDefaults(ItemID.ThinIce);
 							val.stack = 250;
 						}
 					}
@@ -10707,40 +10707,40 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						int num3 = WorldGen.genRand.Next(11);
 						if (num3 >= 0 && num3 <= 6)
 						{
-							Main.chest[num2].item[0].SetDefaults(ItemID.PoisonedKnife, false);
+							Main.chest[num2].item[0].SetDefaults(ItemID.PoisonedKnife);
 							Main.chest[num2].item[0].stack = WorldGen.genRand.Next(34, 79);
 						}
 						else if (num3 >= 7 && num3 <= 9)
 						{
-							Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<SoulofIce>(), false);
+							Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<SoulofIce>());
 							Main.chest[num2].item[0].stack = WorldGen.genRand.Next(3) + 1;
 						}
 						else
 						{
-							Main.chest[num2].item[0].SetDefaults(ItemID.IceBlade, false);
+							Main.chest[num2].item[0].SetDefaults(ItemID.IceBlade);
 							Main.chest[num2].item[0].Prefix(-1);
 						}
-						Main.chest[num2].item[1].SetDefaults(73, false);
+						Main.chest[num2].item[1].SetDefaults(73);
 						Main.chest[num2].item[1].stack = WorldGen.genRand.Next(60, 82);
 						int num4 = WorldGen.genRand.Next(4);
 						if (num4 == 0)
 						{
-							Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<FrostShard>(), false);
+							Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<FrostShard>());
 							Main.chest[num2].item[2].stack = WorldGen.genRand.Next(3, 7);
 						}
 						if (num4 == 1)
 						{
-							Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<IceSculpture>(), false);
+							Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<IceSculpture>());
 							Main.chest[num2].item[2].stack = 1;
 						}
 						if (num4 == 2)
 						{
-							Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<DNASculpture>(), false);
+							Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<DNASculpture>());
 							Main.chest[num2].item[2].stack = 1;
 						}
 						if (num4 == 3)
 						{
-							Main.chest[num2].item[2].SetDefaults(ItemID.IceBrick, false);
+							Main.chest[num2].item[2].SetDefaults(ItemID.IceBrick);
 							Main.chest[num2].item[2].stack = WorldGen.genRand.Next(30, 73);
 						}
 					}
@@ -12146,7 +12146,7 @@ namespace Avalon.WorldGeneration.SecretSeeds
 					{
 						if (contain > 0)
 						{
-							Main.chest[num2].item[num3].SetDefaults(contain, false);
+							Main.chest[num2].item[num3].SetDefaults(contain);
 							Main.chest[num2].item[num3].Prefix(-1);
 							num3++;
 						}
@@ -12154,23 +12154,23 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						switch (num4)
 						{
 							case 0:
-								Main.chest[num2].item[num3].SetDefaults(ItemID.DestroyerEmblem, false);
+								Main.chest[num2].item[num3].SetDefaults(ItemID.DestroyerEmblem);
 								Main.chest[num2].item[num3].Prefix(-1);
 								num3++;
 								break;
 							case 2:
-								Main.chest[num2].item[num3].SetDefaults(489, false);
+								Main.chest[num2].item[num3].SetDefaults(489);
 								Main.chest[num2].item[num3].Prefix(-1);
 								num3++;
 								break;
 							case 3:
-								Main.chest[num2].item[num3].SetDefaults(490, false);
+								Main.chest[num2].item[num3].SetDefaults(490);
 								Main.chest[num2].item[num3].Prefix(-1);
 								num3++;
 								break;
 							case 4:
 								{
-									Main.chest[num2].item[num3].SetDefaults(353, false);
+									Main.chest[num2].item[num3].SetDefaults(353);
 									int stack2 = WorldGen.genRand.Next(3) + 1;
 									Main.chest[num2].item[num3].stack = stack2;
 									num3++;
@@ -12178,102 +12178,102 @@ namespace Avalon.WorldGeneration.SecretSeeds
 								}
 							case 5:
 								{
-									Main.chest[num2].item[num3].SetDefaults(ItemID.RestorationPotion, false);
+									Main.chest[num2].item[num3].SetDefaults(ItemID.RestorationPotion);
 									int stack = WorldGen.genRand.Next(12, 23);
 									Main.chest[num2].item[num3].stack = stack;
 									num3++;
 									break;
 								}
 							default:
-								Main.chest[num2].item[num3].SetDefaults(491, false);
+								Main.chest[num2].item[num3].SetDefaults(491);
 								Main.chest[num2].item[num3].Prefix(-1);
 								num3++;
 								break;
 						}
-						Main.chest[num2].item[num3].SetDefaults(ModContent.ItemType<CaesiumBar>(), false);
+						Main.chest[num2].item[num3].SetDefaults(ModContent.ItemType<CaesiumBar>());
 						int stack3 = WorldGen.genRand.Next(22, 37);
 						Main.chest[num2].item[num3].stack = stack3;
-						Main.chest[num2].item[3].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.ImperviousBrick>(), false);
+						Main.chest[num2].item[3].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.ImperviousBrick>());
 						int stack4 = WorldGen.genRand.Next(11, 55);
 						Main.chest[num2].item[3].stack = stack4;
-						Main.chest[num2].item[4].SetDefaults(73, false);
+						Main.chest[num2].item[4].SetDefaults(73);
 						int stack5 = WorldGen.genRand.Next(45, 110);
 						Main.chest[num2].item[4].stack = stack5;
 						switch (WorldGen.genRand.Next(11))
 						{
 							case 0:
 								{
-									Main.chest[num2].item[5].SetDefaults(391, false);
+									Main.chest[num2].item[5].SetDefaults(391);
 									int stack16 = WorldGen.genRand.Next(10, 30);
 									Main.chest[num2].item[5].stack = stack16;
 									break;
 								}
 							case 1:
 								{
-									Main.chest[num2].item[5].SetDefaults(522, false);
+									Main.chest[num2].item[5].SetDefaults(522);
 									int stack15 = WorldGen.genRand.Next(10, 30);
 									Main.chest[num2].item[5].stack = stack15;
 									break;
 								}
 							case 2:
 								{
-									Main.chest[num2].item[5].SetDefaults(ModContent.ItemType<SoulofDelight>(), false);
+									Main.chest[num2].item[5].SetDefaults(ModContent.ItemType<SoulofDelight>());
 									int stack14 = WorldGen.genRand.Next(3, 8);
 									Main.chest[num2].item[5].stack = stack14;
 									break;
 								}
 							case 3:
 								{
-									Main.chest[num2].item[5].SetDefaults(ItemID.SoulofFright, false);
+									Main.chest[num2].item[5].SetDefaults(ItemID.SoulofFright);
 									int stack13 = WorldGen.genRand.Next(3, 8);
 									Main.chest[num2].item[5].stack = stack13;
 									break;
 								}
 							case 4:
 								{
-									Main.chest[num2].item[5].SetDefaults(575, false);
+									Main.chest[num2].item[5].SetDefaults(575);
 									int stack12 = WorldGen.genRand.Next(5, 7);
 									Main.chest[num2].item[5].stack = stack12;
 									break;
 								}
 							case 5:
 								{
-									Main.chest[num2].item[5].SetDefaults(547, false);
+									Main.chest[num2].item[5].SetDefaults(547);
 									int stack11 = WorldGen.genRand.Next(5, 7);
 									Main.chest[num2].item[5].stack = stack11;
 									break;
 								}
 							case 6:
 								{
-									Main.chest[num2].item[5].SetDefaults(548, false);
+									Main.chest[num2].item[5].SetDefaults(548);
 									int stack10 = WorldGen.genRand.Next(5, 7);
 									Main.chest[num2].item[5].stack = stack10;
 									break;
 								}
 							case 7:
 								{
-									Main.chest[num2].item[5].SetDefaults(549, false);
+									Main.chest[num2].item[5].SetDefaults(549);
 									int stack9 = WorldGen.genRand.Next(5, 7);
 									Main.chest[num2].item[5].stack = stack9;
 									break;
 								}
 							case 8:
 								{
-									Main.chest[num2].item[5].SetDefaults(520, false);
+									Main.chest[num2].item[5].SetDefaults(520);
 									int stack8 = WorldGen.genRand.Next(5, 7);
 									Main.chest[num2].item[5].stack = stack8;
 									break;
 								}
 							case 9:
 								{
-									Main.chest[num2].item[5].SetDefaults(521, false);
+									Main.chest[num2].item[5].SetDefaults(521);
 									int stack7 = WorldGen.genRand.Next(5, 7);
 									Main.chest[num2].item[5].stack = stack7;
 									break;
 								}
 							default:
 								{
-									Main.chest[num2].item[5].SetDefaults(ItemID.SoulofFlight, false);
+									Main.chest[num2].item[5].SetDefaults(ItemID.SoulofFlight);
 									int stack6 = WorldGen.genRand.Next(3, 8);
 									Main.chest[num2].item[5].stack = stack6;
 									break;
@@ -12283,14 +12283,14 @@ namespace Avalon.WorldGeneration.SecretSeeds
 						{
 							case 0:
 								{
-									Main.chest[num2].item[6].SetDefaults(ModContent.ItemType<AuraPotion>(), false);
+									Main.chest[num2].item[6].SetDefaults(ModContent.ItemType<AuraPotion>());
 									int stack19 = WorldGen.genRand.Next(2, 4);
 									Main.chest[num2].item[6].stack = stack19;
 									break;
 								}
 							case 1:
 								{
-									Main.chest[num2].item[6].SetDefaults(ItemID.InvisibilityPotion, false);
+									Main.chest[num2].item[6].SetDefaults(ItemID.InvisibilityPotion);
 									int stack18 = WorldGen.genRand.Next(1, 4);
 									Main.chest[num2].item[6].stack = stack18;
 									break;
@@ -12298,17 +12298,17 @@ namespace Avalon.WorldGeneration.SecretSeeds
 							default:
 								if (num4 == 2)
 								{
-									Main.chest[num2].item[6].SetDefaults(ModContent.ItemType<StrengthPotion>(), false);
+									Main.chest[num2].item[6].SetDefaults(ModContent.ItemType<StrengthPotion>());
 									int stack17 = WorldGen.genRand.Next(3, 5);
 									Main.chest[num2].item[6].stack = stack17;
 								}
 								else
 								{
-									Main.chest[num2].item[6].SetDefaults(437, false);
+									Main.chest[num2].item[6].SetDefaults(437);
 								}
 								break;
 						}
-						Main.chest[num2].item[7].SetDefaults(ItemID.CursedFlames, false);
+						Main.chest[num2].item[7].SetDefaults(ItemID.CursedFlames);
 						Main.chest[num2].item[7].stack = WorldGen.genRand.Next(2) + 1;
 					}
 					return true;

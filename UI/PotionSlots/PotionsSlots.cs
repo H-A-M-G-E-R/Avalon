@@ -31,7 +31,6 @@ namespace Avalon.UI.PotionSlots
             //        {
             //            SoundEngine.PlaySound(SoundID.Grab);
             //            (Main.mouseItem, ItemSlots[i].Item) = (ItemSlots[i].Item, Main.mouseItem);
-            //            Recipe.FindRecipes();
             //        }
             //    };
             //}
@@ -47,7 +46,6 @@ namespace Avalon.UI.PotionSlots
                 {
                     SoundEngine.PlaySound(SoundID.Grab);
                     (Main.mouseItem, ItemSlots.Item) = (ItemSlots.Item, Main.mouseItem);
-                    Recipe.FindRecipes();
                 }
             };
 
@@ -63,7 +61,6 @@ namespace Avalon.UI.PotionSlots
                 {
                     SoundEngine.PlaySound(SoundID.Grab);
                     (Main.mouseItem, ItemSlot2.Item) = (ItemSlot2.Item, Main.mouseItem);
-                    Recipe.FindRecipes();
                 }
             };
             ItemSlot3 = new ExxoUIItemSlot(TextureAssets.InventoryBack, ItemID.None);
@@ -78,7 +75,6 @@ namespace Avalon.UI.PotionSlots
                 {
                     SoundEngine.PlaySound(SoundID.Grab);
                     (Main.mouseItem, ItemSlot3.Item) = (ItemSlot3.Item, Main.mouseItem);
-                    Recipe.FindRecipes();
                 }
             };
 
@@ -94,7 +90,6 @@ namespace Avalon.UI.PotionSlots
                 {
                     SoundEngine.PlaySound(SoundID.Grab);
                     (Main.mouseItem, ItemSlot4.Item) = (ItemSlot4.Item, Main.mouseItem);
-                    Recipe.FindRecipes();
                 }
             };
         }

@@ -61,7 +61,7 @@ public class Hallowor : ModNPC
         });
     }
     // uncomment when time to add
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
         return 0; // Main.hardMode && !spawnInfo.Player.InPillarZone() && spawnInfo.Player.ZoneHallow && spawnInfo.SpawnTileY < (Main.maxTilesY - 200) ? 0.3f : 0f;
     }

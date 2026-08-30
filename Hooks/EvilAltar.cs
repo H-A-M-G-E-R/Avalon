@@ -194,7 +194,7 @@ public class EvilAltar : ModHook
     {
 		if (AvalonWorld.retroWorld && !Main.drunkWorld)
 		{
-			if (Main.netMode == 1 || !Main.hardMode || WorldGen.noTileActions || WorldGen.gen)
+			if (Main.netMode == 1 || !Main.hardMode || WorldGen.noTileActions || WorldGen.isGeneratingOrLoadingWorld)
 			{
 				return;
 			}
@@ -292,7 +292,7 @@ public class EvilAltar : ModHook
 		}
 		else
 		{
-			if (Main.netMode == 1 || !Main.hardMode || WorldGen.noTileActions || WorldGen.gen)
+			if (Main.netMode == 1 || !Main.hardMode || WorldGen.noTileActions || WorldGen.isGeneratingOrLoadingWorld)
 			{
 				return;
 			}

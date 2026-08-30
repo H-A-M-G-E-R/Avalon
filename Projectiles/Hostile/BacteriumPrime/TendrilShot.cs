@@ -35,7 +35,7 @@ public class TendrilShot : ModProjectile
 			Dust d = Dust.NewDustPerfect(Projectile.Center + Main.rand.NextVector2Circular(16, 16) * Projectile.scale, ModContent.DustType<SimpleColorableGlowyDust>(), Projectile.velocity * 0.4f + Main.rand.NextVector2Circular(1, 1));
 			d.scale = 1.5f;
 			d.noGravity = true;
-			d.noLightEmittence = true;
+			d.noLightEmittance = true;
 			d.color = new Color(0.55f, 0.5f, 0.2f, 0.3f);
 		}
 		Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver2;

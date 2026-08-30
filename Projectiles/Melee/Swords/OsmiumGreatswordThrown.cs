@@ -28,6 +28,7 @@ public class OsmiumGreatswordThrown : ModProjectile
 		Projectile.penetrate = -1;
 		Projectile.usesLocalNPCImmunity = true;
 		Projectile.localNPCHitCooldown = 30;
+		Projectile.drawLayer = ProjectileDrawLayerID.BehindNPCsAndTiles;
 	}
 	public const int TimeForMaxDamage = 45;
 	public const float Gravity = 0.2f;
@@ -243,17 +244,13 @@ public class OsmiumGreatswordThrown : ModProjectile
 		}
 	}
 	private bool PerfectTiming => (Projectile.ai[2] >= TimeForMaxDamage && Projectile.ai[2] < TimeForMaxDamage + 8);
-	public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
-	{
-		behindNPCsAndTiles.Add(index);
-	}
 	public override bool TileCollideStyle(ref int width, ref int height, ref bool fallThrough, ref Vector2 hitboxCenterFrac)
 	{
 		width = 6;
 		height = Projectile.ai[1] == 0 ? width : 24;
 		return base.TileCollideStyle(ref width, ref height, ref fallThrough, ref hitboxCenterFrac);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		SpriteEffects e = Projectile.spriteDirection == 1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;
 		Vector2 origin = Vector2.Lerp(new Vector2(Projectile.spriteDirection == 1 ? 7 : (64 - 7), 57), new Vector2(32), MathHelper.Clamp(Projectile.ai[2] * 0.05f,0,1));

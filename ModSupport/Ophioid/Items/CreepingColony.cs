@@ -36,7 +36,7 @@ namespace Avalon.ModSupport.Ophioid.Items
 			// DisplayName.SetDefault("Creeping Colony");
 			// Tooltip.SetDefault("'A putrid stench comes from the thing you just made, it might attract something...' \nSummons Ophiopede in a Corruption world");
 			Item.ResearchUnlockCount = 3;
-			ItemID.Sets.SortingPriorityBossSpawns[Type] = 12;
+			ItemID.Sets.SortingPriorityMiscImportants[Type] = 12;
 			if (ExxoAvalonOrigins.OphioidMod.TryFind("DeadFungusbug", out ModItem DeadFungusBug))
 			{
 				ItemID.Sets.ShimmerTransformToItem[Type] = DeadFungusBug.Type;

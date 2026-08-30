@@ -191,7 +191,7 @@ public class CrystalMinesHouseBiome : MicroBiome
                         //    Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<Items.Weapons.Magic.SacredLyre>(), false);
                         //}
                         Main.chest[num2].item[0].Prefix(-1);
-                        Main.chest[num2].item[1].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.CrystalStoneBlock>(), false);
+                        Main.chest[num2].item[1].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.CrystalStoneBlock>());
                         Main.chest[num2].item[1].stack = Main.rand.Next(200, 301);
                         int n2 = WorldGen.genRand.Next(5);
                         if (n2 == 0)
@@ -227,7 +227,7 @@ public class CrystalMinesHouseBiome : MicroBiome
                         }
                         else
                         {
-                            Main.chest[num2].item[3].SetDefaults(ItemID.PlatinumCoin, false);
+                            Main.chest[num2].item[3].SetDefaults(ItemID.PlatinumCoin);
                             Main.chest[num2].item[3].stack = WorldGen.genRand.Next(1, 5);
                         }
                         num3++;

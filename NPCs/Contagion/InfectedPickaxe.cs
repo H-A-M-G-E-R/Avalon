@@ -80,7 +80,7 @@ public class InfectedPickaxe : ModNPC
             }
         }
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) => Main.hardMode && spawnInfo.Player.InModBiome<Biomes.UndergroundContagion>()
+    public override float SpawnChance(NPC.Spawner spawner) => Main.hardMode && spawner.Player.InModBiome<Biomes.UndergroundContagion>()
         ? 0.2f : 0f;
 	public override void ModifyNPCLoot(NPCLoot npcLoot)
 	{

@@ -63,7 +63,7 @@ public class HellrazerStake : ModProjectile
 		}
 		SoundEngine.PlaySound(SoundID.Item10, Projectile.position);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type];
 		float iterations = Math.Min((int)(Projectile.localAI[2] / 2),15);

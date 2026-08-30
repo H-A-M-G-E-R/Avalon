@@ -10,6 +10,7 @@ using Avalon.Tiles.Furniture.Functional;
 using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -90,7 +91,7 @@ public class BannerBeltPlayer : ModPlayer
 		{
 			if (Player.inventory[i].createTile == TileID.Banners)
 			{
-				if (Item.BannerToNPC(Player.inventory[i].type) != 0)
+				if (BannerSystem.BannerToNPC(Player.inventory[i].type) != 0)
 				{
 					ActiveBanners.Add(Player.inventory[i].placeStyle);
 				}
@@ -104,7 +105,7 @@ public class BannerBeltPlayer : ModPlayer
 		_FindBannersInChest(Player.bank2);
 		_FindBannersInChest(Player.bank3);
 		_FindBannersInChest(Player.bank4);
-		Player.AddBuff(BuffID.MonsterBanner, 2, true);
+		Player.AddBuff(BuffID.MonsterBanner, 2);
 		if (ActiveBanners.Count > 0)
 		{
 			foreach(Player p in Main.ActivePlayers)
@@ -113,7 +114,7 @@ public class BannerBeltPlayer : ModPlayer
 					continue;
 				if(p.Center.Distance(Player.Center) < MAX_DISTANCE)
 				{
-					p.AddBuff(BuffID.MonsterBanner, 2, true);
+					p.AddBuff(BuffID.MonsterBanner, 2);
 				}
 			}
 		}
@@ -124,7 +125,7 @@ public class BannerBeltPlayer : ModPlayer
 		{
 			if (chest.item[i].createTile == TileID.Banners)
 			{
-				if (Item.BannerToNPC(chest.item[i].type) != 0)
+				if (BannerSystem.BannerToNPC(chest.item[i].type) != 0)
 				{
 					ActiveBanners.Add(chest.item[i].placeStyle);
 				}

@@ -17,7 +17,7 @@ public class YellowDungeonClock : ModItem
 	{
 		CreateRecipe(1)
 			.AddIngredient(ModContent.ItemType<Tile.YellowBrick>(), 10)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddIngredient(ItemID.Glass, 6)
 			.AddTile(TileID.BoneWelder)
 			.Register();

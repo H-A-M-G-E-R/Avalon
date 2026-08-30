@@ -83,7 +83,7 @@ public class EnchantedShurikenProj : ModProjectile
 	{
 		return new Color(255, 255, 255, 200);
 	}
-	public override bool PreDraw(ref Color lightColor) // theft
+	public override bool PreDraw(Player player, ref Color lightColor) // theft
 	{
 		Vector2 drawOrigin = new Vector2(Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Width() * 0.5f, Projectile.height * 0.5f);
 		for (int k = 0; k < Projectile.oldPos.Length; k++)

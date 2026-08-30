@@ -19,7 +19,7 @@ internal class ContainedBlackHole : ModTile
         TileObjectData.newTile.Height = 4;
         TileObjectData.newTile.CoordinateHeights = new[] { 18, 16, 16, 16 };
         TileObjectData.addTile(Type);
-        AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+        TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
         AddMapEntry(new Color(191, 142, 111));
         DustType = DustID.Dirt;
     }

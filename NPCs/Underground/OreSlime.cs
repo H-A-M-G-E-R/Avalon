@@ -172,12 +172,12 @@ public class OreSlime : ModNPC
 	{
 		NPC.lifeMax = (int)(NPC.lifeMax * 0.65f);
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		if (spawnInfo.Player.ZoneUndergroundDesert)
+		if (spawner.Player.ZoneUndergroundDesert)
 		{
 			return 0.02f;
 		}
-		return spawnInfo.Player.ZoneRockLayerHeight && !spawnInfo.Player.ZoneDungeon ? 0.06f : 0f;
+		return spawner.Player.ZoneRockLayerHeight && !spawner.Player.ZoneDungeon ? 0.06f : 0f;
 	}
 }

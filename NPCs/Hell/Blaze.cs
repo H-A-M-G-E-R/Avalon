@@ -334,6 +334,6 @@ public class Blaze : ModNPC
         }
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) => spawnInfo.Player.ZoneUnderworldHeight && Main.hardMode
+    public override float SpawnChance(NPC.Spawner spawner) => spawner.Player.ZoneUnderworldHeight && Main.hardMode
         ? 0.1f : 0f;
 }

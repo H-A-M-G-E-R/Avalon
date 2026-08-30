@@ -1,5 +1,6 @@
 using Avalon.Common.Players;
 using Avalon.Items.Accessories.PreHardmode;
+using Avalon.Items.Consumables.Critters;
 using Avalon.Items.Food;
 using Avalon.Items.Material.Bars;
 using Avalon.Items.Material.Herbs;
@@ -18,6 +19,7 @@ using Avalon.Items.Tools.PreHardmode;
 using Avalon.Items.Weapons.Magic.Wands;
 using System.Collections.Generic;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -41,26 +43,25 @@ public class RecipeSystem : ModSystem
     {
         string any = Language.GetTextValue("LegacyMisc.37");
 
-        if (RecipeGroup.recipeGroupIDs.ContainsKey("Wood"))
-        {
-            int index = RecipeGroup.recipeGroupIDs["Wood"];
-            RecipeGroup group0 = RecipeGroup.recipeGroups[index];
-            group0.ValidItems.Add(ModContent.ItemType<ApocalyptusWood>());
-            group0.ValidItems.Add(ModContent.ItemType<Coughwood>());
-            group0.ValidItems.Add(ModContent.ItemType<BleachedEbony>());
-            group0.ValidItems.Add(ModContent.ItemType<ResistantWood>());
-        }
+		RecipeGroups.Wood.ValidItems.Add(ModContent.ItemType<ApocalyptusWood>());
+		RecipeGroups.Wood.ValidItems.Add(ModContent.ItemType<Coughwood>());
+		RecipeGroups.Wood.ValidItems.Add(ModContent.ItemType<BleachedEbony>());
+		RecipeGroups.Wood.ValidItems.Add(ModContent.ItemType<ResistantWood>());
 
-        if (RecipeGroup.recipeGroups.TryGetValue(RecipeGroupID.Fruit, out var group1))
-        {
-            group1.ValidItems.Add(ModContent.ItemType<Blackberry>());
-            group1.ValidItems.Add(ModContent.ItemType<Durian>());
-            group1.ValidItems.Add(ModContent.ItemType<Mangosteen>());
-            group1.ValidItems.Add(ModContent.ItemType<Medlar>());
-            group1.ValidItems.Add(ModContent.ItemType<Raspberry>());
-        }
+		RecipeGroups.Fruit.ValidItems.Add(ModContent.ItemType<Blackberry>());
+		RecipeGroups.Fruit.ValidItems.Add(ModContent.ItemType<Durian>());
+		RecipeGroups.Fruit.ValidItems.Add(ModContent.ItemType<Mangosteen>());
+		RecipeGroups.Fruit.ValidItems.Add(ModContent.ItemType<Medlar>());
+		RecipeGroups.Fruit.ValidItems.Add(ModContent.ItemType<Raspberry>());
 
-        List<int> JukeboxTracks = new List<int>
+		RecipeGroups.GemCritter.ValidItems.Add(ModContent.ItemType<PeridotBunny>());
+		RecipeGroups.GemCritter.ValidItems.Add(ModContent.ItemType<PeridotSquirrel>());
+		RecipeGroups.GemCritter.ValidItems.Add(ModContent.ItemType<TourmalineBunny>());
+		RecipeGroups.GemCritter.ValidItems.Add(ModContent.ItemType<TourmalineSquirrel>());
+		RecipeGroups.GemCritter.ValidItems.Add(ModContent.ItemType<ZirconBunny>());
+		RecipeGroups.GemCritter.ValidItems.Add(ModContent.ItemType<ZirconSquirrel>());
+
+		List<int> JukeboxTracks = new List<int>
         {
             ItemID.MusicBoxOverworldDay,
             ItemID.MusicBoxEerie,
@@ -155,28 +156,31 @@ public class RecipeSystem : ModSystem
         boxesList.AddRange(AvalonJukeboxPlayer.AvalonTracks);
         int[] boxes = boxesList.ToArray();
 
-        var groupMusicBoxes = new RecipeGroup(() => $"{any} Music Box", boxes);
-        RecipeGroup.RegisterGroup("MusicBoxes", groupMusicBoxes);
+		var groupMusicBoxes = RecipeGroup.Register(
+			"MusicBoxes",
+			"Music Box",
+			[.. boxes]
+		);
 
-        #region Balloons
-        var groupFartBalloons = new RecipeGroup(() => $"{any} Fart Balloon", new int[]
-        {
-            ItemID.FartInABalloon,
+		#region Balloons
+		var groupFartBalloons = RecipeGroup.Register(
+			"Avalon:FartBalloons",
+			"Fart Balloon",
+			ItemID.FartInABalloon,
             ItemID.BalloonHorseshoeFart
-        });
-        RecipeGroup.RegisterGroup("Avalon:FartBalloons", groupFartBalloons);
-        var groupRocketBalloons = new RecipeGroup(() => $"{any} Rocket Balloon", new int[]
-        {
-            ModContent.ItemType<Items.Accessories.Hardmode.RocketinaBalloon>(),
+        );
+        var groupRocketBalloons = RecipeGroup.Register(
+			"Avalon:RocketBalloons",
+			"Rocket Balloon",
+			ModContent.ItemType<Items.Accessories.Hardmode.RocketinaBalloon>(),
             ModContent.ItemType<Items.Accessories.Hardmode.RocketHorseshoeBalloon>()
-        });
-        RecipeGroup.RegisterGroup("Avalon:RocketBalloons", groupRocketBalloons);
-        var groupSharkronBalloons = new RecipeGroup(() => $"{any} Sharkron Balloon", new int[]
-        {
-            ItemID.SharkronBalloon,
+        );
+        var groupSharkronBalloons = RecipeGroup.Register(
+			"Avalon:SharkronBalloons",
+			"Sharkron Balloon",
+			ItemID.SharkronBalloon,
             ItemID.BalloonHorseshoeSharkron
-        });
-        RecipeGroup.RegisterGroup("Avalon:SharkronBalloons", groupSharkronBalloons);
+        );
 		#endregion Balloons
 
 		#region evil groups
@@ -190,9 +194,10 @@ public class RecipeSystem : ModSystem
 
 		#endregion
 
-		var groupGemStaves = new RecipeGroup(() => $"{any} Gem Staff", new int[]
-        {
-            ItemID.RubyStaff,
+		var groupGemStaves = RecipeGroup.Register(
+			"Avalon:GemStaves",
+			"Gem Staff",
+			ItemID.RubyStaff,
             ItemID.AmberStaff,
             ItemID.TopazStaff,
             ItemID.EmeraldStaff,
@@ -202,8 +207,7 @@ public class RecipeSystem : ModSystem
             ModContent.ItemType<PeridotStaff>(),
             ModContent.ItemType<TourmalineStaff>(),
             ModContent.ItemType<ZirconStaff>()
-        });
-        RecipeGroup.RegisterGroup("Avalon:GemStaves", groupGemStaves);
+        );
 
         List<int> banners = new();
         for (int i = 0; i < NPCLoader.NPCCount; i++)
@@ -219,9 +223,9 @@ public class RecipeSystem : ModSystem
             }
             else
             {
-                if (Item.NPCtoBanner(npc.BannerID()) > 0)
+                if (BannerSystem.NPCtoBanner(npc.BannerID()) > 0)
                 {
-                    int bannerID = ClassExtensions.BannerPlaceStyleToItemID(Item.NPCtoBanner(npc.BannerID()));
+                    int bannerID = ClassExtensions.BannerPlaceStyleToItemID(BannerSystem.NPCtoBanner(npc.BannerID()));
                     if (bannerID > 0)
                     {
                         banners.Add(bannerID);
@@ -230,8 +234,11 @@ public class RecipeSystem : ModSystem
             }
         }
         int[] bannerArray = banners.ToArray();
-        var groupBanners = new RecipeGroup(() => $"{any} Monster Banner", bannerArray);
-        RecipeGroup.RegisterGroup("Avalon:Banners", groupBanners);
+		var groupBanners = RecipeGroup.Register(
+			"Avalon:Banners",
+			"Monster Banner",
+			[.. bannerArray]
+		);
         //{
         //    ItemID.RedBanner,
         //    ItemID.YellowBanner,
@@ -257,92 +264,18 @@ public class RecipeSystem : ModSystem
         //    ItemID.OmegaBanner
         //});
 
-        var groupGoldPickaxe = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.GoldPickaxe)}", new int[]
-        {
-            ItemID.GoldPickaxe,
-            ItemID.PlatinumPickaxe,
-            ModContent.ItemType<BismuthPickaxe>()
-        });
-        RecipeGroup.RegisterGroup("GoldPickaxe", groupGoldPickaxe);
+		var groupGoldPickaxe = RecipeGroup.Register(
+			nameof(ItemID.GoldPickaxe),
+			"ItemName.GoldPickaxe",
+			ItemID.GoldPickaxe,
+			ItemID.PlatinumPickaxe,
+			ModContent.ItemType<BismuthPickaxe>()
+		);
 
-        #region magic storage stuff
-        var groupSilverBarMagicStorage = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.SilverBar)}", new int[]
-        {
-            ItemID.SilverBar,
-            ItemID.TungstenBar,
-            ModContent.ItemType<ZincBar>()
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnySilverBar", groupSilverBarMagicStorage);
-
-        
-
-        var groupChestMS = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.Chest)}", new int[]
-        {
-            ModContent.ItemType<BleachedEbonyChest>(),
-            ModContent.ItemType<CoughwoodChest>(),
-            ModContent.ItemType<OrangeDungeonChest>(),
-            ModContent.ItemType<PurpleDungeonChest>(),
-            ModContent.ItemType<ResistantWoodChest>(),
-            ModContent.ItemType<YellowDungeonChest>(),
-            ModContent.ItemType<HellfireChest>(),
-            ModContent.ItemType<HeartstoneChest>(),
-            ModContent.ItemType<AmberChest>(),
-            ModContent.ItemType<AmethystChest>(),
-            ModContent.ItemType<DiamondChest>(),
-            ModContent.ItemType<EmeraldChest>(),
-            ModContent.ItemType<PeridotChest>(),
-            ModContent.ItemType<RubyChest>(),
-            ModContent.ItemType<SapphireChest>(),
-            ModContent.ItemType<TopazChest>(),
-            ModContent.ItemType<TourmalineChest>(),
-            ModContent.ItemType<ZirconChest>(),
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnyChest", groupChestMS);
-
-        var groupMythrilBarMagicStorage = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.MythrilBar)}", new int[]
-        {
-            ItemID.MythrilBar,
-            ItemID.OrichalcumBar,
-            ModContent.ItemType<NaquadahBar>()
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnyMythrilBar", groupMythrilBarMagicStorage);
-
-        var groupHMAnvilMagicStorage = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.MythrilAnvil)}", new int[]
-        {
-            ItemID.MythrilAnvil,
-            ItemID.OrichalcumAnvil,
-            ModContent.ItemType<NaquadahAnvil>()
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnyHmAnvil", groupHMAnvilMagicStorage);
-
-        var groupHMFurnaceMagicStorage = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.AdamantiteForge)}", new int[]
-        {
-            ItemID.AdamantiteForge,
-            ItemID.TitaniumForge,
-            ModContent.ItemType<TroxiniumForge>()
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnyHmFurnace", groupHMFurnaceMagicStorage);
-
-        var groupDemoniteBarMagicStorage = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.DemoniteBar)}", new int[]
-        {
-            ItemID.DemoniteBar,
-            ItemID.CrimtaneBar,
-            ModContent.ItemType<BacciliteBar>()
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnyDemoniteBar", groupDemoniteBarMagicStorage);
-
-        var groupDemonAltarMagicStorage = new RecipeGroup(() => $"{any} {Language.GetTextValue("MapObject.DemonAltar")}", new int[]
-        {
-            ModContent.ItemType<DemonAltar>(),
-            ModContent.ItemType<CrimsonAltar>(),
-            ModContent.ItemType<IckyAltar>()
-        });
-        RecipeGroup.RegisterGroup("MagicStorage:AnyDemonAltar", groupDemonAltarMagicStorage);
-        #endregion
-
-        var groupTombstones = new RecipeGroup(() => $"{any} Tombstone", new int[]
-        {
-            ItemID.Gravestone,
+		var groupTombstones = RecipeGroup.Register(
+			"Tombstones",
+			"ItemName.Tombstone",
+			ItemID.Gravestone,
             ItemID.Tombstone,
             ItemID.CrossGraveMarker,
             ItemID.Obelisk,
@@ -353,25 +286,25 @@ public class RecipeSystem : ModSystem
             ItemID.RichGravestone3,
             ItemID.RichGravestone4,
             ItemID.RichGravestone5
-        });
-        RecipeGroup.RegisterGroup("Tombstones", groupTombstones);
+        );
 
-        var groupDungeonBricks = new RecipeGroup(() => $"{any} Dungeon Brick", new int[]
-        {
-            ItemID.PinkBrick,
+        var groupDungeonBricks = RecipeGroup.Register(
+			"DungeonBrick",
+			"Dungeon Brick",
+			ItemID.PinkBrick,
             ModContent.ItemType<OrangeBrick>(),
             ModContent.ItemType<YellowBrick>(),
             ItemID.GreenBrick,
             ItemID.BlueBrick,
             ModContent.ItemType<PurpleBrick>()
-        });
-        RecipeGroup.RegisterGroup("DungeonBrick", groupDungeonBricks);
+        );
 
         //RecipeGroup.RegisterGroup("MagicStorage:AnyTombstone", groupTombstones);
 
-        var groupWings = new RecipeGroup(() => $"{any} Wings", new int[]
-        {
-            ItemID.DemonWings,
+        var groupWings = RecipeGroup.Register(
+			"Wings",
+			"Wings",
+			ItemID.DemonWings,
             ItemID.AngelWings,
             ItemID.ButterflyWings,
             ItemID.FairyWings,
@@ -397,17 +330,17 @@ public class RecipeSystem : ModSystem
             ItemID.MothronWings,
             ItemID.BetsyWings,
             ItemID.SteampunkWings,
-            ItemID.RainbowWings,
+            ItemID.RainbowWings//,
             //ModContent.ItemType<ContagionWings>(),
             //ModContent.ItemType<CrimsonWings>(),
             //ModContent.ItemType<CorruptionWings>(),
             //ModContent.ItemType<HolyWings>(),
             //ModContent.ItemType<EtherealWings>()
-        });
-        RecipeGroup.RegisterGroup("Wings", groupWings);
-        var groupWorkBenches = new RecipeGroup(() => $"{any} Work Bench", new int[]
-        {
-            ItemID.WorkBench,
+        );
+        var groupWorkBenches = RecipeGroup.Register(
+			"WorkBenches",
+			"ItemName.WorkBench",
+			ItemID.WorkBench,
             ItemID.EbonwoodWorkBench,
             ItemID.BlueDungeonWorkBench,
             ItemID.SteampunkWorkBench,
@@ -459,115 +392,91 @@ public class RecipeSystem : ModSystem
             ModContent.ItemType<OrangeDungeonWorkBench>(),
             ModContent.ItemType<PurpleDungeonWorkbench>(),
             ModContent.ItemType<YellowDungeonWorkBench>(),
-            ModContent.ItemType<ResistantWoodWorkBench>(),
+            ModContent.ItemType<ResistantWoodWorkBench>()//,
             //ModContent.ItemType<Items.Placeable.Crafting.VertebraeWorkBench>()
-        });
-        RecipeGroup.RegisterGroup("WorkBenches", groupWorkBenches);
+        );
 
-        var groupHerbs = new RecipeGroup(() => $"{any} Herb", new int[]
-        {
-            ItemID.Blinkroot,
-            ItemID.Fireblossom,
-            ItemID.Deathweed,
-            ItemID.Shiverthorn,
-            ItemID.Waterleaf,
-            ItemID.Moonglow,
-            ItemID.Daybloom,
-            ModContent.ItemType<Bloodberry>(),
-            ModContent.ItemType<Sweetstem>(),
-            ModContent.ItemType<Barfbush>(),
-            ModContent.ItemType<Holybird>(),
-            //ModContent.ItemType<Items.TwilightPlume>(),
-        });
-        RecipeGroup.RegisterGroup("Herbs", groupHerbs);
+		var groupHerbs = RecipeGroup.Register(
+			"Herbs",
+			"Herb",
+			ItemID.Blinkroot,
+			ItemID.Fireblossom,
+			ItemID.Deathweed,
+			ItemID.Shiverthorn,
+			ItemID.Waterleaf,
+			ItemID.Moonglow,
+			ItemID.Daybloom,
+			ModContent.ItemType<Bloodberry>(),
+			ModContent.ItemType<Sweetstem>(),
+			ModContent.ItemType<Barfbush>(),
+			ModContent.ItemType<Holybird>()//,
+			//ModContent.ItemType<Items.TwilightPlume>(),
+		);
 
-        var groupTier1Watch = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.CopperWatch)}", new int[]
-        {
-            ItemID.CopperWatch,
-            ItemID.TinWatch,
-            ModContent.ItemType<BronzeWatch>()
-        });
-        RecipeGroup.RegisterGroup("CopperWatch", groupTier1Watch);
+		var groupTier1Watch = RecipeGroup.Register(
+			nameof(ItemID.CopperWatch),
+			"ItemName.CopperWatch",
+			ItemID.CopperWatch,
+			ItemID.TinWatch,
+			ModContent.ItemType<BronzeWatch>()
+		);
 
-        var groupTier2Watch = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.SilverWatch)}", new int[]
-        {
-            ItemID.SilverWatch,
-            ItemID.TungstenWatch,
-            ModContent.ItemType<ZincWatch>()
-        });
-        RecipeGroup.RegisterGroup("SilverWatch", groupTier2Watch);
+		var groupTier2Watch = RecipeGroup.Register(
+			nameof(ItemID.SilverWatch),
+			"ItemName.SilverWatch",
+			ItemID.SilverWatch,
+			ItemID.TungstenWatch,
+			ModContent.ItemType<ZincWatch>()
+		);
 
-        var groupTier3Watch = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.GoldWatch)}", new int[]
-        {
-            ItemID.GoldWatch,
-            ItemID.PlatinumWatch,
-            ModContent.ItemType<BismuthWatch>()
-        });
-        RecipeGroup.RegisterGroup("GoldWatch", groupTier3Watch);
+		var groupTier3Watch = RecipeGroup.Register(
+			nameof(ItemID.GoldWatch),
+			"ItemName.GoldWatch",
+			ItemID.GoldWatch,
+			ItemID.PlatinumWatch,
+			ModContent.ItemType<BismuthWatch>()
+		);
 
-        var groupGoldBar = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.GoldBar)}", new int[]
-        {
-            ItemID.GoldBar,
-            ItemID.PlatinumBar,
-            ModContent.ItemType<BismuthBar>()
-        });
-        RecipeGroup.RegisterGroup("GoldBar", groupGoldBar);
+		var groupGoldBar = RecipeGroup.Register(
+			nameof(ItemID.GoldBar),
+			"ItemName.GoldBar",
+			ItemID.GoldBar,
+			ItemID.PlatinumBar,
+			ModContent.ItemType<BismuthBar>()
+		);
 
-        var groupEvilBar = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.DemoniteBar)}", new int[]
-        {
-            ItemID.DemoniteBar,
-            ItemID.CrimtaneBar,
-            ModContent.ItemType<BacciliteBar>()
-        });
-        RecipeGroup.RegisterGroup("DemoniteBar", groupEvilBar);
+		var groupEvilBar = RecipeGroup.Register(
+			nameof(ItemID.DemoniteBar),
+			"ItemName.DemoniteBar",
+			ItemID.DemoniteBar,
+			ItemID.CrimtaneBar,
+			ModContent.ItemType<BacciliteBar>()
+		);
 
-        if (RecipeGroup.recipeGroupIDs.ContainsKey("IronBar"))
-        {
-            int index = RecipeGroup.recipeGroupIDs["IronBar"];
-            RecipeGroup groupWood = RecipeGroup.recipeGroups[index];
-            groupWood.ValidItems.Add(ModContent.ItemType<NickelBar>());
-        }
+		RecipeGroups.IronBar.ValidItems.Add(ModContent.ItemType<NickelBar>());
 
-        var groupCopperBar = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.CopperBar)}", new int[]
-        {
-            ItemID.CopperBar,
-            ItemID.TinBar,
-            ModContent.ItemType<BronzeBar>()
-        });
-        RecipeGroup.RegisterGroup("CopperBar", groupCopperBar);
+		var groupCopperBar = RecipeGroup.Register(
+			nameof(ItemID.CopperBar),
+			"ItemName.CopperBar",
+			ItemID.CopperBar,
+			ItemID.TinBar,
+			ModContent.ItemType<BronzeBar>()
+		);
 
-        var groupSilverBar = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.SilverBar)}", new int[]
-        {
-            ItemID.SilverBar,
-            ItemID.TungstenBar,
-            ModContent.ItemType<ZincBar>()
-        });
-        RecipeGroup.RegisterGroup("SilverBar", groupSilverBar);
+		var groupSilverBar = RecipeGroup.Register(
+			nameof(ItemID.SilverBar),
+			"ItemName.SilverBar",
+			ItemID.SilverBar,
+			ItemID.TungstenBar,
+			ModContent.ItemType<ZincBar>()
+		);
 
-        #region thorium stuff
-        var groupThoriumCobalt = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.CobaltBar)}", new int[]
-        {
-            ItemID.CobaltBar,
-            ItemID.PalladiumBar,
-            ModContent.ItemType<DurataniumBar>()
-        });
-        RecipeGroup.RegisterGroup("CobaltBar", groupThoriumCobalt);
+		#region thorium stuff
+		RecipeGroups.CobaltBar.ValidItems.Add(ModContent.ItemType<DurataniumBar>());
 
-        var groupThoriumMythril = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.MythrilBar)}", new int[]
-        {
-            ItemID.MythrilBar,
-            ItemID.OrichalcumBar,
-            ModContent.ItemType<NaquadahBar>()
-        });
-        RecipeGroup.RegisterGroup("MythrilBar", groupThoriumMythril);
+		RecipeGroups.MythrilBar.ValidItems.Add(ModContent.ItemType<NaquadahBar>());
 
-        var groupThoriumAdamantite = new RecipeGroup(() => $"{any} {Lang.GetItemNameValue(ItemID.AdamantiteBar)}", new int[]
-        {
-            ItemID.AdamantiteBar,
-            ItemID.TitaniumBar,
-            ModContent.ItemType<TroxiniumBar>()
-        });
-        RecipeGroup.RegisterGroup("AdamantiteBar", groupThoriumAdamantite);
-        #endregion
-    }
+		RecipeGroups.AdamantiteBar.ValidItems.Add(ModContent.ItemType<TroxiniumBar>());
+		#endregion
+	}
 }

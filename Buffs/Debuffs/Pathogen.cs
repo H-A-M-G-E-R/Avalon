@@ -12,7 +12,7 @@ public class Pathogen : ModBuff
     public override void SetStaticDefaults()
     {
         Main.debuff[Type] = true;
-		BuffID.Sets.LongerExpertDebuff[Type] = true;
+		BuffID.Sets.BuffTimeIsExtendedWithGameDifficulty[Type] = true;
     }
     public override void Update(NPC npc, ref int buffIndex)
     {
@@ -20,7 +20,7 @@ public class Pathogen : ModBuff
         {
             Dust d = Dust.NewDustDirect(npc.position, npc.width, npc.height, ModContent.DustType<PathogenDust>(), 0, 0, 128, default, 1);
             d.noGravity = true;
-            d.noLightEmittence= true;
+            d.noLightEmittance= true;
             d.velocity += npc.velocity;
             d.fadeIn = 1.3f;
         }
@@ -32,7 +32,7 @@ public class Pathogen : ModBuff
         {
             Dust d = Dust.NewDustDirect(player.position, player.width, player.height, ModContent.DustType<PathogenDust>(), 0, 0, 128, default, 1);
             d.noGravity = true;
-            d.noLightEmittence = true;
+            d.noLightEmittance = true;
             d.velocity += player.velocity;
             d.fadeIn = 1.3f;
         }

@@ -336,11 +336,11 @@ public class EnemyGauntletPlayer : ModPlayer
 			}
 			if (gauntlet.IsPlayerInside(Player))
 			{
-				Player.AddBuff(BuffID.NoBuilding, 2, true);
+				Player.AddBuff(BuffID.NoBuilding, 2);
 			}
 			else
 			{
-				Player.AddBuff(BuffID.WitheredWeapon, 2, true);
+				Player.AddBuff(BuffID.WitheredWeapon, 2);
 				Player.lifeRegen -= 50;
 			}
 		}

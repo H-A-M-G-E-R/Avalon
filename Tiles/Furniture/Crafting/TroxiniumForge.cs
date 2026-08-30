@@ -33,7 +33,7 @@ public class TroxiniumForge : ModTile
         b = 0.5f;
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         if (Main.rand.NextBool(40))
         {

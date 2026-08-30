@@ -572,17 +572,17 @@ public class AvalonGlobalNPC : GlobalNPC
 			Dust.NewDust(npc.position, npc.width, npc.height, DustID.DungeonSpirit);
 		}
 	}
-	public override void EditSpawnPool(IDictionary<int, float> pool, NPCSpawnInfo spawnInfo)
+	public override void EditSpawnPool(IDictionary<int, float> pool, NPC.Spawner spawner)
 	{
 		//if (spawnInfo.Player.InModBiome<Tropics>() && !spawnInfo.Player.InPillarZone())
 		//{
 		//	pool[0] = 0;
 		//}
-		if (spawnInfo.Player.InModBiome<UndergroundTropics>())
+		if (spawner.Player.InModBiome<UndergroundTropics>())
 		{
 			pool[0] = 0;
 		}
-		if (spawnInfo.Player.InModBiome<ContagionCaveDesert>())
+		if (spawner.Player.InModBiome<ContagionCaveDesert>())
 		{
 			pool[0] = 0;
 			//pool.Add(NPCID.DesertScorpionWalk, 0.35f);
@@ -599,7 +599,7 @@ public class AvalonGlobalNPC : GlobalNPC
 				pool.Add(NPCID.DuneSplicerHead, 0.2f);
 			}
 		}
-		if (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneHellcastle)
+		if (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneHellcastle)
 		{
 			pool[0] = 0;
 			pool.Add(NPCID.Demon, 0.2f);
@@ -608,7 +608,7 @@ public class AvalonGlobalNPC : GlobalNPC
 			pool.Add(ModContent.NPCType<HellboundLizard>(), 1f);
 			pool.Add(ModContent.NPCType<Gargoyle>(), 1f);
 		}
-		if (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion && !spawnInfo.Player.InPillarZone())// && !spawnInfo.Player.HasBuff(ModContent.BuffType<SilenceCandleBuff>()))
+		if (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion && !spawner.Player.InPillarZone())// && !spawnInfo.Player.HasBuff(ModContent.BuffType<SilenceCandleBuff>()))
 		{
 			pool[0] = 0;
 		}

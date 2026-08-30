@@ -24,7 +24,7 @@ public class FeroziumIceSword : ModItem
 	public override void AddRecipes()
 	{
 		Recipe.Create(Type)
-			.AddRecipeGroup("AdamantiteBar", 18)
+			.AddRecipeGroup(RecipeGroups.AdamantiteBar, 18)
 			.AddIngredient(ItemID.FrostCore)
 			.AddIngredient(ModContent.ItemType<FrigidShard>())
 			.AddTile(TileID.MythrilAnvil)

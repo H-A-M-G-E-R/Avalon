@@ -9,9 +9,9 @@ public class HellboundHalberdSpear : SpearTemplate
 {
 	protected override float HoldoutRangeMax => 230;
 	protected override float HoldoutRangeMin => 40;
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		return base.PreDraw(ref lightColor);
+		return base.PreDraw(player, ref lightColor);
 	}
 	public override void AI()
 	{

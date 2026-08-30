@@ -170,9 +170,8 @@ public class IridiumGreatswordSwing : ModProjectile, ISyncedOnHitEffect
 		Projectile.Center = ((Vector2)player.HandPosition).Floor();
 		Projectile.position -= Projectile.velocity;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		Player player = Main.player[Projectile.owner];
 		float glow = 0;
 		if (Projectile.ai[1] > 0)
 			glow = Utils.Remap(Projectile.ai[1], 0, 0.6f * Projectile.ai[0], Projectile.ai[0], 0);

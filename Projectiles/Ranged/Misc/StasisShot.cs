@@ -123,7 +123,7 @@ public class StasisShot : ModProjectile
 		}
 		return false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		if (Projectile.ai[2] == 0)
 		{

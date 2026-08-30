@@ -82,9 +82,9 @@ public class BaskingSpewer : ModNPC
 	{
 		return true;
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		return Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY].HasTile && spawnInfo.Player.InModBiome<Biomes.ContagionDesert>() && Main.hardMode ? 0.2f : 0f;
+		return Main.tile[spawner.SpawnTileX, spawner.SpawnTileY].HasTile && spawner.Player.InModBiome<Biomes.ContagionDesert>() && Main.hardMode ? 0.2f : 0f;
 	}
 	public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
 	{

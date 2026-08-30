@@ -47,7 +47,7 @@ public class PhantasmBossBag : ModItem
 		return Color.Lerp(lightColor, Color.White, 0.4f);
 	}
 
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		// Spawn some light and dust when dropped in the world
 		Lighting.AddLight(Item.Center, Color.White.ToVector3() * 0.4f);
@@ -70,7 +70,7 @@ public class PhantasmBossBag : ModItem
 		}
 	}
 
-	public override bool PreDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+	public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 	{
 		// Draw the periodic glow effect behind the item when dropped in the world (hence PreDrawInWorld)
 		Texture2D texture = TextureAssets.Item[Item.type].Value;

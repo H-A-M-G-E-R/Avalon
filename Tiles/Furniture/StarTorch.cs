@@ -73,7 +73,7 @@ namespace Avalon.Tiles.Furniture
             //TileObjectData.newAlternate.AnchorWall = true;
             TileObjectData.addAlternate(0);
             TileObjectData.addTile(Type);
-            AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+            TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
             AddMapEntry(new Color(253, 221, 3), Language.GetText("ItemName.Torch"));
             //DustType = DustID.JungleSpore;
             AdjTiles = new int[] { TileID.Torches };
@@ -92,7 +92,7 @@ namespace Avalon.Tiles.Furniture
 			{
 				timer--;
 			}
-			if (Main.rand.NextBool(5) && Main.tile[i, j].TileFrameX < 66 && Main.hasFocus && timer < 25)
+			if (Main.rand.NextBool(5) && Main.tile[i, j].TileFrameX < 66 && FocusHelper.AllowGameplayInputs/* tModPorter Suggestion: Also consider FocusHelper.AllowUIInputs, FocusHelper.UpdateVisualEffects, or others */ && timer < 25)
 			{
 				timer += 26;
 				//ParticleOrchestraSettings pos = new ParticleOrchestraSettings();

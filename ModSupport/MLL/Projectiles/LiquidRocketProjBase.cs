@@ -34,7 +34,7 @@ public abstract class LiquidRocketProjBase : LiquidSpawningExplosionBase
 	}
 
 	// more accurate drawing, for practically the same you can simply add "DrawOriginOffsetY = -7" in SetDefaults.
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Vector2 position = Projectile.Center - Main.screenPosition;
 		Texture2D texture = TextureAssets.Projectile[Type].Value;

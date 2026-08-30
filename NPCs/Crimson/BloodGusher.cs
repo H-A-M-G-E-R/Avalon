@@ -164,9 +164,9 @@ public class BloodGusher : ModNPC
 		loot.Add(ItemDropRule.ByCondition(new Conditions.DontStarveIsNotUp(), ItemID.PigPetItem, 1500));
 	}
 
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		return spawnInfo.Player.ZoneCrimson && Main.hardMode ? 0.2f : 0;
+		return spawner.Player.ZoneCrimson && Main.hardMode ? 0.2f : 0;
 	}
 
 	public override void HitEffect(NPC.HitInfo hit)

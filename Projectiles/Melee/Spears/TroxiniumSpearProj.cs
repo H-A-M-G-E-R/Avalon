@@ -38,11 +38,10 @@ public class TroxiniumSpearProj : SpearTemplate
 	}
 	protected override float HoldoutRangeMax => 180;
 	protected override float HoldoutRangeMin => 40;
-	public override void PostDraw(Color lightColor)
+	public override void PostDraw(Player player, Color lightColor)
 	{
 		SpriteEffects dir = SpriteEffects.None;
 		float rotation = (float)Math.Atan2(Projectile.velocity.Y, Projectile.velocity.X) + 2.355f;
-		Player player = Main.player[Projectile.owner];
 		Vector2 origin = Vector2.Zero;
 		if (player.direction == 1)
 		{

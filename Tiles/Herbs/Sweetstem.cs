@@ -25,7 +25,7 @@ public class Sweetstem : ModHerb
         TileID.Sets.TileCutIgnore.Regrowth[Type] = true;
         base.SetStaticDefaults();
     }
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         Tile tile = Framing.GetTileSafely(i, j); //Safe way of getting a tile instance
         PlantStage stage = GetStage(i, j); //The current stage of the herb

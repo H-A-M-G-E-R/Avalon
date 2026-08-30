@@ -25,7 +25,7 @@ public abstract class LifePickupItem : ModItem
 	{
 		Item.Size = new Vector2(12);
 	}
-	public override bool GrabStyle(Player player)
+	public override bool GrabStyle(WorldItem item, Player player)
 	{
 		if (player.lifeMagnet)
 		{
@@ -42,19 +42,19 @@ public abstract class LifePickupItem : ModItem
 			Item.velocity.Y = (Item.velocity.Y * (float)(acc - 1) + num2) / (float)acc;
 			return true;
 		}
-		return base.GrabStyle(player);
+		return base.GrabStyle(item, player);
 	}
-	public override bool OnPickup(Player player)
+	public override bool OnPickup(WorldItem item, Player player)
 	{
 		SoundEngine.PlaySound(SoundID.Grab, player.position);
 		player.Heal((int)Math.Round(HealAmount * player.GetModPlayer<AvalonPlayer>().HeartPickupValueMultiplier));
 		return false;
 	}
-	public override void GrabRange(Player player, ref int grabRange)
+	public override void GrabRange(WorldItem item, Player player, ref int grabRange)
 	{
 		grabRange = player.GetItemGrabRange(ContentSamples.ItemsByType[ItemID.Heart]);
 	}
-	public override bool CanPickup(Player player)
+	public override bool CanPickup(WorldItem item, Player player)
 	{
 		return true;
 	}

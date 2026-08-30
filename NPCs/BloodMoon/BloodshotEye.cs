@@ -164,9 +164,9 @@ public class BloodshotEye : ModNPC
         }
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if (Main.bloodMoon && !spawnInfo.Player.InPillarZone() && spawnInfo.Player.ZoneOverworldHeight)
+        if (Main.bloodMoon && !spawner.Player.InPillarZone() && spawner.Player.ZoneOverworldHeight)
         {
             if (Main.bloodMoon && !NPC.downedBoss1 && !NPC.downedBoss2 && !NPC.downedBoss3)
             {

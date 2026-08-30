@@ -148,7 +148,7 @@ public class FallenHero : ModNPC
         }
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) =>
-        spawnInfo.Player.ZoneOverworldHeight && !spawnInfo.Player.InPillarZone() && Main.bloodMoon
+    public override float SpawnChance(NPC.Spawner spawner) =>
+        spawner.Player.ZoneOverworldHeight && !spawner.Player.InPillarZone() && Main.bloodMoon
             ? 0.12f : 0f;
 }

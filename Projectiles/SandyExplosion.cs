@@ -42,7 +42,7 @@ public class SandyExplosion : ModProjectile
         if (Projectile.ai[0] >= (3 * 7)) Projectile.Kill();
     }
 
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         Main.spriteBatch.End();
         Main.spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.Additive, null, null, null, null, Main.GameViewMatrix.ZoomMatrix);

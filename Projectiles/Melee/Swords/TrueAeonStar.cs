@@ -37,7 +37,7 @@ public class TrueAeonStar : ModProjectile
 		Projectile.tileCollide = false;
 		Projectile.noEnchantmentVisuals = true;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type].Value;
 		DrawData d = new DrawData(tex, Vector2.Zero, new Rectangle(0, 0, tex.Width, tex.Height / 2), Color.White with { A = 128 }, 0, tex.Size() / new Vector2(2, 4), Projectile.scale, SpriteEffects.None);
@@ -136,7 +136,7 @@ public class TrueAeonStar : ModProjectile
 				Dust d = Dust.NewDustPerfect(Projectile.Center, dustType);
 				d.color = Main.rand.NextBool(3) ? d.color = new Color(Main.rand.Next(200), 100, 255, 0) : Color.Black;
 				d.noGravity = true;
-				d.noLightEmittence = true;
+				d.noLightEmittance = true;
 				d.velocity = Projectile.velocity.RotatedByRandom(0.5f) * Main.rand.NextFloat(4);
 				d.scale += Main.rand.NextFloat();
 			}
@@ -234,7 +234,7 @@ public class TrueAeonStar : ModProjectile
 						Dust d = Dust.NewDustPerfect(Vector2.Lerp(StarPositions[i], StarPositions[i - 1], Main.rand.NextFloat()) + Projectile.Size / 2, dustType);
 						d.color = new Color(Main.rand.Next(200), 100, 255, 32);
 						d.noGravity = true;
-						d.noLightEmittence = true;
+						d.noLightEmittance = true;
 						d.velocity = Main.rand.NextVector2Circular(3, 3) + StarPositions[i].DirectionTo(StarPositions[i - 1]) * -3;
 					}
 				}

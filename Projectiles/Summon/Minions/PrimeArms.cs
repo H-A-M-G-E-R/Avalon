@@ -17,7 +17,7 @@ public class PrimeArmsCounter : ModProjectile
 	public override void SetStaticDefaults()
 	{
 		ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
-		ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
+		ProjectileID.Sets.MinionTargetingFeature[Projectile.type] = true;
 		Main.projPet[Projectile.type] = true;
 	}
 	public override void SetDefaults()
@@ -284,7 +284,7 @@ public class PriminiCannon : ModProjectile
 	{
 		return false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type].Value;
 		Rectangle sourceRect = new(0, tex.Height / 3 * Projectile.frame, tex.Width, tex.Height / 3);
@@ -490,7 +490,7 @@ public class PriminiLaser : ModProjectile
 	{
 		return false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type].Value;
 		Rectangle sourceRect = new(0, tex.Height / 3 * Projectile.frame, tex.Width, tex.Height / 3);
@@ -726,7 +726,7 @@ public class PriminiSaw : ModProjectile
 		if (target.type == NPCID.TargetDummy) return false;
 		return base.CanHitNPC(target);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type].Value;
 		Rectangle sourceRect = new(0, tex.Height / 3 * Projectile.frame, tex.Width, tex.Height / 3);
@@ -960,7 +960,7 @@ public class PriminiVice : ModProjectile
 		if (target.type == NPCID.TargetDummy) return false;
 		return base.CanHitNPC(target);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type].Value;
 		Rectangle sourceRect = new(0, tex.Height / 3 * Projectile.frame, tex.Width, tex.Height / 3);

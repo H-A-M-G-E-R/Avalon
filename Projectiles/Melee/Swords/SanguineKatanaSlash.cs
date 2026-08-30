@@ -17,7 +17,7 @@ public class SanguineKatanaSlash : EnergySlashTemplate, ISyncedOnHitEffect
 {
 	public override string Texture => $"Terraria/Images/Projectile_{ProjectileID.TheHorsemansBlade}";
 	public override LocalizedText DisplayName => ModContent.GetInstance<SanguineKatana>().DisplayName;
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		DrawSlash(Color.Black * 0.2f, Color.Black * 0.2f, Color.Red * 0.2f, Color.Black * 0.5f, 512, 1f, MathHelper.PiOver4, -0.2f, 0, false);
 		DrawSlash(new Color(255, 0, 0) * 0.6f, new Color(128, 0, 0) * 0.5f, new Color(0, 0, 0) * 0.5f, Color.Red * 0.2f, 512, 1f, 0, -0.2f, 0, true);

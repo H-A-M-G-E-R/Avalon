@@ -17,7 +17,7 @@ public abstract class GastrominiSummon : ModProjectile
 
 		ProjectileID.Sets.MinionSacrificable[Projectile.type] = true; // This is needed so your minion can properly spawn when summoned and replaced when other minions are summoned
 																	  //ProjectileID.Sets.CultistIsResistantTo[Projectile.type] = true; // Make the cultist resistant to this projectile, as it's resistant to all homing projectiles.
-		ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
+		ProjectileID.Sets.MinionTargetingFeature[Projectile.type] = true;
 	}
 
 	public override void SetDefaults()

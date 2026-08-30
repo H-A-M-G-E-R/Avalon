@@ -58,9 +58,9 @@ public class CursedFlamer : ModNPC
         BannerItem = ModContent.ItemType<Items.Banners.CursedFlamerBanner>();
         DrawOffsetY = 82 / 2 - NPC.height / 2;
 	}
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return Main.hardMode && spawnInfo.Player.ZoneCorrupt && !spawnInfo.Player.InPillarZone() && spawnInfo.SpawnTileY < Main.maxTilesY - 200 ? 0.3f : 0f;
+        return Main.hardMode && spawner.Player.ZoneCorrupt && !spawner.Player.InPillarZone() && spawner.SpawnTileY < Main.maxTilesY - 200 ? 0.3f : 0f;
     }
     //public override void FindFrame(int frameHeight)
     //{

@@ -16,7 +16,7 @@ public class NickelPickaxe : ModItem
 	{
 		Recipe.Create(Type)
 			.AddIngredient(ModContent.ItemType<Material.Bars.NickelBar>(), 10)
-			.AddRecipeGroup(RecipeGroupID.Wood, 4)
+			.AddRecipeGroup(RecipeGroups.Wood, 4)
 			.AddTile(TileID.Anvils)
 			.Register();
 	}

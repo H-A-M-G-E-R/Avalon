@@ -18,7 +18,7 @@ public class UndergroundTropics : ModBiome
     {
         get
         {
-            return MusicID.JungleUnderground;
+            return MusicID.UndergroundJungle;
             //return ExxoAvalonOrigins.MusicMod != null ? MusicLoader.GetMusicSlot(ExxoAvalonOrigins.MusicMod, "Sounds/Music/UndergroundTropics") : MusicID.JungleUnderground;
         }
     }

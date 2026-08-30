@@ -60,13 +60,13 @@ public class SicklyVulture : ModNPC
         loot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Material.Beak>(), 2));
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if (spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion)
+        if (spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion)
         {
             if (Main.hardMode)
             {
-                if (Main.tile[spawnInfo.SpawnTileX, spawnInfo.SpawnTileY + 1].TileType == ModContent.TileType<Snotsand>())
+                if (Main.tile[spawner.SpawnTileX, spawner.SpawnTileY + 1].TileType == ModContent.TileType<Snotsand>())
                 {
                     return 1f;
                 }

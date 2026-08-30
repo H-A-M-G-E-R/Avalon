@@ -32,7 +32,7 @@ public class IridiumGreatswordBoomLarge : ModProjectile
 		Projectile.timeLeft = 10;
 		DrawOriginOffsetY = 12;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type];
 		var frame = tex.Frame(1, Main.projFrames[Type], 0, Projectile.frame);

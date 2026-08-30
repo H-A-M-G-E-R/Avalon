@@ -83,10 +83,10 @@ public class ContagionMimic : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 5, 10));
         npcLoot.Add(ItemDropRule.Common(ItemID.GreaterManaPotion, 1, 5, 15));
     }
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        if (Main.hardMode && spawnInfo.SpawnTileY > Main.worldSurface && spawnInfo.Player.RollLuck(Main.tenthAnniversaryWorld ? 25 : 75) == 0 &&
-            spawnInfo.Player.InModBiome<Biomes.UndergroundContagion>())
+        if (Main.hardMode && spawner.SpawnTileY > Main.worldSurface && spawner.Player.RollLuck(Main.tenthAnniversaryWorld ? 25 : 75) == 0 &&
+            spawner.Player.InModBiome<Biomes.UndergroundContagion>())
         {
             return 1;
         }

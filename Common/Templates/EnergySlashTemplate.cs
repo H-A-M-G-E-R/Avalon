@@ -16,7 +16,7 @@ public abstract class EnergySlashTemplate : ModProjectile
         Projectile.CloneDefaults(ProjectileID.NightsEdge);
         Projectile.penetrate = 3;
     }
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         return false;
     }

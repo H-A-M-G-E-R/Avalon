@@ -35,11 +35,6 @@ public class SoulDagger : ModProjectile
 	{
 		NPCs.Bosses.Hardmode.Phantasm.Phantasm.ApplyShadowCurse(target);
 	}
-	public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
-	{
-		if (Projectile.tileCollide)
-			behindNPCsAndTiles.Add(index);
-	}
 	public override void AI()
 	{
 		Lighting.AddLight(Projectile.Center, new Vector3(0f, 1f, 1f) * 0.2f);
@@ -145,8 +140,13 @@ public class SoulDagger : ModProjectile
 	}
 
 	public int randTex = Main.rand.Next(3);
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
+		if (Projectile.tileCollide)
+			Projectile.drawLayer = ProjectileDrawLayerID.BehindNPCsAndTiles;
+		else
+			Projectile.drawLayer = ProjectileDrawLayerID.None;
+
 		Asset<Texture2D> texture = TextureAssets.Projectile[Type];
 		Rectangle frame = new Rectangle(0, texture.Height() / 3 * randTex, texture.Width(),texture.Height() / 3);
 		Vector2 drawPos = Projectile.Center - Main.screenPosition;

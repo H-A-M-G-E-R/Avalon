@@ -41,7 +41,7 @@ public class MechanicalWasp : ModItem
 	{
 		CreateRecipe()
 			.AddIngredient(ItemID.Stinger, 6)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 5)
+			.AddRecipeGroup(RecipeGroups.IronBar, 5)
 			.AddIngredient(ItemID.SoulofFlight, 9)
 			.AddIngredient(ItemID.SoulofNight, 6)
 			.AddTile(TileID.MythrilAnvil)

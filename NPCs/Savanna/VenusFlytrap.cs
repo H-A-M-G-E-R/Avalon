@@ -140,9 +140,9 @@ public class VenusFlytrap : ModNPC
 		NPC.rotation = NPC.Center.DirectionTo(Main.player[NPC.target].Center).ToRotation() + MathHelper.Pi / 2;
 		//NPC.velocity = Vector2.Zero;
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		return Main.hardMode && spawnInfo.Player.InModBiome<Biomes.UndergroundTropics>() && !spawnInfo.Player.InPillarZone() ? 0.3f : 0f;
+		return Main.hardMode && spawner.Player.InModBiome<Biomes.UndergroundTropics>() && !spawner.Player.InPillarZone() ? 0.3f : 0f;
 	}
 	public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 	{

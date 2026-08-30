@@ -526,12 +526,12 @@ public abstract class FlailTemplate : ModProjectile
 	private readonly UnifiedRandom chainSeed = new();
 
 	// PreDraw is used to draw a chain and trail before the projectile is drawn normally.
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Vector2 playerArmPosition = Main.GetPlayerArmPosition(Projectile);
 
 		// This fixes a vanilla GetPlayerArmPosition bug causing the chain to draw incorrectly when stepping up slopes. The flail itself still draws incorrectly due to another similar bug. This should be removed once the vanilla bug is fixed.
-		playerArmPosition.Y -= Main.player[Projectile.owner].gfxOffY;
+		playerArmPosition.Y -= player.gfxOffY;
 
 		if (ChainTextures.TryGetValue(Type, out Asset<Texture2D> chainTexture))
 		{

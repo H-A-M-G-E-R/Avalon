@@ -54,7 +54,7 @@ public class CougherCough : ModProjectile
 		target.AddBuff(ModContent.BuffType<Buffs.Debuffs.Pathogen>(), 5 * 60);
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		ClassExtensions.DrawGas(TextureAssets.Projectile[Type].Value, lightColor, Projectile, -3, 8);
 		return false;

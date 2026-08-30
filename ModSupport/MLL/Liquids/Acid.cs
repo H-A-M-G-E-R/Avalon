@@ -202,7 +202,7 @@ public class Acid : ModLiquid
 			// doNothing();
 
 			//play the liquid merge sound
-			if (!WorldGen.gen)
+			if (!WorldGen.isGeneratingOrLoadingWorld)
 			{
 				LiquidHooks.PlayLiquidChangeSound(tileX, tileY, Type, otherLiquid);
 			}
@@ -233,7 +233,7 @@ public class Acid : ModLiquid
 			tile.LiquidAmount = 0;
 			tile.LiquidType = 0;
 			//play liquid merge sound
-			if (!WorldGen.gen)
+			if (!WorldGen.isGeneratingOrLoadingWorld)
 			{
 				LiquidHooks.PlayLiquidChangeSound(tileX, tileY, Type, otherLiquid);
 			}
@@ -315,7 +315,7 @@ public class Acid : ModLiquid
 			npc.AddBuff(ModContent.BuffType<Dissolving>(), 60 * 7);
 		}
 	}
-	public override void ItemLiquidCollision(Item item, ref Vector2 wetVelocity, ref float gravity, ref float maxFallSpeed)
+	public override void ItemLiquidCollision(WorldItem item, ref Vector2 wetVelocity, ref float gravity, ref float maxFallSpeed)
 	{
 		if (!item.beingGrabbed)
 		{
@@ -329,8 +329,8 @@ public class Acid : ModLiquid
 					NetMessage.SendData(MessageID.SyncItem, -1, -1, null, item.whoAmI);
 				}
 
-				SoundEngine.PlaySound(SoundID.LiquidsWaterLava, item.position);
-				SoundEngine.PlaySound(SoundID.SplashWeak, item.position);
+				SoundEngine.PlaySound(SoundID.LiquidsWaterLava);
+				SoundEngine.PlaySound(SoundID.SplashWeak);
 
 				for (int n = 0; n < 5; n++)
 				{

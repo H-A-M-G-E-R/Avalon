@@ -20,7 +20,7 @@ public class FallenStarTile : ModTile
         TileObjectData.newTile.UsesCustomCanPlace = false;
         TileObjectData.newTile.LavaDeath = false;
         TileObjectData.addTile(Type);
-        AddToArray(ref TileID.Sets.RoomNeeds.CountsAsDoor);
+        TileID.Sets.RoomNeeds.CountsAsDoor[Type] = true;
         TileID.Sets.DisableSmartCursor[Type] = true;
         DustType = DustID.GemTopaz;
     }

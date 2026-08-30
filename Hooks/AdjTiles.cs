@@ -80,7 +80,6 @@ internal class AdjTiles : ModHook
                         self.adjTile[TileID.MythrilAnvil] = false;
                     }
                 }
-                Recipe.FindRecipes();
             }
             else
             {
@@ -162,9 +161,7 @@ internal class AdjTiles : ModHook
 						}
 					}
                 }
-                Recipe.FindRecipes();
             }
-            Recipe.FindRecipes();
         }
         else orig.Invoke(self);
     }
@@ -193,9 +190,7 @@ internal class AdjTiles : ModHook
         }
         if (self.GetModPlayer<AvalonPlayer>().AdjShimmer != self.GetModPlayer<AvalonPlayer>().oldAdjShimmer)
         {
-            Recipe.FindRecipes();
         }
-        Recipe.FindRecipes();
         orig(self);
     }
             /*if ((self.GetModPlayer<ExxoEquipEffectPlayer>().GoblinToolbelt ||
@@ -272,7 +267,6 @@ internal class AdjTiles : ModHook
                         }
                     }
                 }
-                Recipe.FindRecipes();
             }
             else
                 orig(self);

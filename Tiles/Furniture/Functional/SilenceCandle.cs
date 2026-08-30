@@ -24,7 +24,7 @@ public class SilenceCandle : ModTile
 		TileObjectData.newTile.LavaDeath = false;
 		TileObjectData.addTile(Type);
 		Main.tileLighted[Type] = true;
-		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 		AddMapEntry(new Color(253, 221, 3), this.GetLocalization("MapEntry"));
 		DustType = -1;
 		flameTexture = ModContent.Request<Texture2D>(Texture + "_Flame");

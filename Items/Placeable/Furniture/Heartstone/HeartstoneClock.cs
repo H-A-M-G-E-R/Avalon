@@ -17,7 +17,7 @@ public class HeartstoneClock : ModItem
 	{
 		CreateRecipe()
 			.AddIngredient(ModContent.ItemType<Material.Ores.Heartstone>(), 10)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddTile(TileID.Sawmill)
 			.Register();
 	}

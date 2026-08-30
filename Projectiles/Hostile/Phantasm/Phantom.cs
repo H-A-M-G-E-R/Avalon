@@ -65,7 +65,7 @@ public class Phantom : ModProjectile
 		}
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Asset<Texture2D> texture = TextureAssets.Projectile[Type];
 		int frameHeight = texture.Value.Height / Main.projFrames[Projectile.type];

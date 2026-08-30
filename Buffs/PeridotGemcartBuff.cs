@@ -20,11 +20,8 @@ public class PeridotGemcartBuff : ModBuff
 
     public override void SetStaticDefaults()
     {
-        // Handles automatically mounting the player within Update, and setting Main.buffNoTimeDisplay/buffNoSave (no need to write yourself like in ExampleMountBuff)
-        BuffID.Sets.BasicMountData[Type] = new BuffID.Sets.BuffMountData()
-        {
-            mountID = ModContent.MountType<PeridotGemcart>()
-        };
+		// Handles automatically mounting the player within Update, and setting Main.buffNoTimeDisplay/buffNoSave (no need to write yourself like in ExampleMountBuff)
+		BuffID.Sets.MountType[Type] = ModContent.MountType<PeridotGemcart>();
         Main.buffNoTimeDisplay[Type] = true;
     }
 }

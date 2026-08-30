@@ -27,7 +27,7 @@ public class AlkalineJellyfishJarTile : ModTile
 		TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
 		TileObjectData.addTile(Type);
 
-		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 		AddMapEntry(new Color(12, 218, 168), CreateMapEntryName());
 		RegisterItemDrop(ModContent.ItemType<AlkalineJellyfishJar>());
 

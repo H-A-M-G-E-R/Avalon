@@ -89,15 +89,15 @@ internal class AncientHeadphones : ModHook
                 }
                 if (Main.LocalPlayer.ZoneJungle)
                 {
-                    Main.newMusic = MusicID.Jungle;
+                    Main.newMusic = MusicID.JungleDay;
                 }
                 if (Main.LocalPlayer.ZoneBeach)
                 {
-                    Main.newMusic = MusicID.Ocean;
+                    Main.newMusic = MusicID.OceanDay;
                 }
                 if (Main.LocalPlayer.ZoneNormalSpace)
                 {
-                    Main.newMusic = MusicID.Space;
+                    Main.newMusic = MusicID.SpaceNight;
                 }
             }
         }

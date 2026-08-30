@@ -1307,70 +1307,70 @@ internal class Hellcastle
 
                     if (loot == 0)
                     {
-                        Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<Items.Accessories.Hardmode.RingofArrogance>(), false);
+                        Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<Items.Accessories.Hardmode.RingofArrogance>());
                         Main.chest[num2].item[0].Prefix(-1);
                     }
                     if (loot == 1)
                     {
-                        Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<Boomlash>(), false);
+                        Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<Boomlash>());
                         Main.chest[num2].item[0].Prefix(-1);
                     }
                     if (loot == 2)
                     {
-                        Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<PossessedFlamesaw>(), false);
+                        Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<PossessedFlamesaw>());
                         Main.chest[num2].item[0].Prefix(-1);
                     }
-                    Main.chest[num2].item[1].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.ImperviousBrick>(), false);
+                    Main.chest[num2].item[1].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.ImperviousBrick>());
                     Main.chest[num2].item[1].stack = WorldGen.genRand.Next(200, 451);
                     int rand = WorldGen.genRand.Next(4);
                     if (rand == 0)
                     {
-                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<BloodCastPotion>(), false);
+                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<BloodCastPotion>());
                         Main.chest[num2].item[2].stack = WorldGen.genRand.Next(2, 4);
                     }
                     if (rand == 1)
                     {
-                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<LeapingPotion>(), false);
+                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<LeapingPotion>());
                         Main.chest[num2].item[2].stack = WorldGen.genRand.Next(2, 5);
                     }
                     if (rand == 2)
                     {
-                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<CloverPotion>(), false);
+                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<CloverPotion>());
                         Main.chest[num2].item[2].stack = WorldGen.genRand.Next(3) + 1;
                     }
                     if (rand == 3)
                     {
-                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<NinjaPotion>(), false);
+                        Main.chest[num2].item[2].SetDefaults(ModContent.ItemType<NinjaPotion>());
                         Main.chest[num2].item[2].stack = WorldGen.genRand.Next(2) + 1;
                     }
                     int n3 = WorldGen.genRand.Next(3);
                     if (n3 == 0)
                     {
-                        Main.chest[num2].item[3].SetDefaults(ItemID.TrapsightPotion, false);
+                        Main.chest[num2].item[3].SetDefaults(ItemID.TrapsightPotion);
                         Main.chest[num2].item[3].stack = WorldGen.genRand.Next(2) + 1;
                     }
                     if (n3 == 1)
                     {
-                        Main.chest[num2].item[3].SetDefaults(ItemID.CalmingPotion, false);
+                        Main.chest[num2].item[3].SetDefaults(ItemID.CalmingPotion);
                         Main.chest[num2].item[3].stack = WorldGen.genRand.Next(2) + 2;
                     }
                     if (n3 == 2)
                     {
-                        Main.chest[num2].item[3].SetDefaults(ModContent.ItemType<HeartsickPotion>(), false);
+                        Main.chest[num2].item[3].SetDefaults(ModContent.ItemType<HeartsickPotion>());
                         Main.chest[num2].item[3].stack = WorldGen.genRand.Next(2) + 3;
                     }
                     int n2 = WorldGen.genRand.Next(2);
                     if (n2 == 0)
                     {
-                        Main.chest[num2].item[4].SetDefaults(ItemID.LunarBar, false);
+                        Main.chest[num2].item[4].SetDefaults(ItemID.LunarBar);
                         Main.chest[num2].item[4].stack = WorldGen.genRand.Next(5, 11);
                     }
                     if (n2 == 1)
                     {
-                        Main.chest[num2].item[4].SetDefaults(ItemID.LunarOre, false);
+                        Main.chest[num2].item[4].SetDefaults(ItemID.LunarOre);
                         Main.chest[num2].item[4].stack = WorldGen.genRand.Next(11, 25);
                     }
-                    Main.chest[num2].item[5].SetDefaults(ItemID.GoldCoin, false);
+                    Main.chest[num2].item[5].SetDefaults(ItemID.GoldCoin);
                     Main.chest[num2].item[5].stack = WorldGen.genRand.Next(5) + 3;
                     return true;
                 }

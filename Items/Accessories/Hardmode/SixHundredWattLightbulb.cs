@@ -17,7 +17,7 @@ public class SixHundredWattLightbulb : ModItem
 		Item.rare = ItemRarityID.Cyan;
 		Item.value = Item.sellPrice(0, 2);
 	}
-	public override void Update(ref float gravity, ref float maxFallSpeed)
+	public override void Update(WorldItem item, ref float gravity, ref float maxFallSpeed)
 	{
 		Lighting.AddLight(Item.position, 1, 0.8f, 0.5f);
 	}

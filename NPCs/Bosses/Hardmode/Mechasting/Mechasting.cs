@@ -60,7 +60,7 @@ public class Mechasting : ModNPC
         //bossBag = ModContent.ItemType<Items.BossBags.MechastingBossBag>();
 
     }
-    public override void BossLoot(ref string name, ref int potionType)
+    public override void BossLoot(ref int potionType, ref int potionStack, ref int heartStack)
     {
         potionType = ItemID.GreaterHealingPotion;
     }

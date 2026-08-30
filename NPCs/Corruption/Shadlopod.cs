@@ -152,10 +152,10 @@ public class Shadlopod : ModNPC
 				Tile t4 = Main.tile[(nextPos + new Vector2(-4.5f, 4.5f)).ToTileCoordinates()];
 				// checks only work for 4 corners idc works for this proj size
 				if (i > 3 &&
-					(!(t1.IsActuated || !t1.HasTile || !Main.tileSolid[t1.type] || Main.tileSolidTop[t1.type]) ||
-					!(t2.IsActuated || !t2.HasTile || !Main.tileSolid[t2.type] || Main.tileSolidTop[t2.type]) ||
-					!(t3.IsActuated || !t3.HasTile || !Main.tileSolid[t3.type] || Main.tileSolidTop[t3.type]) ||
-					!(t4.IsActuated || !t4.HasTile || !Main.tileSolid[t4.type] || Main.tileSolidTop[t4.type])))
+					(!(t1.IsActuated || !t1.HasTile || !Main.tileSolid[t1.TileType] || Main.tileSolidTop[t1.TileType]) ||
+					!(t2.IsActuated || !t2.HasTile || !Main.tileSolid[t2.TileType] || Main.tileSolidTop[t2.TileType]) ||
+					!(t3.IsActuated || !t3.HasTile || !Main.tileSolid[t3.TileType] || Main.tileSolidTop[t3.TileType]) ||
+					!(t4.IsActuated || !t4.HasTile || !Main.tileSolid[t4.TileType] || Main.tileSolidTop[t4.TileType])))
 				{
 					retVal = false;
 					angle = MathHelper.PiOver2;
@@ -279,6 +279,6 @@ public class Shadlopod : ModNPC
 		}
 	}
 
-	public override float SpawnChance(NPCSpawnInfo spawnInfo) => spawnInfo.Player.ZoneCorrupt && !spawnInfo.Player.InPillarZone()
+	public override float SpawnChance(NPC.Spawner spawner) => spawner.Player.ZoneCorrupt && !spawner.Player.InPillarZone()
 		? 0.2f : 0f;
 }

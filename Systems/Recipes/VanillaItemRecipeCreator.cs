@@ -270,7 +270,7 @@ public class VanillaItemRecipeCreator : ModSystem
 		Recipe.Create(ItemID.LihzahrdPowerCell)
 			.AddIngredient(ItemID.Glass, 10)
 			.AddIngredient(ItemID.FallenStar, 25)
-			.AddRecipeGroup("AdamantiteBar", 10)
+			.AddRecipeGroup(RecipeGroups.AdamantiteBar, 10)
 			.AddTile(TileID.WorkBenches)
 			.AddCondition(Heartstone.RetroWorld)
 			.SortAfterFirstRecipesOf(ItemID.SolarTablet)
@@ -757,7 +757,7 @@ public class VanillaItemRecipeCreator : ModSystem
 
 		Recipe.Create(ItemID.DungeonClockBlue)
 			.AddIngredient(ItemID.BlueBrick, 10)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddIngredient(ItemID.Glass, 6)
 			.AddTile(TileID.BoneWelder)
 			.Register();
@@ -846,7 +846,7 @@ public class VanillaItemRecipeCreator : ModSystem
 
 		Recipe.Create(ItemID.DungeonClockGreen)
 			.AddIngredient(ItemID.GreenBrick, 10)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddIngredient(ItemID.Glass, 6)
 			.AddTile(TileID.BoneWelder)
 			.Register();
@@ -935,7 +935,7 @@ public class VanillaItemRecipeCreator : ModSystem
 
 		Recipe.Create(ItemID.DungeonClockPink)
 			.AddIngredient(ItemID.PinkBrick, 10)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddIngredient(ItemID.Glass, 6)
 			.AddTile(TileID.BoneWelder)
 			.Register();
@@ -1040,7 +1040,7 @@ public class VanillaItemRecipeCreator : ModSystem
 		Recipe.Create(ItemID.ObsidianClock)
 			.AddIngredient(ItemID.Obsidian, 10)
 			.AddIngredient(ItemID.Hellstone, 2)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddIngredient(ItemID.Glass, 6)
 			.AddTile(TileID.Sawmill)
 			.DisableDecraft()

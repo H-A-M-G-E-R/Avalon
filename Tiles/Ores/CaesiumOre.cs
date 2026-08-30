@@ -43,7 +43,7 @@ public class CaesiumOre : ModTile
                 (Main.tile[i, j].HasTile && !Main.tile[i - 1, j].HasTile) ||
                 (Main.tile[i, j].HasTile && !Main.tile[i + 1, j].HasTile))
             {
-                if (Main.rand.NextBool(7000) && !Main.gamePaused && Main.hasFocus)
+                if (Main.rand.NextBool(7000) && !Main.gamePaused && FocusHelper.AllowGameplayInputs/* tModPorter Suggestion: Also consider FocusHelper.AllowUIInputs, FocusHelper.UpdateVisualEffects, or others */)
                 {
                     Projectile.NewProjectile(Entity.GetSource_None(), new Vector2(i, j) * 16,
                         new Vector2(Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, 2f)),

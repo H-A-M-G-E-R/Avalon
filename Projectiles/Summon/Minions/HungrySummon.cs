@@ -19,7 +19,7 @@ public class HungrySummon : ModProjectile
 		Main.projFrames[Type] = 6;
 		Main.projPet[Projectile.type] = true;
 		ProjectileID.Sets.MinionSacrificable[Projectile.type] = true;
-		ProjectileID.Sets.MinionTargettingFeature[Projectile.type] = true;
+		ProjectileID.Sets.MinionTargetingFeature[Projectile.type] = true;
 	}
 	public override bool? CanCutTiles()
 	{
@@ -253,9 +253,9 @@ public class HungrySummon : ModProjectile
 				SpriteEffects.None, 1f);
 		}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
-		//DrawChain(Main.player[Projectile.owner].Center, Projectile.Center, lightColor);
-		return base.PreDraw(ref lightColor);
+		//DrawChain(player.Center, Projectile.Center, lightColor);
+		return base.PreDraw(player, ref lightColor);
 	}
 }

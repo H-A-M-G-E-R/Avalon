@@ -27,7 +27,7 @@ public class Pathogen : ModItem
 	{
 		return Color.White;
 	}
-	public override void PostUpdate()
+	public override void PostUpdate(WorldItem item)
 	{
 		float num12 = (float)Main.rand.Next(90, 111) * 0.01f;
 		num12 *= Main.essScale * 0.3f;

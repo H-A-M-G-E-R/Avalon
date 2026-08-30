@@ -120,7 +120,7 @@ public class Undine : ModNPC
             BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheDungeon,
             new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.Avalon.Bestiary.Undine")),
         });
-    public override float SpawnChance(NPCSpawnInfo spawnInfo) => spawnInfo.Player.ZoneDungeon
+    public override float SpawnChance(NPC.Spawner spawner) => spawner.Player.ZoneDungeon
         ? 0.3f : 0f;
 
     public override void HitEffect(NPC.HitInfo hit)

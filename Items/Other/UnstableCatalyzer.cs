@@ -17,9 +17,9 @@ public class UnstableCatalyzer : ModItem
 	public override void AddRecipes()
 	{
 		Recipe.Create(Type)
-			.AddRecipeGroup(RecipeGroupID.Wood, 20)
+			.AddRecipeGroup(RecipeGroups.Wood, 20)
 			.AddRecipeGroup("DemoniteBar", 5)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 15)
+			.AddRecipeGroup(RecipeGroups.IronBar, 15)
 			.AddRecipeGroup("WorkBenches")
 			.AddTile(TileID.Anvils)
 			.DisableDecraft()

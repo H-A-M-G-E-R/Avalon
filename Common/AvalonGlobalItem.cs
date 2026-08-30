@@ -83,7 +83,7 @@ public class AvalonGlobalItem : GlobalItem
 		}
 	}
 
-	public override void OnSpawn(Item item, IEntitySource source)
+	public override void OnSpawn(WorldItem item, IEntitySource source)
 	{
 		if (source is EntitySource_ItemOpen newSource)
 		{
@@ -251,7 +251,7 @@ public class AvalonGlobalItem : GlobalItem
 		Item.staff[ItemID.HiveWand] = true;
 		ContentSamples.ItemsByType[ItemID.HiveWand].GetPrefixCategories().AddRange([PrefixCategory.Magic]);
 	}
-	public override void PostUpdate(Item item)
+	public override void PostUpdate(WorldItem item)
 	{
 		//if (item.lavaWet && item.position.Y / 16 > Main.maxTilesY - 190)
 		//{
@@ -2023,7 +2023,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixTool", Language.GetTextValue("Mods.Avalon.PrefixTooltips.Efficiency"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 				index = tooltips.FindLastIndex(tt => (tt.Mod.Equals("Terraria") || tt.Mod.Equals(Mod.Name))
@@ -2041,7 +2041,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index, new TooltipLine(Mod, "PrefixTool", Language.GetTextValue("Mods.Avalon.PrefixTooltips.Expanded"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2055,7 +2055,7 @@ public class AvalonGlobalItem : GlobalItem
 						"+" + (item.GetGlobalItem<AvalonGlobalItemInstance>().TileBoostSaved + 1).ToString() +
 						Language.GetTextValue("Mods.Avalon.PrefixTooltips.Range"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 				index = tooltips.FindLastIndex(tt => (tt.Mod.Equals("Terraria") || tt.Mod.Equals(Mod.Name))
@@ -2076,7 +2076,7 @@ public class AvalonGlobalItem : GlobalItem
 						"+" + (item.GetGlobalItem<AvalonGlobalItemInstance>().TileBoostSaved + 2).ToString() +
 						Language.GetTextValue("Mods.Avalon.PrefixTooltips.Range"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 				index = tooltips.FindLastIndex(tt => (tt.Mod.Equals("Terraria") || tt.Mod.Equals(Mod.Name))
@@ -2097,8 +2097,7 @@ public class AvalonGlobalItem : GlobalItem
 						(item.GetGlobalItem<AvalonGlobalItemInstance>().TileBoostSaved - 1).ToString() +
 						Language.GetTextValue("Mods.Avalon.PrefixTooltips.Range"))
 					{
-						IsModifier = true,
-						IsModifierBad = true
+						Color = Colors.PrefixBad
 					}); ;
 				}
 				index = tooltips.FindLastIndex(tt => (tt.Mod.Equals("Terraria") || tt.Mod.Equals(Mod.Name))
@@ -2119,8 +2118,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDefense", "-1 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true,
-						IsModifierBad = true
+						Color = Colors.PrefixBad
 					});
 				}
 			}
@@ -2132,7 +2130,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDefense", "+1 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2144,7 +2142,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDefense", "+2 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2156,13 +2154,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDefense", "-2 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true,
-						IsModifierBad = true
+						Color = Colors.PrefixBad
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccStinky", Language.GetTextValue("Mods.Avalon.PrefixTooltips.Stinky"))
 					{
-						IsModifier = true,
-						IsModifierBad = true
+						Color = Colors.PrefixBad
 					});
 				}
 			}
@@ -2174,11 +2170,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDefense", "+3% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Damage"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccKnockback", "+6% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Knockback"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2190,12 +2186,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMeleeDamage", "+5% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.MeleeDamage"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccKnockback", "-2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.MeleeSpeed"))
 					{
-						IsModifier = true,
-						IsModifierBad = true
+						Color = Colors.PrefixBad
 					});
 				}
 			}
@@ -2207,7 +2202,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMoveSpeed", "+4% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.MovementSpeed"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2219,11 +2214,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMoveSpeed", "+5% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.MovementSpeed"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccIgnoreWater", "+25% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Fluidic"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2235,11 +2230,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDamage", "+3% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Damage"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccDefense", "+1 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2251,7 +2246,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccBlockRange", "+1 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.PlacementRange"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2263,11 +2258,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccTileSpeed", "+30% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.TileSpeed"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccWallSpeed", "+30% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.WallSpeed"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2279,7 +2274,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMana", "+20 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Mana"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2291,7 +2286,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccArmorPen", "+2 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.ArmorPenetration"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2303,7 +2298,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccCritChance", "+2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.CritChance"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2315,7 +2310,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccEndurance", "-2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.DamageTaken"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2330,15 +2325,15 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMana", "+20 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Mana"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccMoveSpeed", "+3% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.MovementSpeed"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 3, new TooltipLine(Mod, "PrefixAccDefense", "+1 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2350,11 +2345,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDefense", "+3 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccDamage", "+3% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Damage"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2366,11 +2361,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccCritBonus", "+2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.CritChance"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccDefense", "+2 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Defense"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2382,7 +2377,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccAmmo", Language.GetTextValue("Mods.Avalon.PrefixTooltips.Ammo"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2394,7 +2389,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMoney", Language.GetTextValue("Mods.Avalon.PrefixTooltips.Money"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2406,7 +2401,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccStamRegen", Language.GetTextValue("Mods.Avalon.PrefixTooltips.StamRegen"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2418,16 +2413,15 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccCritBonus", "+4% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.CritDamage"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccCritBonus", "+2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.CritChance"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 3, new TooltipLine(Mod, "PrefixAccMaxCritReduction", "-1% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.CritCap"))
 					{
-						IsModifier = true,
-						IsModifierBad = true
+						Color = Colors.PrefixBad
 					});
 				}
 			}
@@ -2452,7 +2446,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccMana", "+40 " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Mana"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2464,7 +2458,7 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccEndurance", "-1% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.DamageTaken"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}
@@ -2489,11 +2483,11 @@ public class AvalonGlobalItem : GlobalItem
 				{
 					tooltips.Insert(index + 1, new TooltipLine(Mod, "PrefixAccDamage", "+2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.Damage"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 					tooltips.Insert(index + 2, new TooltipLine(Mod, "PrefixAccMeleeSpeed", "+2% " + Language.GetTextValue("Mods.Avalon.PrefixTooltips.MeleeSpeed"))
 					{
-						IsModifier = true
+						Color = Colors.PrefixGood
 					});
 				}
 			}

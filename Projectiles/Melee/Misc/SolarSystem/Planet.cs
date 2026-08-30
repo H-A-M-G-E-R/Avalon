@@ -58,7 +58,7 @@ public abstract class Planet : ModProjectile
         base.ReceiveExtraAI(reader);
         hostPosition = reader.ReadInt32();
     }
-    public override bool PreDraw(ref Color lightColor)
+    public override bool PreDraw(Player player, ref Color lightColor)
     {
         float scale = 1f;
         Color planetColor = Color.White;

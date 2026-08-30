@@ -330,12 +330,12 @@ public class Sun : ModProjectile
 		}
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Projectile.rotation += 0.01f;
 
 		Vector2 start = Projectile.Center;
-		var end = Main.player[Projectile.owner].MountedCenter;
+		var end = player.MountedCenter;
 		start -= Main.screenPosition;
 		end -= Main.screenPosition;
 

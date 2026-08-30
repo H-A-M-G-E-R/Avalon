@@ -27,7 +27,7 @@ public class TrueAeonStarShard : ModProjectile
 		ProjectileID.Sets.TrailCacheLength[Type] = 8;
 		ProjectileID.Sets.TrailingMode[Type] = 2;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		for (int i = 0; i < 8; i++)
 		{
@@ -89,7 +89,7 @@ public class TrueAeonStarShard : ModProjectile
 			Dust d = Dust.NewDustDirect(Projectile.Center, 0, 0, type, 0, 0, 0, default, 1f);
 			d.color = new Color(Main.rand.Next(200), 100, 255, 0) * Projectile.Opacity;
 			d.noGravity = true;
-			d.noLightEmittence = true;
+			d.noLightEmittance = true;
 			d.fadeIn = Main.rand.NextFloat(0.5f, 1.5f);
 			d.velocity = Main.rand.NextVector2Circular(3, 3) + Projectile.velocity;
 		}

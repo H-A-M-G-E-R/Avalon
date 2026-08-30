@@ -46,7 +46,7 @@ public class ContagionPot : ModTile
 		Gore.NewGore(WorldGen.GetItemSource_FromTileBreak(i, j), new Vector2(i * 16, j * 16), default, ModContent.GoreType<Gores.ContagionPotGore1>());
 		Gore.NewGore(WorldGen.GetItemSource_FromTileBreak(i, j), new Vector2(i * 16, j * 16), default, ModContent.GoreType<Gores.ContagionPotGore2>());
 		Gore.NewGore(WorldGen.GetItemSource_FromTileBreak(i, j), new Vector2(i * 16, j * 16), default, ModContent.GoreType<Gores.ContagionPotGore3>());
-		if (!WorldGen.gen && Main.netMode != NetmodeID.MultiplayerClient)
+		if (!WorldGen.isGeneratingOrLoadingWorld && Main.netMode != NetmodeID.MultiplayerClient)
 		{
 			if (WorldGen.genRand.NextBool(15))
 			{

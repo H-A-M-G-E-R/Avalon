@@ -96,7 +96,6 @@ internal class HerbologyUIStats : ExxoUIPanelWrapper<ExxoUIList>
             {
                 SoundEngine.PlaySound(SoundID.Grab);
                 (Main.mouseItem, ItemSlot.Item) = (ItemSlot.Item, Main.mouseItem);
-                Recipe.FindRecipes();
             }
         };
     }

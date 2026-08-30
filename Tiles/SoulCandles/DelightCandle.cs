@@ -22,7 +22,7 @@ public class DelightCandle : ModTile
 		TileObjectData.newTile.CoordinateHeights = new int[] { 16, 16 };
 		TileObjectData.addTile(Type);
 		Main.tileLighted[Type] = true;
-		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 		AddMapEntry(new Color(253, 221, 3));
 		DustType = ModContent.DustType<Dusts.SoulofDelight>();
 	}

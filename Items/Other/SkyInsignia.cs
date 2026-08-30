@@ -18,16 +18,16 @@ public class SkyInsignia : ModItem
 	{
 		Item.Size = new Vector2(12);
 	}
-	public override void GrabRange(Player player, ref int grabRange)
+	public override void GrabRange(WorldItem item, Player player, ref int grabRange)
 	{
 		grabRange = 78;
 	}
-	public override bool CanPickup(Player player)
+	public override bool CanPickup(WorldItem item, Player player)
 	{
 		return true;
 	}
 
-	public override bool OnPickup(Player player)
+	public override bool OnPickup(WorldItem item, Player player)
 	{
 		player.GetModPlayer<AvalonPlayer>().LevelUpSkyBlessing();
 		SoundEngine.PlaySound(SoundID.Grab, player.position);

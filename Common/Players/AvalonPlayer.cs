@@ -1123,7 +1123,7 @@ public partial class AvalonPlayer : ModPlayer
 					{
 						int num = Item.NewItem(Player.GetSource_Death(), (int)Player.position.X, (int)Player.position.Y,
 							Player.width, Player.height, Player.inventory[i].type);
-						Main.item[num].netDefaults(Player.inventory[i].netID);
+						Main.item[num].netDefaults(Player.inventory[i].type);
 						Main.item[num].Prefix(Player.inventory[i].prefix);
 						Main.item[num].stack = Player.inventory[i].stack;
 						Main.item[num].velocity.Y = Main.rand.Next(-20, 1) * 0.2f;

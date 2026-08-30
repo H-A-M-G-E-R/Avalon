@@ -20,7 +20,7 @@ public class ClearCutterSlash : EnergySlashTemplate, ISyncedOnHitEffect
 		base.SetDefaults();
 		Projectile.penetrate = 3;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Color[] Colors = { Color.LightSkyBlue, Color.Magenta, Color.White, Color.Magenta };
 		Color Color1 = ClassExtensions.CycleThroughColors(Colors, 60) * 0.3f;

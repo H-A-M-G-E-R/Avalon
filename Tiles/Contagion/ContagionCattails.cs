@@ -31,7 +31,7 @@ public class ContagionCattails : ModTile
 		HitSound = SoundID.Grass;
 	}
 
-	public override void RandomUpdate(int i, int j)
+	public override void RandomUpdate(int i, int j, bool underground)
 	{
 		AvalonWorld.CheckContagionCatTail(i, j);
 		if (Main.tile[i, j].HasTile && WorldGen.genRand.NextBool(8))
@@ -167,7 +167,7 @@ public class ContagionCattails : ModTile
 // my bad homie - Lion8cake 6/10/2024
 public class CattailLilyPadGen : GlobalTile
 {
-	public override void RandomUpdate(int i, int j, int type)
+	public override void RandomUpdate(int i, int j, int type, bool underground)
 	{
 		if (j >= Main.worldSurface)
 		{

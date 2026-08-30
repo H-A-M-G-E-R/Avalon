@@ -156,7 +156,7 @@ public class ZapshockProjectile : ModProjectile
 		//	_rotations.Add(_rotations[_rotations.Count - 1]);
 		//}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		//var tex = AssetReferences.Assets.Textures.GlowCircle.Asset;
 		//Rectangle middle = new Rectangle(0, 11, 24, 1);

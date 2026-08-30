@@ -62,7 +62,7 @@ public class SoulEaterFriendly : ModProjectile
 		}
 		SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		int frameHeight = TextureAssets.Projectile[Type].Value.Height / Main.projFrames[Projectile.type];
 		Rectangle sourceRectangle = new Rectangle(0, frameHeight * Projectile.frame, TextureAssets.Projectile[Type].Width(), frameHeight);

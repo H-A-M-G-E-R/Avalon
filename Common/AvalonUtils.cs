@@ -33,19 +33,19 @@ public static class AvalonUtils
 			for (int j = value3; j < value4; j++)
 			{
 				Tile tile = Main.tile[i, j];
-				if (tile == null || !tile.active() || tile.inActive())
+				if (tile == null || !tile.HasTile || tile.IsActuated)
 				{
 					continue;
 				}
 
-				bool flag = Main.tileSolid[tile.type] || Main.tileSolidTop[tile.type];
+				bool flag = Main.tileSolid[tile.TileType] || Main.tileSolidTop[tile.TileType];
 
 				if (flag)
 				{
 					vector.X = i * 16;
 					vector.Y = j * 16;
 					int num2 = 16;
-					if (tile.halfBrick())
+					if (tile.IsHalfBlock)
 					{
 						vector.Y += 8f;
 						num2 -= 8;

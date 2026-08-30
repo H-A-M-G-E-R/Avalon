@@ -196,17 +196,17 @@ public class GemLocks : ModTile
 			{
 				case 0:
 					var dust = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, ModContent.DustType<Dusts.PeridotDust>(), 0, 0, 100, default, 0.6f);
-					Main.dust[dust].noLightEmittence = true;
+					Main.dust[dust].noLightEmittance = true;
 					Main.dust[dust].noLight = true;
 					return false;
 				case 1:
 					dust = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, ModContent.DustType<Dusts.TourmalineDust>(), 0, 0, 100, default, 0.6f);
-					Main.dust[dust].noLightEmittence = true;
+					Main.dust[dust].noLightEmittance = true;
 					Main.dust[dust].noLight = true;
 					return false;
 				case 2:
 					dust = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, ModContent.DustType<Dusts.ZirconDust>(), 0, 0, 100, default, 0.6f);
-					Main.dust[dust].noLightEmittence = true;
+					Main.dust[dust].noLightEmittance = true;
 					Main.dust[dust].noLight = true;
 					return false;
 			}

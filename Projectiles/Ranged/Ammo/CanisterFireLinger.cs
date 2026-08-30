@@ -47,6 +47,6 @@ public class CanisterFireLinger : ModProjectile
 	}
 	public override void OnHitPlayer(Player target, Player.HurtInfo info)
 	{
-		target.AddBuff(BuffID.OnFire, 240, false);
+		target.AddBuff(BuffID.OnFire, 240);
 	}
 }

@@ -13,7 +13,7 @@ public class CaesiumBlastplains : ModBiome
 	public override string MapBackground => BackgroundPath;
     public override int Music => ExxoAvalonOrigins.MusicMod != null
         ? MusicLoader.GetMusicSlot(ExxoAvalonOrigins.MusicMod, "Sounds/Music/CaesiumBlastplains")
-        : MusicID.Hell;
+        : MusicID.Underworld;
 
     public override bool IsBiomeActive(Player player)
     {

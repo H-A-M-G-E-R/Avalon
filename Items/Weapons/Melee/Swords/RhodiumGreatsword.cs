@@ -16,7 +16,7 @@ public class RhodiumGreatsword : ModItem, IItemWithReleaseButtonMidSwingEffect
 {
 	public override void SetStaticDefaults()
 	{
-		ItemID.Sets.BonusAttackSpeedMultiplier[Type] = 0.75f;
+		ItemID.Sets.BonusMeleeSpeedMultiplier[Type] = 0.75f;
 		ItemID.Sets.ToolTipDamageMultiplier[Type] = 2f;
 	}
 	public override void SetDefaults()

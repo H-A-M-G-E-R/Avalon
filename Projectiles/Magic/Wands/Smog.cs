@@ -65,7 +65,7 @@ public class Smog : ModProjectile
 	{
 		target.AddBuff(BuffID.Poisoned, 180);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		ClassExtensions.DrawGas(TextureAssets.Projectile[Type].Value, lightColor, Projectile, 4, 6);
 		return false;

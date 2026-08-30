@@ -89,7 +89,7 @@ public class SoulEdgeDash : ModProjectile, ISyncedOnHitEffect
 		Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.PiOver4;
 		player.SetCompositeArmFront(true, Player.CompositeArmStretchAmount.Full, (Projectile.rotation + MathHelper.PiOver4 + MathHelper.Pi) * player.gravDir + (player.gravDir == -1 ? MathHelper.Pi : 0));
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		//float percent = Projectile.timeLeft / (float)initialTimeLeft;
 		float percent = Utils.Remap(Projectile.timeLeft, 0, initialTimeLeft * 0.75f, 0, 1) * (1f - MathF.Pow(Projectile.timeLeft / (float)initialTimeLeft,5));

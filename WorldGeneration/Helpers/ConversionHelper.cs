@@ -127,7 +127,7 @@ public static class ConversionHelper
         Main.tile[x, y].TileType = (ushort)tileType;
         if (Main.netMode != NetmodeID.SinglePlayer)
         {
-            NetMessage.SendData(MessageID.TileSquare, -1, -1, null, x, y, 1, 1, 0);
+            NetMessage.SendData(MessageID.AreaTileChange, -1, -1, null, x, y, 1, 1, 0);
         }
         if (tileType == ModContent.TileType<Ickgrass>() && Main.tile[x, y - 1].TileType == TileID.Pumpkins)
         {

@@ -95,7 +95,7 @@ public class AncientSandstorm : ModProjectile
 		return Projectile.alpha < 220;
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		ClassExtensions.DrawGas(TextureAssets.Projectile[Type].Value, lightColor * 0.8f, Projectile, 4, 6);
 		return false;

@@ -128,7 +128,7 @@ public class RobotEnergyBall : ModProjectile
 	{
 		target.AddBuff(BuffID.Electrified, 60 * 5);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Texture2D tex = TextureAssets.Projectile[Type].Value;
 		Rectangle frame = tex.Frame(1, 3, 0, Projectile.frame);

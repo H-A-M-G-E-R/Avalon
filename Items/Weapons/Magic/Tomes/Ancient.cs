@@ -28,7 +28,7 @@ public class Ancient : ModItem
 	{
 		player.itemRotation = Utils.AngleLerp(player.itemRotation, 0f, 0.9f);
 		NetMessage.SendData(MessageID.PlayerControls, -1, -1, null, player.whoAmI);
-		NetMessage.SendData(MessageID.ShotAnimationAndSound, -1, -1, null, player.whoAmI);
+		NetMessage.SendData(MessageID.ItemRotationAndAnimation, -1, -1, null, player.whoAmI);
 
 		Vector2 dirToMouse = player.SafeDirectionTo(Main.MouseWorld);
 		Vector2 velMult = player.velocity * new Vector2(MathF.Abs(dirToMouse.X), MathF.Abs(dirToMouse.Y)); // The player's current velocity, multiplied by the unsigned cosine & sine of the angle to the mouse

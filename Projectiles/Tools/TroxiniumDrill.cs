@@ -28,9 +28,8 @@ public class TroxiniumDrill : ModProjectile
     {
         return lightColor * 4f;
     }
-    public override void PostDraw(Color lightColor)
+    public override void PostDraw(Player player, Color lightColor)
     {
-        //Player player = Main.player[Projectile.owner];
         //Texture2D texture = ModContent.Request<Texture2D>(Texture + "_Glow").Value;
         //Vector2 drawOrigin = new Vector2(0, 0) + (Projectile.spriteDirection != 1 ? new Vector2(48, 0) : Vector2.Zero);
         //Vector2 drawPos = Projectile.Center - Main.screenPosition;

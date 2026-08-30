@@ -17,7 +17,7 @@ public class MoonplateClock : ModItem
 	{
 		CreateRecipe()
 			.AddIngredient(ModContent.ItemType<Tile.MoonplateBlock>(), 15)
-			.AddRecipeGroup(RecipeGroupID.IronBar, 3)
+			.AddRecipeGroup(RecipeGroups.IronBar, 3)
 			.AddTile(TileID.SkyMill)
 			.Register();
 	}

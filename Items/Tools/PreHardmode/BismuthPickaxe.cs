@@ -14,6 +14,6 @@ public class BismuthPickaxe : ModItem
 	}
 	public override void AddRecipes()
 	{
-		CreateRecipe(1).AddIngredient(ModContent.ItemType<Material.Bars.BismuthBar>(), 10).AddRecipeGroup(RecipeGroupID.Wood, 4).AddTile(TileID.Anvils).Register();
+		CreateRecipe(1).AddIngredient(ModContent.ItemType<Material.Bars.BismuthBar>(), 10).AddRecipeGroup(RecipeGroups.Wood, 4).AddTile(TileID.Anvils).Register();
 	}
 }

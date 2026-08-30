@@ -13,7 +13,7 @@ public class PathogenDust : ModDust
         dust.alpha += 2;
 
         //dust.velocity.X += Main.WindForVisuals * 0.2f;
-        if (!dust.noLightEmittence)
+        if (!dust.noLightEmittance)
         {
             Vector3 light = new Vector3(0.32f, 0.2f, 0.5f) * dust.scale * 1.5f;
             Lighting.AddLight(dust.position, light);

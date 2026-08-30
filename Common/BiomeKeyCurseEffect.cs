@@ -13,7 +13,7 @@ namespace Avalon.Common
 	{
 		public override bool AppliesToEntity(Item entity, bool lateInstantiation)
 		{
-			return entity.netID is ItemID.CorruptionKey or ItemID.CrimsonKey or ItemID.DungeonDesertKey or ItemID.FrozenKey or ItemID.JungleKey or ItemID.HallowedKey || entity.type == ModContent.ItemType<Items.Other.ContagionKey>() || entity.type == ModContent.ItemType<Items.Other.UnderworldKey>();
+			return entity.type is ItemID.CorruptionKey or ItemID.CrimsonKey or ItemID.DungeonDesertKey or ItemID.FrozenKey or ItemID.JungleKey or ItemID.HallowedKey || entity.type == ModContent.ItemType<Items.Other.ContagionKey>() || entity.type == ModContent.ItemType<Items.Other.UnderworldKey>();
 		}
 		public override bool PreDrawInInventory(Item item, SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
 		{
@@ -31,7 +31,7 @@ namespace Avalon.Common
 			}
 			return base.PreDrawInInventory(item, spriteBatch, position, frame, drawColor, itemColor, origin, scale);
 		}
-		public override bool PreDrawInWorld(Item item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
+		public override bool PreDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, ref float rotation, ref float scale, int whoAmI)
 		{
 			if (!NPC.downedPlantBoss)
 			{

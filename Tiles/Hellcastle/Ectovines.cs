@@ -87,7 +87,7 @@ public class Ectovines : ModTile
         return true;
     }
 
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         Tile tileBelow = Framing.GetTileSafely(i, j + 1);
         if (WorldGen.genRand.NextBool(15) && !tileBelow.HasTile && tileBelow.LiquidType != LiquidID.Lava)

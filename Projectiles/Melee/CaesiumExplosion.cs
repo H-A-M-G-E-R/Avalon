@@ -68,7 +68,7 @@ public class CaesiumExplosion : ModProjectile
 	{
 		Projectile.rotation = Main.rand.NextFloat(MathHelper.Pi, -MathHelper.Pi);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		int frameHeight = TextureAssets.Projectile[Type].Value.Height / 7;
 		Rectangle frame = new Rectangle(0, frameHeight * Projectile.frame, TextureAssets.Projectile[Type].Value.Width, frameHeight);

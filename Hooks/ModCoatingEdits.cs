@@ -111,7 +111,7 @@ namespace Avalon.Hooks
 			}
 			if (broadcast)
 			{
-				NetMessage.SendData(MessageID.PaintWall, -1, -1, null, x, y, (int)paintCoatId, 1f);
+				NetMessage.SendData(MessageID.SyncWallPaintOrCoating, -1, -1, null, x, y, (int)paintCoatId, 1f);
 			}
 			if (paintCoatId == 0 || paintCoatId == Data.Sets.AvalonCoatingsID.ActuatorCoating)
 			{
@@ -152,7 +152,7 @@ namespace Avalon.Hooks
 			}
 			if (broadcast)
 			{
-				NetMessage.SendData(MessageID.PaintTile, -1, -1, null, x, y, (int)paintCoatId, 1f);
+				NetMessage.SendData(MessageID.SyncTilePaintOrCoating, -1, -1, null, x, y, (int)paintCoatId, 1f);
 			}
 			if (paintCoatId == 0 || paintCoatId == Data.Sets.AvalonCoatingsID.ActuatorCoating)
 			{

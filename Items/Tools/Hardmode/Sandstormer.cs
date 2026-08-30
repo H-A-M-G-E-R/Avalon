@@ -19,7 +19,7 @@ public class Sandstormer : ModItem
 	public override void AddRecipes()
 	{
 		CreateRecipe()
-			.AddRecipeGroup(RecipeGroupID.Sand, 75)
+			.AddRecipeGroup(RecipeGroups.Sand, 75)
 			.AddRecipeGroup("GoldBar", 8)
 			.AddIngredient(ItemID.SoulofLight, 10)
 			.AddTile(TileID.MythrilAnvil)

@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Avalon.Common;
 using Avalon.Items.Accessories.Info;
 using Avalon.Items.Material;
@@ -193,23 +193,16 @@ public class Librarian : ModNPC
         return "";
     }
 
-    public override void SetChatButtons(ref string button, ref string button2)
-    {
-        button = Language.GetTextValue("LegacyInterface.28");
-    }
+	public override void RegisterChatButtons(NPCInteractionList interactions)
+	{
+		interactions.InsertBefore(NPCInteractions.Shop(ShopName), NPCInteractionDatabase.CloseButton);
+	}
 
-    public override bool CanTownNPCSpawn(int numTownNPCs)
+	public override bool CanTownNPCSpawn(int numTownNPCs)
     {
 		return ClassExtensions.DownedAnyPHMBoss();
     }
 
-    public override void OnChatButtonClicked(bool firstButton, ref string shop)
-    {
-        if (firstButton)
-        {
-            shop = ShopName;
-        }
-    }
     public override void AddShops()
     {
         var shop = new NPCShop(Type, "Shop");

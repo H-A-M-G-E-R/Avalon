@@ -88,9 +88,9 @@ public class AmberSlime : ModNPC
         }
     }
 
-    public override float SpawnChance(NPCSpawnInfo spawnInfo)
+    public override float SpawnChance(NPC.Spawner spawner)
     {
-        return (spawnInfo.Player.InModBiome<Biomes.Savanna>() || spawnInfo.Player.InModBiome<Biomes.UndergroundTropics>()) && !spawnInfo.Player.ZoneDungeon ? 0.5f : 0f;
+        return (spawner.Player.InModBiome<Biomes.Savanna>() || spawner.Player.InModBiome<Biomes.UndergroundTropics>()) && !spawner.Player.ZoneDungeon ? 0.5f : 0f;
     }
 }
 public class TropicalSlimeGrassy : AmberSlime

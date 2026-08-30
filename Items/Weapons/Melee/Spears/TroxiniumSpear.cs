@@ -37,7 +37,7 @@ public class TroxiniumSpear : ModItem
 			.AddTile(TileID.MythrilAnvil)
 			.Register();
 	}
-	public override void PostDrawInWorld(SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
+	public override void PostDrawInWorld(WorldItem item, SpriteBatch spriteBatch, Color lightColor, Color alphaColor, float rotation, float scale, int whoAmI)
 	{
 		Vector2 vector = glow.Size() / 2f;
 		Vector2 value = new Vector2((float)(Item.width / 2) - vector.X, Item.height - glow.Height());

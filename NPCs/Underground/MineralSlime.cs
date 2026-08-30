@@ -76,7 +76,7 @@ public class MineralSlime : OreSlime
 	{
 		NPC.lifeMax = (int)(NPC.lifeMax * 0.65f);
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo) =>
-		spawnInfo.Player.ZoneRockLayerHeight && !spawnInfo.Player.ZoneDungeon && Main.hardMode
+	public override float SpawnChance(NPC.Spawner spawner) =>
+		spawner.Player.ZoneRockLayerHeight && !spawner.Player.ZoneDungeon && Main.hardMode
 			? 0.05f : 0f;
 }

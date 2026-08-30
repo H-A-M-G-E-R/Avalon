@@ -61,9 +61,9 @@ public class AngryFairy : ModNPC
 		if (Main.rand.NextBool(40))
 			SoundEngine.PlaySound(SoundID.Pixie with { pitch = -0.3f, volume = 0.75f}, NPC.position);
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		return spawnInfo.Player.ZoneForest ? ModContent.GetInstance<BiomeTileCounts>().Trees > 170 ? 0.025f : 0.1f : 0f;
+		return spawner.Player.ZoneForest ? ModContent.GetInstance<BiomeTileCounts>().Trees > 170 ? 0.025f : 0.1f : 0f;
 	}
 	public override void FindFrame(int frameHeight)
 	{

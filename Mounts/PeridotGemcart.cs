@@ -12,7 +12,6 @@ internal class PeridotGemcart : ModMount
     public override void SetStaticDefaults()
     {
         MountID.Sets.Cart[Type] = true;
-        MountID.Sets.FacePlayersVelocity[Type] = true;
 
         SetAsMinecart(MountData, ModContent.BuffType<Buffs.PeridotGemcartBuff>(), MountData.frontTexture);
 

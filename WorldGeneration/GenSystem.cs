@@ -26,7 +26,7 @@ public class GenSystem : ModSystem
     {
         AvalonWorld.JungleLocationX = GenVars.JungleX;
     }
-    public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
+    public override void ModifyWorldGenTasks(List<GenPass> tasks)
     {
 		if (!AvalonWorld.retroWorld || (WorldGen.drunkWorldGen && WorldGen.getGoodWorldGen && WorldGen.noTrapsWorldGen))
 		{

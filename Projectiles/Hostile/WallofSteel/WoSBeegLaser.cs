@@ -43,7 +43,7 @@ namespace Avalon.Projectiles.Hostile.WallofSteel;
 		Projectile.timeLeft = 3600;
 		Projectile.tileCollide = false;
 	}
-	public override void PostDraw(Color lightColor)
+	public override void PostDraw(Player player, Color lightColor)
 	{
 		Projectile p = Projectile;
 

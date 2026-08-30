@@ -13,7 +13,7 @@ public class BronzeAxe : ModItem
 	{
 		Terraria.Recipe.Create(Type)
 			.AddIngredient(ModContent.ItemType<Material.Bars.BronzeBar>(), 6)
-			.AddRecipeGroup(RecipeGroupID.Wood, 3)
+			.AddRecipeGroup(RecipeGroups.Wood, 3)
 			.AddTile(TileID.Anvils)
 			.Register();
 	}

@@ -84,7 +84,7 @@ public class PoisonGasTrap : ModProjectile
 		target.AddBuff(BuffID.Venom, 7 * 60);
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		ClassExtensions.DrawGas(TextureAssets.Projectile[Type].Value, lightColor * 0.8f, Projectile, 4, 6);
 		return false;

@@ -80,7 +80,7 @@ public class GreenPigron : ModNPC
         npcLoot.Add(ItemDropRule.Common(ItemID.PigronMinecart, 100));
         npcLoot.Add(ItemDropRule.ByCondition(new Conditions.WindyEnoughForKiteDrops(), ItemID.KitePigron, 25));
     }
-	public override float SpawnChance(NPCSpawnInfo spawnInfo) =>
-		spawnInfo.Player.InModBiome<Biomes.UndergroundContagionIce>() && !spawnInfo.Player.InPillarZone() &&
+	public override float SpawnChance(NPC.Spawner spawner) =>
+		spawner.Player.InModBiome<Biomes.UndergroundContagionIce>() && !spawner.Player.InPillarZone() &&
 		Main.hardMode ? 0.083f : 0f;
 }

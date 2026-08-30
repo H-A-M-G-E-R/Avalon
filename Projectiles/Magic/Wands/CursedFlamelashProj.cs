@@ -96,7 +96,7 @@ public class CursedFlamelashProj : ModProjectile
 			Projectile.NewProjectile(Projectile.GetSource_FromThis(), Projectile.Center, Vector2.Zero, ModContent.ProjectileType<CursedFlamelashExplosion>(), Projectile.damage * 2, Projectile.knockBack * 2, Projectile.owner);
 		}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 
 		Main.spriteBatch.End();

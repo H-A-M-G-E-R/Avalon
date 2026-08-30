@@ -23,7 +23,7 @@ public class MightCandle : ModTile
 		TileObjectData.addTile(Type);
 		Main.tileFrameImportant[Type] = true;
 		Main.tileLighted[Type] = true;
-		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
+		TileID.Sets.RoomNeeds.CountsAsTorch[Type] = true;
 		AddMapEntry(new Color(253, 221, 3));
 		DustType = ModContent.DustType<Dusts.SoulofMight>();
 	}

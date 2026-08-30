@@ -1305,7 +1305,7 @@ public class SkyFortress
                 {
                     //Main.chest[num2].item[0].SetDefaults(ModContent.ItemType<Items.Consumables.DragonBait>(), false);
                     //Main.chest[num2].item[0].stack = Main.rand.Next(2, 6);
-                    Main.chest[num2].item[1].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.SkyBrick>(), false);
+                    Main.chest[num2].item[1].SetDefaults(ModContent.ItemType<Items.Placeable.Tile.SkyBrick>());
                     Main.chest[num2].item[1].stack = Main.rand.Next(200, 451);
                     //int rand = WorldGen.genRand.Next(3);
                     //if (rand == 0)
@@ -1334,7 +1334,7 @@ public class SkyFortress
                     //    Main.chest[num2].item[3].SetDefaults(ModContent.ItemType<Items.Placeable.Bar.TritanoriumBar>(), false);
                     //    Main.chest[num2].item[3].stack = Main.rand.Next(11, 25);
                     //}
-                    Main.chest[num2].item[4].SetDefaults(ItemID.PlatinumCoin, false);
+                    Main.chest[num2].item[4].SetDefaults(ItemID.PlatinumCoin);
                     Main.chest[num2].item[4].stack = Main.rand.Next(4) + 2;
                     return true;
                 }

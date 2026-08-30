@@ -14,7 +14,7 @@ public class VertexSlash : EnergySlashTemplate
 {
 	public override string Texture => $"Terraria/Images/Projectile_{ProjectileID.TheHorsemansBlade}";
 	public override LocalizedText DisplayName => ModContent.GetInstance<VertexOfExcalibur>().DisplayName;
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		if (Math.Abs(Projectile.ai[0]) > 0.2f)
 		{
@@ -60,7 +60,7 @@ public class VertexSlash : EnergySlashTemplate
 				Dust dust2 = Dust.NewDustPerfect(Projectile.Center + num8.ToRotationVector2() * (Main.rand.NextFloat() * 120f * Projectile.scale + 20f * Projectile.scale), Dusts[Main.rand.Next(Dusts.Length)], vector3 * 2f, 0, Color.White, 1f);
 				dust2.fadeIn = 0.4f + Main.rand.NextFloat() * 0.5f;
 				dust2.noGravity = true;
-				dust2.noLightEmittence = true;
+				dust2.noLightEmittance = true;
 			}
 		}
 	}

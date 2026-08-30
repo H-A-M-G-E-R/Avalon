@@ -13,7 +13,7 @@ public class TuhrtlPressurePlate : ModTile
 	public override void SetStaticDefaults()
 	{
 		TileID.Sets.PressurePlate[Type] = -2;
-		TileID.Sets.IsATrigger[Type] = true;
+		TileID.Sets.Wiring.IsATrigger[Type] = true;
 
 		Main.tileFrameImportant[Type] = true;
 		Main.tileObsidianKill[Type] = true;

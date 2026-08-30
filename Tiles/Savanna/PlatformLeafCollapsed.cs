@@ -44,7 +44,7 @@ public class PlatformLeafCollapsed : ModTile
     {
         return true;
     }
-    public override void RandomUpdate(int i, int j)
+    public override void RandomUpdate(int i, int j, bool underground)
     {
         int xpos;
         int ypos;

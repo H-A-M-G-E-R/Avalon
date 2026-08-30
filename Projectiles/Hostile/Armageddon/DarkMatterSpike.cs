@@ -57,7 +57,7 @@ namespace Avalon.Projectiles.Hostile.Armageddon
                 Projectile.velocity.Y += 0.2f;
             }
         }
-        public override bool PreDraw(ref Color lightColor)
+        public override bool PreDraw(Player player, ref Color lightColor)
         {
             Texture2D tex = TextureAssets.Projectile[Type].Value;
             Vector2 Scale = new Vector2(MathHelper.Clamp(Projectile.ai[1] * 2, 0, 1), Projectile.ai[1]) * Projectile.scale;

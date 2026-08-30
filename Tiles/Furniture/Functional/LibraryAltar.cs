@@ -28,7 +28,7 @@ public class LibraryAltar : ModTile
 		TileObjectData.newTile.CopyFrom(TileObjectData.Style3x3);
 		TileObjectData.addTile(Type);
 
-		AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
+		TileID.Sets.RoomNeeds.CountsAsTable[Type] = true;
 		AddMapEntry(Color.Gray);
 	}
 	public override void MouseOver(int i, int j)

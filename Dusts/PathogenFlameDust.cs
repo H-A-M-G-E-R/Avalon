@@ -20,7 +20,7 @@ public class PathogenFlameDust : ModDust
         {
             dust.velocity.Y += 0.05f;
         }
-        if (!dust.noLightEmittence)
+        if (!dust.noLightEmittance)
 		{
 			Vector3 light = new Vector3(0.5f, 0f, 2f) * dust.scale * 1.5f;
             Lighting.AddLight(dust.position, light);

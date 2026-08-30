@@ -112,7 +112,7 @@ public class BoomlashProj : ModProjectile
 		}
 		SoundEngine.PlaySound(SoundID.DD2_ExplosiveTrapExplode, Projectile.position);
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		Rectangle frame2 = TextureAssets.Projectile[Type].Frame();
 		Vector2 frameOrigin2 = frame2.Size() / 2f;

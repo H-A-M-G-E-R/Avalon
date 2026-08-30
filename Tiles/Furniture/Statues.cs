@@ -200,7 +200,7 @@ public class Statues : ModTile
 
 public class ExampleStatueModWorld : ModSystem
 {
-    public override void ModifyWorldGenTasks(List<GenPass> tasks, ref double totalWeight)
+    public override void ModifyWorldGenTasks(List<GenPass> tasks)
     {
 		if (!AvalonWorld.retroWorld || (WorldGen.drunkWorldGen && WorldGen.getGoodWorldGen && WorldGen.noTrapsWorldGen))
 		{

@@ -59,7 +59,7 @@ public class DevilScythe : ModProjectile, ISyncedOnHitEffect
 			Dust d = Dust.NewDustDirect(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.DesertTorch, 0f, 0f, 0, default(Color), 1f);
 			d.noGravity = true;
 			d.velocity *= 3;
-			d.noLightEmittence = true;
+			d.noLightEmittance = true;
 			d.fadeIn = Main.rand.NextFloat(1, 1.5f);
 		}
 		for (int dustAmount = 0; dustAmount < 15; dustAmount++)
@@ -67,7 +67,7 @@ public class DevilScythe : ModProjectile, ISyncedOnHitEffect
 			Dust d = Dust.NewDustDirect(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.BoneTorch, 0f, 0f, 0, default(Color), 1f);
 			d.noGravity = true;
 			d.velocity *= 3;
-			d.noLightEmittence = true;
+			d.noLightEmittance = true;
 			d.fadeIn = 1.4f;
 		}
 	}
@@ -141,14 +141,14 @@ public class DevilScythe : ModProjectile, ISyncedOnHitEffect
 			Dust d2 = Dust.NewDustDirect(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.DesertTorch, 0f, 0f, 0, default(Color), Projectile.Opacity);
 			d2.noGravity = true;
 			d2.velocity = Projectile.velocity * 0.5f;
-			d2.noLightEmittence = Main.rand.NextBool();
+			d2.noLightEmittance = Main.rand.NextBool();
 		}
 		if (Main.rand.NextBool(9))
 		{
 			Dust d = Dust.NewDustDirect(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, DustID.BoneTorch, 0f, 0f, 0, default(Color), Projectile.Opacity * 0.8f);
 			d.noGravity = true;
 			d.velocity = Projectile.velocity * 0.5f;
-			d.noLightEmittence = Main.rand.NextBool();
+			d.noLightEmittance = Main.rand.NextBool();
 		}
 		//int target = Projectile.FindTargetWithLineOfSight(500);
 		//if(target != -1)
@@ -166,7 +166,7 @@ public class DevilScythe : ModProjectile, ISyncedOnHitEffect
 		//}
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		var tex = TextureAssets.Projectile[Type].Value;
 		var effect = Projectile.direction == 1 ? SpriteEffects.None : SpriteEffects.FlipHorizontally;

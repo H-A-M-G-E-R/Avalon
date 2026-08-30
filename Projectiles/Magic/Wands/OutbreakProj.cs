@@ -209,7 +209,7 @@ public class OutbreakProj : ModProjectile
 			d.color.A = 200;
 		}
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		//Texture2D projectileTexture = TextureAssets.Projectile[Type].Value;
 		//Vector2 drawPos = Projectile.Center - Main.screenPosition;
@@ -232,6 +232,6 @@ public class OutbreakProj : ModProjectile
 
 		////Main.spriteBatch.Draw(projectileTexture, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
 		//return false;
-		return base.PreDraw(ref lightColor);
+		return base.PreDraw(player, ref lightColor);
 	}
 }

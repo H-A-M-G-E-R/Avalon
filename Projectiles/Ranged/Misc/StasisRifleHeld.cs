@@ -115,12 +115,12 @@ public class StasisRifleHeld : ModProjectile
 			Projectile.frame = 0;
 	}
 
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		float Power = MathHelper.Clamp(Projectile.ai[1], 0, 1);
 		SpriteEffects Flip = Projectile.direction == -1 ? SpriteEffects.FlipVertically : SpriteEffects.None;
 		Rectangle frame = TextureAssets.Projectile[Type].Frame(2, 4, 0, Projectile.frame);
-		Vector2 drawPos = Projectile.Center - Main.screenPosition + new Vector2(0, -4 + Main.player[Projectile.owner].gfxOffY);
+		Vector2 drawPos = Projectile.Center - Main.screenPosition + new Vector2(0, -4 + player.gfxOffY);
 
 		if (Projectile.timeLeft == 59)
 		{

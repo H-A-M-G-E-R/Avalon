@@ -341,50 +341,50 @@ class IceShrine
                         var num4 = WorldGen.genRand.Next(19);
                         if (num4 >= 0 && num4 <= 6)
                         {
-                            Main.chest[num2].item[0].SetDefaults(ItemID.BlizzardinaBottle, false);
+                            Main.chest[num2].item[0].SetDefaults(ItemID.BlizzardinaBottle);
                             Main.chest[num2].item[0].Prefix(-1);
                         }
                         else if (num4 >= 7 && num4 <= 13)
                         {
-                            Main.chest[num2].item[0].SetDefaults(ItemID.PoisonedKnife, false);
+                            Main.chest[num2].item[0].SetDefaults(ItemID.PoisonedKnife);
                             Main.chest[num2].item[0].stack = WorldGen.genRand.Next(34, 79);
                         }
                         else if (num4 >= 14 && num4 <= 17)
                         {
-                            Main.chest[num2].item[0].SetDefaults(ItemID.IceBlade, false);
+                            Main.chest[num2].item[0].SetDefaults(ItemID.IceBlade);
                             Main.chest[num2].item[0].Prefix(-1);
                         }
                         else if (num4 == 18)
                         {
-                            Main.chest[num2].item[0].SetDefaults(ItemID.IceSkates, false);
+                            Main.chest[num2].item[0].SetDefaults(ItemID.IceSkates);
                             Main.chest[num2].item[0].Prefix(-1);
                         }
-                        Main.chest[num2].item[1].SetDefaults(ItemID.GoldCoin, false);
+                        Main.chest[num2].item[1].SetDefaults(ItemID.GoldCoin);
                         Main.chest[num2].item[1].stack = WorldGen.genRand.Next(60, 82);
                         var num5 = WorldGen.genRand.Next(5);
                         if (num5 == 0)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ItemID.RestorationPotion, false);
+                            Main.chest[num2].item[2].SetDefaults(ItemID.RestorationPotion);
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(3, 7);
                         }
                         if (num5 == 1)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ItemID.SuspiciousLookingEye, false);
+                            Main.chest[num2].item[2].SetDefaults(ItemID.SuspiciousLookingEye);
                             Main.chest[num2].item[2].stack = 1;
                         }
                         if (num5 == 2)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ItemID.SlushBlock, false);
+                            Main.chest[num2].item[2].SetDefaults(ItemID.SlushBlock);
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(200, 451);
                         }
                         if (num5 == 3)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ItemID.IceBrick, false);
+                            Main.chest[num2].item[2].SetDefaults(ItemID.IceBrick);
                             Main.chest[num2].item[2].stack = WorldGen.genRand.Next(30, 73);
                         }
                         if (num5 == 4)
                         {
-                            Main.chest[num2].item[2].SetDefaults(ItemID.HandWarmer, false);
+                            Main.chest[num2].item[2].SetDefaults(ItemID.HandWarmer);
                             Main.chest[num2].item[2].Prefix(-1);
                         }
                     }

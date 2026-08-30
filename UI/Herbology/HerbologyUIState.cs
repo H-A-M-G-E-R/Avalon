@@ -447,7 +447,6 @@ public class HerbologyUIState : ExxoUIState
         {
             modPlayer.DisplayHerbologyMenu = false;
             player.dropItemCheck();
-            Recipe.FindRecipes();
         }
     }
     public override void LeftClick(UIMouseEvent evt)

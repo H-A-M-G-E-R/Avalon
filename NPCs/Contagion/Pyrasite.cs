@@ -60,9 +60,9 @@ public class PyrasiteHead : WormHead
 			new FlavorTextBestiaryInfoElement(Language.GetTextValue("Mods.Avalon.Bestiary.Pyrasite"))
 		]);
 	}
-	public override float SpawnChance(NPCSpawnInfo spawnInfo)
+	public override float SpawnChance(NPC.Spawner spawner)
 	{
-		if ((spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawnInfo.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) && !spawnInfo.Player.InPillarZone())
+		if ((spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneContagion || spawner.Player.GetModPlayer<AvalonBiomePlayer>().ZoneUndergroundContagion) && !spawner.Player.InPillarZone())
 			return 0.1f;
 		return 0;
 	}

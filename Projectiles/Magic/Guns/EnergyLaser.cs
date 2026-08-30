@@ -136,7 +136,7 @@ public class EnergyLaser : ModProjectile, ISyncedOnHitEffect
 		Projectile.velocity = Vector2.Zero;
 		return false;
 	}
-	public override bool PreDraw(ref Color lightColor)
+	public override bool PreDraw(Player player, ref Color lightColor)
 	{
 		//Rectangle screen = new Rectangle((int)Main.screenPosition.X, (int)Main.screenPosition.Y, Main.screenWidth, Main.screenHeight);
 		Vector2 StartPos = new Vector2(Projectile.ai[0], Projectile.ai[1]); //screen.ClosestPointInRect(new Vector2(Projectile.ai[0], Projectile.ai[1]));

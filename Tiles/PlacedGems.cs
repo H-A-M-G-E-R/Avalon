@@ -60,17 +60,17 @@ public class PlacedGems : ModTile
 			//    break;
 			case 3:
 				var dust = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, ModContent.DustType<Dusts.TourmalineDust>(), 0, 0, 50, default, 0.8f);
-				Main.dust[dust].noLightEmittence = true;
+				Main.dust[dust].noLightEmittance = true;
 				Main.dust[dust].noLight = true;
 				return false;
 			case 4:
 				dust = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, ModContent.DustType<Dusts.PeridotDust>(), 0, 0, 50, default, 0.8f);
-				Main.dust[dust].noLightEmittence = true;
+				Main.dust[dust].noLightEmittance = true;
 				Main.dust[dust].noLight = true;
 				return false;
 			case 5:
 				dust = Dust.NewDust(new Vector2(i * 16, j * 16), 16, 16, ModContent.DustType<Dusts.ZirconDust>(), 0, 0, 50, default, 0.8f);
-				Main.dust[dust].noLightEmittence = true;
+				Main.dust[dust].noLightEmittance = true;
 				Main.dust[dust].noLight = true;
 				return false;
 		}
